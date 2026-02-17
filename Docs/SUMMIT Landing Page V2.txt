@@ -1,0 +1,282 @@
+# SUMMIT Lighting Systems — Landing Page Copy + Layout (v2)
+
+Purpose: a single-page lead generator for permanent roofline + year‑round accent lighting installs in the West Kootenays (BC).
+Primary conversion: **Request a free quote** (form + click‑to‑call/text).
+
+---
+
+## 1) Global layout rules
+
+- **One primary CTA:** “Get a Free Quote” (repeat throughout).
+- **Secondary CTA:** “Call / Text” (same placement pattern, lighter emphasis).
+- **Fast trust:** Local service area + warranty + insured + clear timeline.
+- **Chromaglow integration:** treat as *the system you install* (ingredient brand), with a short disclosure statement (see Section 4).
+
+---
+
+## 🏠 HERO (Above the fold)
+
+**Top micro‑bar (small text)**
+West Kootenays • Permanent roofline lighting • Free on‑site estimate
+
+**Headline**
+Permanent Roofline Lighting — Installed Once, Enjoyed Year‑Round
+
+**Subheadline**
+A clean, low‑profile lighting system professionally installed on your home or business.
+Set schedules, change colors, and run scenes anytime — holidays, evenings, events, and everyday accent lighting.
+
+**Primary CTA (button)**
+Get a Free Quote
+
+**Secondary CTA (link/button)**
+Call / Text for a Fast Estimate
+
+**Trust row (3–5 compact items)**
+- Fully insured installation
+- Manufacturer parts coverage + SUMMIT workmanship warranty
+- Designed for harsh weather
+- Reply within 1 business day
+
+**“Powered by” line (trust transfer, small)**
+Powered by **Chromaglow Pro** (48V RGBW) — installed by SUMMIT.
+
+**Disclosure (fine print, small)**
+Chromaglow Pro is manufactured by Big Star Lights. SUMMIT Lighting Systems is an independent installer.
+
+**Hero visual**
+- 1 strong exterior photo (house at dusk) OR short looping video
+- Overlay: “Before / After” toggle if available (future)
+
+---
+
+## 😩 PROBLEM / RELIEF (Pain points → outcome)
+
+**Headline**
+Stop Climbing Ladders Every Fall
+
+**Bullets (left)**
+- No more seasonal install/removal
+- No more tangled strands or dead sections
+- No more risky ladder work on icy days
+- No more last‑minute scrambling before holidays
+
+**Outcome (right)**
+A permanent system that looks clean in daylight and transforms your home at night — with simple app control.
+
+**CTA**
+Get a Free Quote
+
+---
+
+## ✨ WHAT YOU GET (Benefits, not specs)
+
+**Headline**
+A Permanent Lighting Upgrade That Pays Off Every Season
+
+**Benefit tiles (6)**
+- **Always ready:** one install, year‑round use
+- **Clean look:** low‑profile, color‑matched tracks
+- **Total control:** schedules, scenes, and brightness
+- **Holiday + everyday:** warm whites to full color
+- **Weather‑ready:** built for real winters and summers
+- **Long‑term value:** durable components + clear warranties
+
+---
+
+## 🧩 THE SYSTEM WE INSTALL (Chromaglow Pro — factual, short)
+
+**Headline**
+The System We Install: Chromaglow Pro (48V RGBW)
+
+**One‑sentence positioning**
+Commercial‑grade permanent lighting designed for long runs, harsh weather, and precise roofline installs.
+
+**Fact bullets (keep tight; verify/update if product sheet changes)**
+- 48V low‑voltage **RGBW** lighting system
+- IP‑rated components for outdoor use
+- Wide operating temperature range (built for extreme climates)
+- Even spacing for clean roofline patterns
+- App control, scenes, and scheduling
+- Long‑run capability for larger homes (fewer injection points)
+
+**Micro‑note**
+We design the layout and install for your rooflines; Chromaglow Pro is the component system we build with.
+
+---
+
+## 📸 GALLERY (Proof fast)
+
+**Headline**
+Recent Installs + Lighting Looks
+
+**Layout**
+- 8–12 photos minimum
+- Mix: daylight “clean track” shots + nighttime “effect” shots
+- One short “walk‑up” video if possible
+
+**CTA**
+Get a Free Quote
+
+---
+
+## ✅ HOW IT WORKS (Process reduces friction)
+
+**Headline**
+Simple Process, Clean Results
+
+1. **Request a quote** (2 minutes)
+2. **On‑site measure + design** (rooflines, power, visibility)
+3. **Install day** (professional mounting, tidy routing, testing)
+4. **App setup + handoff** (scenes, schedules, controls)
+
+**Expectation‑setting line**
+Typical installs are completed in 1 day for many homes (larger homes may require more time).
+
+---
+
+## 💬 SOCIAL PROOF (Even if new)
+
+If you have testimonials, place them here.
+If you do not yet have many, use:
+- A short “Why people choose permanent lighting” statement
+- Manufacturer warranty + workmanship warranty clarity
+- Any relevant experience credentials you can truthfully claim
+
+**Headline**
+Designed Like a Permanent Upgrade — Not Seasonal Decor
+
+**Optional proof blocks**
+- “Local, insured installer serving the West Kootenays”
+- “Clear warranties — components + workmanship”
+- “Professional layout, clean lines, and careful cable management”
+
+---
+
+## 💰 PRICING ANCHOR (Range + drivers)
+
+**Headline**
+What It Typically Costs
+
+**Short framing**
+Every quote is based on roofline length, complexity, and access.
+Most projects fall within a predictable range once we measure.
+
+**Pricing range (edit to your real ranges)**
+- Small homes: $X–$Y
+- Typical homes: $X–$Y
+- Large / complex roofs: $X–$Y
+
+**Cost drivers (bullets)**
+- Total linear feet of roofline covered
+- Roof complexity (peaks, returns, dormers)
+- Access (ladder vs. lift)
+- Power routing and concealment requirements
+
+**CTA**
+Get a Free Quote
+
+---
+
+## 🛡️ WARRANTIES + SAFETY (Trust close to CTA)
+
+**Headline**
+Warranties You Can Understand
+
+**Two‑column**
+**Manufacturer (Chromaglow Pro / Big Star Lights)**
+- Parts coverage per manufacturer warranty terms
+
+**SUMMIT Lighting Systems**
+- Workmanship / installation warranty (state your term)
+- Support for configuration + basic troubleshooting
+
+**Safety line**
+We install with safety-first practices and appropriate access equipment.
+
+---
+
+## ❓ FAQ (Objection handling)
+
+### 1) Does it look noticeable during the day?
+Chromaglow Pro is designed to be **discrete** on the roofline, with tracks/channels intended to keep the install looking clean and “built-in” rather than seasonal décor. We color-match and place the system to minimize visibility from the street where possible.
+
+### 2) Can you do warm white only?
+Yes. Chromaglow Pro is **RGBW**, which includes a dedicated white channel. We can set you up with **warm-white-only** daily schedules, and you still have full color available for holidays or special events.
+
+### 3) How do controls and scheduling work?
+You control the system through the **Chromaglow Pro mobile app**, including presets, scenes, brightness, and **scheduled automation**. The system is smart-home friendly and compatible with **Alexa** and **Google Home**.
+
+### 4) How long does installation take?
+Your quote includes a clear estimate for **total project cost** and **how long the install will take**. Many homes can be completed in a day; larger or more complex rooflines can take longer. We confirm timelines after measuring and design.
+
+### 5) What happens if a section fails?
+Chromaglow Pro light strings are designed to be **cut and spliced**, which makes repairs straightforward when needed. We diagnose the issue, isolate the segment, and repair/replace using the manufacturer’s system components.
+
+### 6) Is it safe / low voltage?
+Yes. Chromaglow Pro is a **48V low-voltage** system and is described by the manufacturer as plug-and-play (no manipulation of the 120V side of the system). Local permit requirements can vary by municipality.
+
+### 7) Can I expand coverage later?
+Usually, yes. The system is designed to scale: a controller can manage **up to 1,500 ft of lights**, and you can expand by adding additional power supplies/controllers as needed (which can be synced).
+
+### 8) How do you handle steep roofs and hard access?
+We plan the install around safe access. Our crew is **certified in fall protection** and **mobile elevating work platform (MEWP) operation**, and we use the right approach for the roofline—ladder, lift, or alternate mounting strategy—based on the site.
+
+### 9) What’s included in the quote?
+Your quote includes:
+- A measured lighting plan (coverage + layout assumptions)
+- An estimate of the **full cost** of the job
+- An estimate of **how long the job will take** to complete
+- Warranty clarity: manufacturer parts coverage (Chromaglow Pro / Big Star Lights) + SUMMIT workmanship terms
+
+## 🧾 QUOTE FORM (Primary conversion)
+
+**Headline**
+Get a Free Quote
+
+**Form fields (keep minimal)**
+- Name
+- Address / community
+- Phone or email
+- “Anything we should know?” (optional)
+
+**Submit button**
+Get My Free Quote
+
+**Post‑submit microcopy**
+Reply within 1 business day. No pressure.
+
+**Secondary CTA**
+Call / Text for a Fast Estimate
+
+---
+
+## 📍 FOOTER
+
+**SUMMIT Lighting Systems**
+Permanent Holiday + Year‑Round Accent Lighting
+
+Service area: West Kootenays (Nelson • Trail • Castlegar • Rossland • Salmo + nearby)
+
+Contact:
+- Phone/Text: [your number]
+- Email: [your email]
+
+**Disclosure (repeat, small)**
+Chromaglow Pro is manufactured by Big Star Lights. SUMMIT Lighting Systems is an independent installer.
+
+---
+
+## SEO
+
+**Title tag**
+SUMMIT Lighting Systems | Permanent Roofline Lighting | West Kootenays
+
+**Meta description**
+Permanent roofline lighting installed once and enjoyed year‑round. Professional installs across the West Kootenays. Get a free quote.
+
+**OG title**
+SUMMIT Lighting Systems | Permanent Roofline Lighting
+
+**OG description**
+Clean, permanent roofline lighting with app control for homes and businesses in the West Kootenays. Request a free quote.
