@@ -129,27 +129,61 @@
     .sticky-cta .btn { flex: 1; width: 100%; }
 
     @media (max-width: 1080px) {
-      .nav-inner { grid-template-columns: auto 1fr auto; }
-      .nav-actions { justify-self: end; }
+      .nav-inner { grid-template-columns: auto 1fr auto auto; }
+      .nav-actions { justify-self: end; gap: 8px; }
       .nav-menu { justify-self: end; }
-      .hero-copy { width: min(58%, 620px); }
+      .hero-copy { width: min(62%, 620px); }
     }
     @media (max-width: 820px) {
-      .page { padding-top: 138px; }
-      .nav-inner { grid-template-columns: 1fr; padding: 10px 0; min-height: auto; }
-      .brand, .nav-menu, .nav-actions { justify-self: stretch; }
-      .nav-menu { order: 3; }
-      .nav-actions { grid-column: auto; justify-self: stretch; order: 2; }
-      .nav-actions .btn { flex: 1; }
-      .hero { padding-top: 0; }
-      .hero-gallery { min-height: calc(100vh - 138px); }
-      .hero-gallery::after { inset: 0; border-radius: 0; background: linear-gradient(180deg, rgba(7,12,20,0.68) 0%, rgba(7,12,20,0.48) 36%, rgba(7,12,20,0.2) 100%); }
-      .hero-copy { position: absolute; left: 28px; right: 28px; bottom: 92px; width: auto; }
-      .hero-slide { min-height: calc(100vh - 138px); }
-      .hero-gallery-controls { left: 14px; right: 14px; }
-      .trust-row { grid-template-columns: 1fr; }
+      /* Compact single-row nav */
+      .page { padding-top: 60px; }
+      .nav-inner { grid-template-columns: auto 1fr auto; padding: 10px 0; min-height: 60px; gap: 12px; }
+      .brand { justify-self: start; }
+      /* Hide full CTA buttons — sticky bar handles them */
+      .nav-actions { display: none; }
+      .nav-menu { justify-self: end; order: unset; }
+
+      /* Hero fills viewport below compact nav */
+      .hero { padding-top: 0; padding-bottom: 0; }
+      .hero-gallery { min-height: calc(100svh - 60px); }
+      .hero-slide { min-height: calc(100svh - 60px); }
+
+      /* Bottom-heavy gradient so text is readable */
+      .hero-gallery::after {
+        background: linear-gradient(180deg,
+          rgba(7,12,20,0.18) 0%,
+          rgba(7,12,20,0.08) 30%,
+          rgba(7,12,20,0.55) 62%,
+          rgba(7,12,20,0.92) 100%);
+      }
+
+      /* Copy sits just above the sticky bar */
+      .hero-copy {
+        position: absolute;
+        left: 20px;
+        right: 20px;
+        bottom: 88px;
+        width: auto;
+        gap: 14px;
+      }
+
+      .hero h1 { font-size: clamp(24px, 6.5vw, 34px); }
+      .hero p.lede { font-size: 15px; line-height: 1.5; }
+
+      /* Trust pills and disclosure clutter the image — hide in hero */
+      .hero .trust-row { display: none; }
+      .hero .disclosure { display: none; }
+
+      /* Stack CTA buttons full-width */
+      .cta-row { flex-direction: column; gap: 8px; }
+      .cta-row .btn { width: 100%; justify-content: center; }
+
+      /* Gallery nav arrows */
+      .hero-gallery-controls { left: 12px; right: 12px; }
+
+      /* Sticky bottom bar */
       .sticky-cta { display: flex; }
-      body { padding-bottom: 82px; }
+      body { padding-bottom: 74px; }
     }
   </style>
 </head>
