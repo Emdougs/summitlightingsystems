@@ -104,6 +104,13 @@
     .placeholder { color: var(--muted); border: 1px dashed rgba(255,255,255,0.16); background: rgba(255,255,255,0.02); }
     .placeholder::after { content: 'Photo coming soon'; position: absolute; inset: 0; display: grid; place-items: center; font-weight: 600; color: var(--muted); }
 
+    .system-feature { margin: 0 0 14px; position: relative; overflow: hidden; border-radius: var(--radius); border: 1px solid rgba(255,255,255,0.06); box-shadow: 0 18px 40px rgba(0,0,0,0.28); height: 420px; }
+    .system-feature img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .system-feature figcaption { position: absolute; left: 16px; bottom: 14px; padding: 8px 14px; border-radius: 10px; background: rgba(6,10,18,0.72); color: var(--text); font-weight: 700; font-size: 15px; }
+    .gallery-fig { margin: 0; position: relative; overflow: hidden; border-radius: var(--radius); border: 1px solid rgba(255,255,255,0.06); background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01)); box-shadow: 0 18px 40px rgba(0,0,0,0.28); display: flex; align-items: center; justify-content: center; }
+    .gallery-fig img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .gallery-fig figcaption { position: absolute; left: 12px; bottom: 10px; padding: 7px 10px; border-radius: 10px; background: rgba(6,10,18,0.7); color: var(--text); font-weight: 600; font-size: 13px; }
+
     .process { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 14px; }
     .process-step { background: var(--card); border: 1px solid rgba(255,255,255,0.06); border-radius: var(--radius); padding: 16px; display: grid; gap: 6px; }
     .process-step strong { color: var(--text); }
@@ -184,6 +191,8 @@
       /* Sticky bottom bar */
       .sticky-cta { display: flex; }
       body { padding-bottom: 74px; }
+      /* System section — stack to single column */
+      #system .shell > div[style*="grid-template-columns"] { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -207,6 +216,7 @@
           <div class="menu-list" id="menu-list">
             <a href="#switch">Why Switch</a>
             <a href="#benefits">What You Get</a>
+            <a href="#system">The System</a>
             <a href="#process">Process</a>
             <a href="#faq">FAQ</a>
             <a href="#quote">Quote</a>
@@ -251,8 +261,7 @@
               <div class="pill">Reply within 1 business day</div>
             </div>
             <div class="disclosure">
-              Powered by <strong>Chromaglow Pro</strong> (48V RGBW)<br/>
-              <em>Chromaglow Pro is manufactured by Big Star Lights. SUMMIT Lighting Systems is an independent installer.</em>
+              Powered by <strong>Chromaglow Pro</strong> (48V RGBW)
             </div>
           </div>
           <div class="hero-gallery-controls">
@@ -299,10 +308,36 @@
             <div class="card"><h3>Clean roofline look</h3><p>Low-profile, color-matched tracks.</p></div>
             <div class="card"><h3>Full control</h3><p>Schedules, scenes, and brightness.</p></div>
             <div class="card"><h3>True whites + full colour</h3><p>RGBW system with a dedicated white channel.</p></div>
-            <div class="card"><h3>Built for the Kootenays</h3><p>Weather-rated components for harsh climates.</p></div>
-            <div class="card"><h3>Long-term value</h3><p>Durable system + clear warranties.</p></div>
+            <div class="card"><h3>Built for Canadian Winters</h3><p>Weather-rated components for harsh climates.</p></div>
+            <div class="card"><h3>Long-term value</h3><p>Durable system + 10 year warranty.</p></div>
           </div>
-          <p style="margin-top:14px;"><strong>System Installed:</strong> <span style="color: var(--muted);">Chromaglow Pro (48V RGBW) — commercial-grade, long-run capable, app-controlled lighting designed for permanent installs.</span></p>
+        </div>
+      </section>
+
+      <section id="system">
+        <div class="shell">
+          <div class="eyebrow">The System</div>
+          <h2>Premium Hardware. Permanent Results.</h2>
+          <figure class="system-feature" style="margin-top:16px;">
+            <img src="./Assets/How it works/7.jpg" alt="Hand holding the Chromaglow app with a home lit in ice blue behind" loading="lazy" />
+            <figcaption>Hundreds of scenes, one tap.</figcaption>
+          </figure>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+            <div style="display:grid; gap:14px;">
+              <figure class="gallery-fig">
+                <img src="./Assets/How it works/6.jpg" alt="Multi-gable roofline with warm white LEDs glowing at dusk" loading="lazy" />
+                <figcaption>Warm white, every night.</figcaption>
+              </figure>
+              <figure class="gallery-fig">
+                <img src="./Assets/How it works/3.jpg" alt="Close-up of low-profile LED nodes sitting flush on a white soffit in daylight" loading="lazy" />
+                <figcaption>Invisible by day.</figcaption>
+              </figure>
+            </div>
+            <figure class="gallery-fig" style="background:#0c111b; min-height:480px;">
+              <img src="./Assets/How it works/1.png" alt="Chromaglow Pro node spec diagram — 6 diodes, UL certified, 10-year warranty" loading="lazy" style="object-fit:contain;" />
+              <figcaption>Built to last 10 years.</figcaption>
+            </figure>
+          </div>
         </div>
       </section>
 
@@ -326,7 +361,7 @@
       <section id="faq">
         <div class="shell panel">
           <div class="eyebrow">FAQ</div>
-          <h2>FAQ (Short + Direct)</h2>
+          <h2>FAQ</h2>
           <div class="faq" style="margin-top:12px;">
             <details open><summary>Does it look noticeable during the day?</summary><p>No. The track is designed to be discreet and color-matched where possible.</p></details>
             <details><summary>Can I run warm white only?</summary><p>Yes. RGBW includes a dedicated white channel.</p></details>
@@ -346,10 +381,14 @@
               <p>Quick form or call/text for a fast estimate.</p>
               <div class="card" style="margin-top:12px;">
 	                <p><strong>Call / Text:</strong> <a href="tel:+12366132173">(236) 613-2173</a></p>
-	                <p><strong>Email:</strong> <a href="mailto:info@summitlightingsystem.ca">info@summitlightingsystem.ca</a></p>
+	                <p><strong>Email:</strong> <a href="mailto:info@summitlightingsystems.ca">info@summitlightingsystems.ca</a></p>
               </div>
             </div>
-            <form>
+            <form id="quote-form" action="https://api.web3forms.com/submit" method="POST">
+              <input type="hidden" name="access_key" value="b3035883-5393-4cf1-8aea-7d144f7cd9d2" />
+              <input type="hidden" name="subject" value="New Quote Request — SUMMIT Lighting Systems" />
+              <input type="hidden" name="from_name" value="SUMMIT Website" />
+              <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
               <div>
                 <label for="name">Name</label>
                 <input id="name" name="name" placeholder="Your name" required />
@@ -366,10 +405,11 @@
                 <label for="notes">Project Details (optional)</label>
                 <textarea id="notes" name="notes" placeholder="Roofline length, timeline, special requests..."></textarea>
               </div>
-              <p style="color: var(--muted);">Reply within 1 business day. No pressure.</p>
+              <p style="color: var(--muted);">Reply within 1 business day.</p>
               <button class="btn primary" type="submit">Get My Free Quote</button>
 	              <a class="btn secondary" href="tel:+12366132173">Call / Text for a Fast Estimate</a>
             </form>
+            <div id="quote-result" style="display:none; padding:16px; border-radius:12px; margin-top:12px;"></div>
           </div>
         </div>
       </section>
@@ -447,6 +487,33 @@
     onScroll();
     updateHeroGallery();
     window.addEventListener('scroll', onScroll, { passive: true });
+
+    const quoteForm = document.getElementById('quote-form');
+    const quoteResult = document.getElementById('quote-result');
+    if (quoteForm) {
+      quoteForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const submitBtn = quoteForm.querySelector('button[type="submit"]');
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending\u2026';
+        try {
+          const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(quoteForm) });
+          const json = await res.json();
+          if (json.success) {
+            quoteForm.style.display = 'none';
+            quoteResult.style.cssText = 'display:block; padding:16px; border-radius:12px; background:rgba(53,185,255,0.1); border:1px solid rgba(53,185,255,0.3);';
+            quoteResult.innerHTML = '<strong style="color:var(--text)">Message sent!</strong><p style="margin:6px 0 0; color:var(--muted)">We\'ll be in touch within 1 business day.</p>';
+          } else {
+            throw new Error('Submission failed');
+          }
+        } catch {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Get My Free Quote';
+          quoteResult.style.cssText = 'display:block; padding:16px; border-radius:12px; background:rgba(255,80,80,0.08); border:1px solid rgba(255,80,80,0.25);';
+          quoteResult.innerHTML = '<strong style="color:var(--text)">Something went wrong.</strong><p style="margin:6px 0 0; color:var(--muted)">Please call or text us at (236) 613-2173.</p>';
+        }
+      });
+    }
   </script>
 </body>
 </html>
