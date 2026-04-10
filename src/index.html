@@ -5,10 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SUMMIT Lighting Systems | Permanent Roofline Lighting | West Kootenays</title>
   <meta name="description" content="Permanent roofline lighting installed once and enjoyed year-round. Professional installs across the West Kootenays. Get a free quote." />
+  <meta name="color-scheme" content="dark" />
   <meta property="og:title" content="SUMMIT Lighting Systems | Permanent Roofline Lighting" />
   <meta property="og:description" content="Clean, permanent roofline lighting with app control for homes and businesses in the West Kootenays. Request a free quote." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="image" href="./Assets/hero/Chromaglow-Pro-Install-Shots-07206.jpg" fetchpriority="high">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -25,6 +27,11 @@
       --max: 1200px;
     }
     * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+    }
     body {
       margin: 0;
       background: var(--bg);
@@ -33,6 +40,12 @@
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
+    :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+    section[id] { scroll-margin-top: 96px; }
     h1, h2, h3, h4 { font-family: 'Space Grotesk', 'Manrope', system-ui, sans-serif; margin: 0 0 10px; line-height: 1.2; }
     p { margin: 0 0 12px; color: var(--muted); }
     a { color: inherit; text-decoration: none; }
@@ -41,6 +54,14 @@
 
     .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 20; background: rgba(12,17,27,0.88); backdrop-filter: blur(18px); border-bottom: 1px solid rgba(255,255,255,0.05); overflow: visible; }
     .nav-inner { display: grid; grid-template-columns: auto 1fr auto auto; align-items: center; padding: 8px 0; gap: 18px; min-height: 78px; transition: padding 180ms ease; }
+    .nav-anchors { display: none; align-items: center; justify-content: center; gap: 4px; flex-wrap: wrap; }
+    .nav-anchors a { padding: 8px 12px; border-radius: 8px; color: var(--muted); font-size: 14px; font-weight: 600; letter-spacing: 0.01em; transition: color 140ms ease, background 140ms ease; }
+    .nav-anchors a:hover { color: var(--text); background: rgba(255,255,255,0.05); }
+    .nav-anchors a[aria-current="true"] { color: var(--accent-2); background: rgba(56,192,255,0.1); }
+    @media (min-width: 900px) {
+      .nav-anchors { display: flex; }
+      .nav-menu { display: none; }
+    }
     .brand { display: grid; gap: 2px; }
     .brand-mark { font-family: 'Space Grotesk', 'Manrope', system-ui, sans-serif; font-size: clamp(20px, 2.6vw, 28px); font-weight: 700; letter-spacing: 0.14em; color: var(--text); line-height: 1; }
     .brand-sub { color: var(--muted); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; }
@@ -72,20 +93,24 @@
     .pill { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); padding: 12px 14px; border-radius: 12px; text-align: center; color: var(--text); font-weight: 600; }
     .disclosure { font-size: 12px; color: var(--muted); opacity: 0.8; }
     .hero-gallery { position: relative; width: 100%; border-radius: 0; border: 0; background: transparent; box-shadow: none; backdrop-filter: none; padding: 0; overflow: hidden; min-height: calc(100vh - 86px); }
-    .hero-gallery::after { content: ''; position: absolute; inset: 0; border-radius: 0; background: linear-gradient(90deg, rgba(7,12,20,0.78) 0%, rgba(7,12,20,0.54) 34%, rgba(7,12,20,0.18) 58%, rgba(7,12,20,0.1) 100%), linear-gradient(180deg, rgba(8,12,20,0.06), rgba(8,12,20,0.44)); pointer-events: none; z-index: 1; }
+    .hero-gallery::after { content: ''; position: absolute; inset: 0; border-radius: 0; background: linear-gradient(90deg, rgba(5,9,16,0.88) 0%, rgba(5,9,16,0.66) 34%, rgba(5,9,16,0.24) 58%, rgba(5,9,16,0.12) 100%), linear-gradient(180deg, rgba(5,9,16,0.08), rgba(5,9,16,0.55)); pointer-events: none; z-index: 1; }
     .hero-gallery-track { display: grid; grid-auto-flow: column; grid-auto-columns: 100%; gap: 18px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none; -ms-overflow-style: none; touch-action: pan-x; }
     .hero-gallery-track::-webkit-scrollbar { display: none; }
     .hero-slide { position: relative; margin: 0; min-height: calc(100vh - 86px); border-radius: 0; overflow: hidden; scroll-snap-align: start; background: rgba(255,255,255,0.03); }
     .hero-slide img { width: 100%; height: 116%; display: block; object-fit: cover; object-position: center; transform: translateY(-14%); }
     .hero-gallery-controls { position: absolute; inset: 50% 22px auto 22px; transform: translateY(-50%); z-index: 3; display: flex; align-items: center; justify-content: space-between; pointer-events: none; }
-    .hero-gallery-nav { width: 42px; height: 42px; border: 1px solid rgba(255,255,255,0.12); border-radius: 999px; background: rgba(8,12,20,0.68); color: var(--text); display: inline-flex; align-items: center; justify-content: center; cursor: pointer; transition: background 140ms ease, transform 140ms ease, border-color 140ms ease; }
-    .hero-gallery-nav:hover { background: rgba(18,28,42,0.9); border-color: rgba(255,255,255,0.2); transform: translateY(-1px); }
-    .hero-gallery-nav:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-    .hero-gallery-nav svg { width: 18px; height: 18px; }
-    .hero-gallery-nav { pointer-events: auto; }
-    .hero-gallery-dots { position: absolute; inset: 24px 24px auto auto; z-index: 3; display: inline-flex; align-items: center; gap: 8px; padding: 10px 12px; border-radius: 999px; background: rgba(8,12,20,0.64); border: 1px solid rgba(255,255,255,0.08); }
-    .hero-gallery-dot { width: 8px; height: 8px; border-radius: 999px; background: rgba(255,255,255,0.28); transition: transform 140ms ease, background 140ms ease; }
-    .hero-gallery-dot.active { background: var(--accent); transform: scale(1.25); }
+    .hero-gallery-nav { width: 48px; height: 48px; border: 1px solid rgba(255,255,255,0.18); border-radius: 999px; background: rgba(8,12,20,0.72); color: var(--text); display: inline-flex; align-items: center; justify-content: center; cursor: pointer; transition: background 140ms ease, transform 140ms ease, border-color 140ms ease; pointer-events: auto; }
+    .hero-gallery-nav:hover { background: rgba(18,28,42,0.92); border-color: rgba(255,255,255,0.28); transform: translateY(-1px); }
+    .hero-gallery-nav:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+    .hero-gallery-nav svg { width: 22px; height: 22px; }
+    .hero-gallery-meta { position: absolute; inset: 22px 22px auto auto; z-index: 3; display: inline-flex; align-items: center; gap: 10px; padding: 8px 10px 8px 14px; border-radius: 999px; background: rgba(8,12,20,0.74); border: 1px solid rgba(255,255,255,0.1); }
+    .hero-gallery-caption { font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent-2); padding-right: 2px; }
+    .hero-gallery-dots { display: inline-flex; align-items: center; gap: 14px; }
+    .hero-gallery-dot { position: relative; width: 14px; height: 14px; padding: 0; border-radius: 999px; background: rgba(255,255,255,0.32); border: 1px solid rgba(255,255,255,0.22); cursor: pointer; transition: transform 140ms ease, background 140ms ease, border-color 140ms ease; }
+    .hero-gallery-dot::before { content: ''; position: absolute; inset: -15px; }
+    .hero-gallery-dot:hover { background: rgba(255,255,255,0.5); }
+    .hero-gallery-dot.active { background: var(--accent); border-color: var(--accent-2); transform: scale(1.2); }
+    .hero-gallery-dot:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
     section { padding: 88px 0; position: relative; }
     section .eyebrow { text-transform: uppercase; letter-spacing: 1px; font-size: 13px; color: var(--accent); font-weight: 700; margin-bottom: 6px; }
@@ -134,6 +159,42 @@
 
     .sticky-cta { position: fixed; inset: auto 0 0 0; display: none; padding: 10px 16px; background: rgba(10,16,24,0.95); border-top: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(10px); z-index: 20; gap: 10px; }
     .sticky-cta .btn { flex: 1; width: 100%; }
+
+    /* Service Area section */
+    .service-area-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 28px; align-items: center; margin-top: 16px; }
+    .service-area-map { background: #0a121d; border: 1px solid rgba(255,255,255,0.06); border-radius: var(--radius); padding: 12px; box-shadow: 0 18px 40px rgba(0,0,0,0.28); }
+    .service-area-map img { display: block; width: 100%; height: auto; border-radius: 10px; }
+    .service-area-copy h2 { margin-bottom: 10px; }
+    .community-list { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 18px; padding: 0; list-style: none; }
+    .community-list li { background: rgba(56,192,255,0.08); border: 1px solid rgba(56,192,255,0.22); color: var(--text); padding: 8px 12px; border-radius: 999px; font-size: 14px; font-weight: 600; }
+    .service-area-callout { background: var(--card); border: 1px solid rgba(255,255,255,0.06); border-radius: var(--radius); padding: 14px 16px; color: var(--muted); font-size: 14px; }
+    .service-area-callout a { color: var(--accent-2); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+    @media (max-width: 768px) {
+      .service-area-grid { grid-template-columns: 1fr; gap: 18px; }
+    }
+
+    /* Founding Installs trust badge strip */
+    .trust-strip { padding: 36px 0; }
+    .trust-strip-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .trust-badge { display: grid; grid-template-columns: auto 1fr; gap: 12px; align-items: start; padding: 14px 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); background: rgba(255,255,255,0.02); }
+    .trust-badge svg { width: 28px; height: 28px; color: var(--accent); flex-shrink: 0; }
+    .trust-badge strong { display: block; color: var(--text); font-size: 15px; font-weight: 700; line-height: 1.25; margin-bottom: 2px; }
+    .trust-badge span { color: var(--muted); font-size: 13px; line-height: 1.35; }
+    @media (max-width: 900px) {
+      .trust-strip-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .trust-strip-grid { grid-template-columns: 1fr; }
+    }
+
+    /* Referral section */
+    #referral .panel { border: 1px solid rgba(56,192,255,0.35); box-shadow: 0 24px 60px rgba(0,0,0,0.32), 0 0 0 1px rgba(56,192,255,0.08), 0 0 60px rgba(56,192,255,0.08); background: linear-gradient(180deg, rgba(56,192,255,0.06), rgba(56,192,255,0.01)), var(--panel); }
+    .referral-content { display: grid; gap: 14px; max-width: 720px; }
+    .referral-amount { color: var(--accent-2); font-weight: 700; }
+    .referral-content .btn { justify-self: start; margin-top: 6px; }
+    @media (max-width: 600px) {
+      .referral-content .btn { justify-self: stretch; width: 100%; }
+    }
 
     @media (max-width: 1080px) {
       .nav-inner { grid-template-columns: auto 1fr auto auto; }
@@ -195,30 +256,69 @@
       #system .shell > div[style*="grid-template-columns"] { grid-template-columns: 1fr; }
     }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "SUMMIT Lighting Systems",
+    "description": "Permanent roofline lighting installed once and enjoyed year-round. Professional installs across the West Kootenays.",
+    "telephone": "+1-236-613-2173",
+    "email": "info@summitlightingsystems.ca",
+    "url": "https://summitlightingsystems.ca",
+    "areaServed": [
+      { "@type": "City", "name": "Nelson", "containedInPlace": "British Columbia, Canada" },
+      { "@type": "City", "name": "Castlegar", "containedInPlace": "British Columbia, Canada" },
+      { "@type": "City", "name": "Trail", "containedInPlace": "British Columbia, Canada" },
+      { "@type": "City", "name": "Rossland", "containedInPlace": "British Columbia, Canada" },
+      { "@type": "City", "name": "Salmo", "containedInPlace": "British Columbia, Canada" },
+      { "@type": "City", "name": "Fruitvale", "containedInPlace": "British Columbia, Canada" },
+      { "@type": "City", "name": "Montrose", "containedInPlace": "British Columbia, Canada" },
+      { "@type": "City", "name": "Warfield", "containedInPlace": "British Columbia, Canada" },
+      { "@type": "Place", "name": "Slocan Valley", "containedInPlace": "British Columbia, Canada" },
+      { "@type": "City", "name": "Kaslo", "containedInPlace": "British Columbia, Canada" }
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "BC",
+      "addressCountry": "CA"
+    }
+  }
+  </script>
 </head>
 <body>
   <div class="page">
-    <nav class="nav" id="nav">
+    <nav class="nav" id="nav" aria-label="Primary">
       <div class="shell nav-inner">
         <div class="brand">
           <span class="brand-mark">SUMMIT</span>
           <span class="brand-sub">Lighting Systems</span>
         </div>
+        <div class="nav-anchors" id="nav-anchors">
+          <a href="#switch">Why Switch</a>
+          <a href="#benefits">Benefits</a>
+          <a href="#system">System</a>
+          <a href="#service-area">Service Area</a>
+          <a href="#process">Process</a>
+          <a href="#faq">FAQ</a>
+          <a href="#referral">Referral</a>
+        </div>
         <div class="nav-actions">
-	          <a class="btn secondary" href="tel:+12366132173">Call / Text</a>
+          <a class="btn secondary" href="tel:+12366132173">Call / Text</a>
           <a class="btn primary" href="#quote">Get a Free Quote</a>
         </div>
-        <div class="nav-menu" aria-label="Primary">
-          <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-list">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        <div class="nav-menu">
+          <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-list" aria-label="Open navigation menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
             Menu
           </button>
           <div class="menu-list" id="menu-list">
             <a href="#switch">Why Switch</a>
-            <a href="#benefits">What You Get</a>
-            <a href="#system">The System</a>
+            <a href="#benefits">Benefits</a>
+            <a href="#system">System</a>
+            <a href="#service-area">Service Area</a>
             <a href="#process">Process</a>
             <a href="#faq">FAQ</a>
+            <a href="#referral">Referral</a>
             <a href="#quote">Quote</a>
           </div>
         </div>
@@ -227,24 +327,27 @@
 
     <header class="hero" id="top">
       <div class="hero-grid">
-        <div class="hero-gallery" aria-label="Project photo gallery">
-          <div class="hero-gallery-dots" aria-hidden="true">
-            <span class="hero-gallery-dot active"></span>
-            <span class="hero-gallery-dot"></span>
-            <span class="hero-gallery-dot"></span>
-            <span class="hero-gallery-dot"></span>
+        <div class="hero-gallery" id="hero-gallery" aria-roledescription="carousel" aria-label="Project photo gallery">
+          <div class="hero-gallery-meta">
+            <span class="hero-gallery-caption" id="hero-gallery-caption">Day</span>
+            <div class="hero-gallery-dots" role="tablist" aria-label="Choose a slide">
+              <button class="hero-gallery-dot active" type="button" role="tab" aria-selected="true" aria-label="Go to slide 1: Day"></button>
+              <button class="hero-gallery-dot" type="button" role="tab" aria-selected="false" aria-label="Go to slide 2: Night"></button>
+              <button class="hero-gallery-dot" type="button" role="tab" aria-selected="false" aria-label="Go to slide 3: Colour"></button>
+              <button class="hero-gallery-dot" type="button" role="tab" aria-selected="false" aria-label="Go to slide 4: Holiday"></button>
+            </div>
           </div>
           <div class="hero-gallery-track" id="hero-gallery-track">
-            <figure class="hero-slide">
-              <img src="./Assets/hero/Chromaglow-Pro-Install-Shots-07206.jpg" alt="Warm white permanent roofline lighting on a home exterior" loading="eager" />
+            <figure class="hero-slide" data-caption="Day">
+              <img src="./Assets/hero/Chromaglow-Pro-Install-Shots-07206.jpg" alt="Warm white permanent roofline lighting on a home exterior" loading="eager" fetchpriority="high" />
             </figure>
-            <figure class="hero-slide">
+            <figure class="hero-slide" data-caption="Night">
               <img src="./Assets/hero/Chromaglow-Pro-Install-Shots-07211.jpg" alt="Christmas lighting scenes on a home exterior at night" loading="lazy" />
             </figure>
-            <figure class="hero-slide">
+            <figure class="hero-slide" data-caption="Colour">
               <img src="./Assets/hero/Chromaglow-Pro-Install-Shots-07207.jpg" alt="Blue Christmas roofline lights on a home at night" loading="lazy" />
             </figure>
-            <figure class="hero-slide">
+            <figure class="hero-slide" data-caption="Holiday">
               <img src="./Assets/hero/Chromaglow-Pro-Install-Shots-07208.jpg" alt="Colour-changing permanent lighting illuminating the front of a home" loading="lazy" />
             </figure>
           </div>
@@ -265,10 +368,10 @@
             </div>
           </div>
           <div class="hero-gallery-controls">
-            <button class="hero-gallery-nav" type="button" id="hero-gallery-prev" aria-label="Previous photo">
+            <button class="hero-gallery-nav" type="button" id="hero-gallery-prev" aria-label="Previous slide">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>
             </button>
-            <button class="hero-gallery-nav" type="button" id="hero-gallery-next" aria-label="Next photo">
+            <button class="hero-gallery-nav" type="button" id="hero-gallery-next" aria-label="Next slide">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"></path></svg>
             </button>
           </div>
@@ -341,10 +444,86 @@
         </div>
       </section>
 
+      <section class="trust-strip" aria-label="Why trust SUMMIT Lighting Systems">
+        <div class="shell">
+          <div class="trust-strip-grid">
+            <div class="trust-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 2 4 5v6c0 5 3.5 9.5 8 11 4.5-1.5 8-6 8-11V5l-8-3Z"/>
+                <path d="m9 12 2 2 4-4"/>
+              </svg>
+              <div>
+                <strong>10-Year Warranty</strong>
+                <span>Comprehensive coverage on parts &amp; workmanship.</span>
+              </div>
+            </div>
+            <div class="trust-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 2v4M12 18v4M2 12h4M18 12h4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/>
+                <circle cx="12" cy="12" r="4"/>
+              </svg>
+              <div>
+                <strong>IP68 + UL/cUL Certified</strong>
+                <span>Sealed, safety-tested, built for Canadian winters.</span>
+              </div>
+            </div>
+            <div class="trust-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0Z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              <div>
+                <strong>Locally Owned &amp; Operated</strong>
+                <span>Based in the West Kootenays. Real people, fast response.</span>
+              </div>
+            </div>
+            <div class="trust-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="m12 2 3 7h7l-5.5 4.5L18 22l-6-4-6 4 1.5-8.5L2 9h7Z"/>
+              </svg>
+              <div>
+                <strong>Founding Install Pricing</strong>
+                <span>Early customers get our best rates as we build our portfolio.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="service-area">
+        <div class="shell panel">
+          <div class="eyebrow">Service Area</div>
+          <div class="service-area-grid">
+            <div class="service-area-map">
+              <img src="./Assets/west-kootenays-map.svg" alt="Map of the West Kootenays region showing communities served by SUMMIT Lighting Systems" loading="lazy" />
+            </div>
+            <div class="service-area-copy">
+              <h2>Proudly Serving the West Kootenays</h2>
+              <p>Locally owned. Locally installed. Quick response across the region.</p>
+              <ul class="community-list" aria-label="Communities we serve">
+                <li>Nelson</li>
+                <li>Castlegar</li>
+                <li>Trail</li>
+                <li>Rossland</li>
+                <li>Salmo</li>
+                <li>Fruitvale</li>
+                <li>Montrose</li>
+                <li>Warfield</li>
+                <li>Slocan Valley</li>
+                <li>Kaslo</li>
+              </ul>
+              <div class="service-area-callout">
+                Outside this area? <a href="tel:+12366132173">Call / Text</a> &mdash; we may still be able to help.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="process">
         <div class="shell panel">
           <div class="eyebrow">Simple Process</div>
-          <h2>Simple Process</h2>
+          <h2>Your Install, Step by Step</h2>
           <div class="process" style="margin-top:14px;">
             <div class="process-step"><strong>1) Request a quote</strong><span>Quick form or call</span></div>
             <div class="process-step"><strong>2) On-site measure + design</strong><span>Rooflines, power access, visibility</span></div>
@@ -361,7 +540,7 @@
       <section id="faq">
         <div class="shell panel">
           <div class="eyebrow">FAQ</div>
-          <h2>FAQ</h2>
+          <h2>Common Questions</h2>
           <div class="faq" style="margin-top:12px;">
             <details open><summary>Does it look noticeable during the day?</summary><p>No. The extruded aluminum track is designed to blend in and can be custom color-matched to your trim using RAL paint codes. Multiple track styles are available to suit different mounting scenarios.</p></details>
             <details><summary>How long do the lights last?</summary><p>The LEDs are rated for 100,000 hours — that’s roughly 45 years at 6 hours of daily use. The system is backed by a 10-year comprehensive warranty.</p></details>
@@ -371,6 +550,18 @@
             <details><summary>How far can the lights run without extra equipment?</summary><p>Up to 300 feet in a single uninterrupted run with no power injection needed, thanks to the 48V architecture and heavier 16-gauge wiring.</p></details>
             <details><summary>How are the lights controlled?</summary><p>Through a smartphone app via Wi-Fi or Bluetooth. Every light is individually addressable, so you can create custom effects, schedule scenes, and control specific zones independently.</p></details>
             <details><summary>What’s included in the quote?</summary><p>A custom-measured layout for your home, total cost, estimated timeline, and full warranty details — no surprises.</p></details>
+            <details><summary>How does the $200 referral bonus work?</summary><p>If you refer a neighbour, friend, or family member who books an install of $2,000 or more, we’ll send you $200 once the install is complete. There’s no cap — refer as many people as you like. Just have them mention your name in their quote request, or fill in the “Who referred you?” field on the form.</p></details>
+          </div>
+        </div>
+      </section>
+
+      <section id="referral">
+        <div class="shell panel">
+          <div class="eyebrow">Referral Program</div>
+          <div class="referral-content">
+            <h2>Know a Neighbour Who Needs This? Earn $200.</h2>
+            <p>We’re offering <span class="referral-amount">$200</span> to anyone who refers a completed install of $2,000 or more. No cap, no catch — refer as many neighbours as you like. Just let us know who sent them in your quote request.</p>
+            <a class="btn primary" href="#quote" id="refer-cta">Refer Someone Now</a>
           </div>
         </div>
       </section>
@@ -381,38 +572,41 @@
             <div>
               <div class="eyebrow">Get a Free Quote</div>
               <h2>Reply within 1 business day. No pressure.</h2>
-              <p>Quick form or call/text for a fast estimate.</p>
+              <p id="quote-reassurance">Quick form or call / text for a fast estimate. We&rsquo;ll reply within 1 business day.</p>
               <div class="card" style="margin-top:12px;">
-	                <p><strong>Call / Text:</strong> <a href="tel:+12366132173">(236) 613-2173</a></p>
-	                <p><strong>Email:</strong> <a href="mailto:info@summitlightingsystems.ca">info@summitlightingsystems.ca</a></p>
+                <p><strong>Call / Text:</strong> <a href="tel:+12366132173">(236) 613-2173</a></p>
+                <p><strong>Email:</strong> <a href="mailto:info@summitlightingsystems.ca">info@summitlightingsystems.ca</a></p>
               </div>
             </div>
-            <form id="quote-form" action="https://api.web3forms.com/submit" method="POST">
+            <form id="quote-form" action="https://api.web3forms.com/submit" method="POST" aria-describedby="quote-reassurance">
               <input type="hidden" name="access_key" value="b3035883-5393-4cf1-8aea-7d144f7cd9d2" />
               <input type="hidden" name="subject" value="New Quote Request — SUMMIT Lighting Systems" />
               <input type="hidden" name="from_name" value="SUMMIT Website" />
-              <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+              <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
               <div>
                 <label for="name">Name</label>
-                <input id="name" name="name" placeholder="Your name" required />
+                <input id="name" name="name" type="text" autocomplete="name" placeholder="Your name" required />
               </div>
               <div>
                 <label for="address">Address / Community</label>
-                <input id="address" name="address" placeholder="Town or neighborhood" required />
+                <input id="address" name="address" type="text" autocomplete="address-level2" placeholder="Town or neighbourhood" required />
               </div>
               <div>
                 <label for="contact">Phone or Email</label>
-	                <input id="contact" name="contact" placeholder="(236) 613-2173 or you@example.com" required />
+                <input id="contact" name="contact" type="text" autocomplete="email" placeholder="(236) 613-2173 or you@example.com" required />
               </div>
               <div>
-                <label for="notes">Project Details (optional)</label>
+                <label for="referrer">Who referred you? <span style="color:var(--muted); font-weight:500;">(optional)</span></label>
+                <input id="referrer" name="referrer" type="text" placeholder="Name of the person who sent you" />
+              </div>
+              <div>
+                <label for="notes">Project Details <span style="color:var(--muted); font-weight:500;">(optional)</span></label>
                 <textarea id="notes" name="notes" placeholder="Roofline length, timeline, special requests..."></textarea>
               </div>
-              <p style="color: var(--muted);">Reply within 1 business day.</p>
-              <button class="btn primary" type="submit">Get My Free Quote</button>
-	              <a class="btn secondary" href="tel:+12366132173">Call / Text for a Fast Estimate</a>
+              <button class="btn primary" type="submit">Get a Free Quote</button>
+              <a class="btn secondary" href="tel:+12366132173">Call / Text for a Fast Estimate</a>
             </form>
-            <div id="quote-result" style="display:none; padding:16px; border-radius:12px; margin-top:12px;"></div>
+            <div id="quote-result" style="display:none; padding:16px; border-radius:12px; margin-top:12px;" role="status" aria-live="polite"></div>
           </div>
         </div>
       </section>
@@ -439,12 +633,16 @@
     const menu = nav.querySelector('.nav-menu');
     const toggle = nav.querySelector('.menu-toggle');
     const menuList = nav.querySelector('.menu-list');
+    const heroGallery = document.getElementById('hero-gallery');
     const heroGalleryTrack = document.getElementById('hero-gallery-track');
     const heroGallerySlides = heroGalleryTrack ? Array.from(heroGalleryTrack.querySelectorAll('.hero-slide')) : [];
     const heroGalleryDots = Array.from(document.querySelectorAll('.hero-gallery-dot'));
+    const heroGalleryCaption = document.getElementById('hero-gallery-caption');
     const prevSlideButton = document.getElementById('hero-gallery-prev');
     const nextSlideButton = document.getElementById('hero-gallery-next');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const closeMenu = () => { menu.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); };
+
     const getActiveHeroSlide = () => {
       if (!heroGalleryTrack || !heroGallerySlides.length) return 0;
       const current = heroGalleryTrack.scrollLeft;
@@ -462,14 +660,48 @@
     const updateHeroGallery = () => {
       if (!heroGalleryTrack || !heroGallerySlides.length) return;
       const activeIndex = getActiveHeroSlide();
-      heroGalleryDots.forEach((dot, index) => dot.classList.toggle('active', index === activeIndex));
+      heroGalleryDots.forEach((dot, index) => {
+        const isActive = index === activeIndex;
+        dot.classList.toggle('active', isActive);
+        dot.setAttribute('aria-selected', String(isActive));
+      });
+      if (heroGalleryCaption) {
+        const caption = heroGallerySlides[activeIndex]?.dataset.caption;
+        if (caption) heroGalleryCaption.textContent = caption;
+      }
+    };
+    const goToHeroSlide = (index) => {
+      if (!heroGalleryTrack || !heroGallerySlides.length) return;
+      const target = heroGallerySlides[(index + heroGallerySlides.length) % heroGallerySlides.length];
+      target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', inline: 'start', block: 'nearest' });
     };
     const moveHeroGallery = (direction) => {
-      if (!heroGalleryTrack || !heroGallerySlides.length) return;
-      const activeIndex = getActiveHeroSlide();
-      const nextIndex = (activeIndex + direction + heroGallerySlides.length) % heroGallerySlides.length;
-      heroGallerySlides[nextIndex].scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+      goToHeroSlide(getActiveHeroSlide() + direction);
     };
+
+    // Hero slider auto-advance (pauses on hover/focus, respects reduced motion)
+    let heroAutoplayId = null;
+    const startHeroAutoplay = () => {
+      if (reduceMotion || !heroGallerySlides.length) return;
+      stopHeroAutoplay();
+      heroAutoplayId = window.setInterval(() => moveHeroGallery(1), 6000);
+    };
+    const stopHeroAutoplay = () => {
+      if (heroAutoplayId) {
+        window.clearInterval(heroAutoplayId);
+        heroAutoplayId = null;
+      }
+    };
+    if (heroGallery) {
+      heroGallery.addEventListener('mouseenter', stopHeroAutoplay);
+      heroGallery.addEventListener('mouseleave', startHeroAutoplay);
+      heroGallery.addEventListener('focusin', stopHeroAutoplay);
+      heroGallery.addEventListener('focusout', startHeroAutoplay);
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) stopHeroAutoplay(); else startHeroAutoplay();
+      });
+    }
+
     const onScroll = () => {
       const scrolled = window.scrollY > 12;
       nav.classList.toggle('scrolled', scrolled);
@@ -483,13 +715,58 @@
     });
     prevSlideButton?.addEventListener('click', () => moveHeroGallery(-1));
     nextSlideButton?.addEventListener('click', () => moveHeroGallery(1));
+    heroGalleryDots.forEach((dot, index) => {
+      dot.addEventListener('click', () => goToHeroSlide(index));
+    });
     menuList.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
     window.addEventListener('click', (e) => { if (!menu.contains(e.target) && menu.classList.contains('open')) closeMenu(); });
     heroGalleryTrack?.addEventListener('scroll', updateHeroGallery, { passive: true });
     window.addEventListener('resize', updateHeroGallery);
     onScroll();
     updateHeroGallery();
+    startHeroAutoplay();
     window.addEventListener('scroll', onScroll, { passive: true });
+
+    // Scroll-spy: highlight current section in nav-anchors
+    const navAnchorLinks = Array.from(document.querySelectorAll('#nav-anchors a'));
+    const sectionMap = new Map();
+    navAnchorLinks.forEach(link => {
+      const id = link.getAttribute('href')?.replace('#', '');
+      const target = id && document.getElementById(id);
+      if (target) sectionMap.set(target, link);
+    });
+    if (sectionMap.size && 'IntersectionObserver' in window) {
+      const setActiveLink = (link) => {
+        navAnchorLinks.forEach(l => l.removeAttribute('aria-current'));
+        if (link) link.setAttribute('aria-current', 'true');
+      };
+      const observer = new IntersectionObserver((entries) => {
+        const visible = entries
+          .filter(e => e.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+        if (visible.length) {
+          setActiveLink(sectionMap.get(visible[0].target));
+        }
+      }, { rootMargin: '-40% 0px -50% 0px', threshold: [0, 0.1, 0.25, 0.5, 1] });
+      sectionMap.forEach((_, section) => observer.observe(section));
+    }
+
+    // Referral CTA: scroll to quote form and focus the referrer field
+    const referCta = document.getElementById('refer-cta');
+    const focusReferrer = () => {
+      const referrer = document.getElementById('referrer');
+      if (referrer) {
+        referrer.focus({ preventScroll: true });
+        referrer.placeholder = 'Their name (so we know who to thank!)';
+      }
+    };
+    referCta?.addEventListener('click', (e) => {
+      e.preventDefault();
+      const quote = document.getElementById('quote');
+      quote?.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+      window.setTimeout(focusReferrer, reduceMotion ? 0 : 600);
+      history.replaceState(null, '', '#quote');
+    });
 
     const quoteForm = document.getElementById('quote-form');
     const quoteResult = document.getElementById('quote-result');
@@ -511,7 +788,7 @@
           }
         } catch {
           submitBtn.disabled = false;
-          submitBtn.textContent = 'Get My Free Quote';
+          submitBtn.textContent = 'Get a Free Quote';
           quoteResult.style.cssText = 'display:block; padding:16px; border-radius:12px; background:rgba(255,80,80,0.08); border:1px solid rgba(255,80,80,0.25);';
           quoteResult.innerHTML = '<strong style="color:var(--text)">Something went wrong.</strong><p style="margin:6px 0 0; color:var(--muted)">Please call or text us at (236) 613-2173.</p>';
         }

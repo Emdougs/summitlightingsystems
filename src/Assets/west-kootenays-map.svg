@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 500" role="img" aria-labelledby="wk-map-title wk-map-desc">
+  <title id="wk-map-title">West Kootenays service area map</title>
+  <desc id="wk-map-desc">A stylized map of the West Kootenays region showing communities served by SUMMIT Lighting Systems: Kaslo, Slocan Valley, Nelson, Castlegar, Salmo, Trail, Rossland, Warfield, Montrose, and Fruitvale.</desc>
+
+  <defs>
+    <linearGradient id="wk-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#101a2a"/>
+      <stop offset="1" stop-color="#0a121d"/>
+    </linearGradient>
+    <linearGradient id="wk-region" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#38c0ff" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#38c0ff" stop-opacity="0.04"/>
+    </linearGradient>
+    <radialGradient id="wk-glow" cx="0.5" cy="0.5" r="0.6">
+      <stop offset="0" stop-color="#38c0ff" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#38c0ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="640" height="500" fill="url(#wk-bg)"/>
+
+  <!-- Decorative topographic contours -->
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1" fill="none">
+    <path d="M 0 90 Q 160 70 320 100 T 640 80"/>
+    <path d="M 0 170 Q 200 140 420 170 T 640 160"/>
+    <path d="M 0 260 Q 180 220 380 260 T 640 240"/>
+    <path d="M 0 350 Q 220 320 460 350 T 640 330"/>
+    <path d="M 0 440 Q 200 410 420 440 T 640 420"/>
+  </g>
+
+  <!-- Glow under service area -->
+  <ellipse cx="320" cy="270" rx="300" ry="200" fill="url(#wk-glow)"/>
+
+  <!-- Service area boundary (dashed) -->
+  <path d="M 110 180
+           C 80 70, 240 40, 360 60
+           C 490 70, 580 130, 555 240
+           C 580 360, 460 440, 320 445
+           C 170 450, 60 370, 90 260 Z"
+        fill="url(#wk-region)"
+        stroke="#5bd6ff"
+        stroke-opacity="0.5"
+        stroke-width="1.4"
+        stroke-dasharray="5 5"/>
+
+  <!-- Slocan Lake -->
+  <path d="M 178 95 C 168 130, 172 175, 184 215 C 196 200, 200 160, 192 120 C 188 105, 184 98, 178 95 Z"
+        fill="#38c0ff" fill-opacity="0.32"
+        stroke="#8ee6ff" stroke-opacity="0.45" stroke-width="0.8"/>
+
+  <!-- Kootenay Lake -->
+  <path d="M 500 80
+           C 478 130, 488 190, 502 240
+           C 512 280, 506 320, 488 350
+           C 478 360, 472 348, 478 320
+           C 472 280, 468 230, 478 180
+           C 482 140, 490 100, 500 80 Z"
+        fill="#38c0ff" fill-opacity="0.32"
+        stroke="#8ee6ff" stroke-opacity="0.45" stroke-width="0.8"/>
+
+  <!-- Columbia River -->
+  <path d="M 90 140 C 140 180, 190 230, 220 290 C 245 340, 258 380, 260 430"
+        fill="none"
+        stroke="#38c0ff" stroke-opacity="0.45"
+        stroke-width="2.5"
+        stroke-linecap="round"/>
+
+  <!-- North arrow -->
+  <g transform="translate(50, 50)" fill="#a8b6cc">
+    <text x="0" y="24" font-family="'Manrope', system-ui, sans-serif" font-size="12" font-weight="700">N</text>
+    <polygon points="14,4 8,18 20,18"/>
+  </g>
+
+  <!-- Communities -->
+  <g font-family="'Manrope', system-ui, sans-serif" font-size="13" font-weight="600" fill="#e8f1ff">
+
+    <!-- Kaslo -->
+    <circle cx="500" cy="105" r="10" fill="#35b9ff" fill-opacity="0.18"/>
+    <circle cx="500" cy="105" r="4.5" fill="#5bd6ff"/>
+    <text x="515" y="110">Kaslo</text>
+
+    <!-- Slocan Valley -->
+    <circle cx="218" cy="220" r="10" fill="#35b9ff" fill-opacity="0.18"/>
+    <circle cx="218" cy="220" r="4.5" fill="#5bd6ff"/>
+    <text x="234" y="225">Slocan Valley</text>
+
+    <!-- Nelson (largest) -->
+    <circle cx="380" cy="280" r="14" fill="#35b9ff" fill-opacity="0.22"/>
+    <circle cx="380" cy="280" r="6.5" fill="#8ee6ff"/>
+    <text x="397" y="285" font-size="14" font-weight="700">Nelson</text>
+
+    <!-- Castlegar -->
+    <circle cx="240" cy="330" r="11" fill="#35b9ff" fill-opacity="0.18"/>
+    <circle cx="240" cy="330" r="5" fill="#5bd6ff"/>
+    <text x="225" y="334" text-anchor="end">Castlegar</text>
+
+    <!-- Salmo -->
+    <circle cx="430" cy="360" r="10" fill="#35b9ff" fill-opacity="0.18"/>
+    <circle cx="430" cy="360" r="4.5" fill="#5bd6ff"/>
+    <text x="446" y="364">Salmo</text>
+
+    <!-- Trail-area cluster -->
+    <circle cx="130" cy="410" r="9" fill="#35b9ff" fill-opacity="0.18"/>
+    <circle cx="130" cy="410" r="4" fill="#5bd6ff"/>
+    <text x="130" y="438" text-anchor="middle" font-size="12">Rossland</text>
+
+    <circle cx="200" cy="410" r="9" fill="#35b9ff" fill-opacity="0.18"/>
+    <circle cx="200" cy="410" r="4" fill="#5bd6ff"/>
+    <text x="200" y="438" text-anchor="middle" font-size="12">Warfield</text>
+
+    <circle cx="270" cy="410" r="12" fill="#35b9ff" fill-opacity="0.22"/>
+    <circle cx="270" cy="410" r="5.5" fill="#8ee6ff"/>
+    <text x="270" y="438" text-anchor="middle" font-size="13" font-weight="700">Trail</text>
+
+    <circle cx="340" cy="410" r="9" fill="#35b9ff" fill-opacity="0.18"/>
+    <circle cx="340" cy="410" r="4" fill="#5bd6ff"/>
+    <text x="340" y="438" text-anchor="middle" font-size="12">Montrose</text>
+
+    <circle cx="410" cy="410" r="9" fill="#35b9ff" fill-opacity="0.18"/>
+    <circle cx="410" cy="410" r="4" fill="#5bd6ff"/>
+    <text x="410" y="438" text-anchor="middle" font-size="12">Fruitvale</text>
+  </g>
+</svg>
