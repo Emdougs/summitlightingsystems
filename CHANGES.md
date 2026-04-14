@@ -2,6 +2,12 @@
 
 This pass implements the seven prioritised improvements from the design critique. Everything stays in vanilla HTML / CSS / JS — no new dependencies, no build step.
 
+## Follow-up revisions after initial review
+
+- **Hero trust strip.** The four "Founding Install" trust badges (10-Year Warranty, IP68+UL/cUL, Locally Owned, Founding Install Pricing) now live inside the hero, replacing the three generic trust pills that used to sit there. The standalone `.trust-strip` section between System and Service Area was removed entirely. On desktop the badges render as a 2×2 grid using a translucent dark-blur background so they sit cleanly over the hero image; they're hidden below 820px to keep the hero uncluttered on phones.
+- **Hero slider caption removed.** The "Day / Night / Colour / Holiday" pill next to the slider dots was removed per request. The dots remain, with descriptive `aria-label`s.
+- **Real map replaces the stylised SVG.** [src/Assets/west-kootenays-map.png](src/Assets/west-kootenays-map.png) is a real OpenStreetMap render. It's built once at design-time by fetching six OSM tiles at zoom 9, stitching them, cropping to the West Kootenays bounding box, then recolouring into the site's dark-blue palette with Pillow. The result ships as a single static PNG (~210 KB) with no runtime requests. A small SVG overlay positioned on top of the image draws the site-brand cyan markers and labels for Kaslo, Slocan Valley, Nelson, Castlegar, Salmo and Trail. OSM attribution is shown below the map as required by their licence.
+
 ## What changed
 
 ### 1. Service Area section (new)
