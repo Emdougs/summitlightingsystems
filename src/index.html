@@ -189,8 +189,9 @@
       border-bottom:1px solid var(--line);padding:12px 0;
     }
     .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .brand{display:flex;align-items:center;gap:10px;font-family:'Sora',sans-serif;font-weight:700;font-size:1.02rem;letter-spacing:.02em}
-    .brand img{height:34px;width:auto}
+    .brand{display:flex;align-items:center;gap:11px;font-family:'Sora',sans-serif;font-weight:700;font-size:1.28rem;letter-spacing:.04em}
+    .brand img{height:30px;width:auto;display:block}
+    .brand-name{background:linear-gradient(180deg,#fff 0%,var(--amber-2) 130%);-webkit-background-clip:text;background-clip:text;color:transparent}
     .nav-links{display:flex;gap:26px;font-size:.9rem;color:var(--muted)}
     .nav-links a{transition:.2s}
     .nav-links a:hover{color:var(--amber-2)}
@@ -477,8 +478,8 @@
   <header id="header">
     <div class="shell nav">
       <a class="brand" href="#top">
-        <img src="Assets/logo.png" alt="SUMMIT Lighting Systems logo" width="34" height="34" />
-        SUMMIT
+        <img src="Assets/logo-mark.png" alt="SUMMIT Lighting Systems logo" width="58" height="30" />
+        <span class="brand-name">SUMMIT</span>
       </a>
       <nav class="nav-links" aria-label="Primary">
         <a href="#switch">Why Permanent</a>
