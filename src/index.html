@@ -4,802 +4,884 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SUMMIT Lighting Systems | Permanent Roofline Lighting | West Kootenays</title>
-  <meta name="description" content="Permanent roofline lighting installed once and enjoyed year-round. Professional installs across the West Kootenays. Get a free quote." />
+  <meta name="description" content="Permanent roofline lighting, installed once and enjoyed year-round. App-controlled, built for Canadian winters, backed by a 10-year warranty. Get an instant estimate." />
   <meta name="color-scheme" content="dark" />
   <meta property="og:title" content="SUMMIT Lighting Systems | Permanent Roofline Lighting" />
-  <meta property="og:description" content="Clean, permanent roofline lighting with app control for homes and businesses in the West Kootenays. Request a free quote." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="image" href="./Assets/hero/Chromaglow-Pro-Install-Shots-07206.jpg" fetchpriority="high">
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #0c111b;
-      --panel: #121b29;
-      --card: #142033;
-      --text: #e8f1ff;
-      --muted: #a8b6cc;
-      --accent: #35b9ff;
-      --accent-2: #8ee6ff;
-      --glow: rgba(53,185,255,0.35);
-      --shadow: 0 24px 60px rgba(0,0,0,0.32);
-      --radius: 14px;
-      --max: 1200px;
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
-    }
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Manrope', system-ui, -apple-system, sans-serif;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-    :focus-visible {
-      outline: 2px solid var(--accent);
-      outline-offset: 2px;
-      border-radius: 4px;
-    }
-    section[id] { scroll-margin-top: 96px; }
-    h1, h2, h3, h4 { font-family: 'Space Grotesk', 'Manrope', system-ui, sans-serif; margin: 0 0 10px; line-height: 1.2; }
-    p { margin: 0 0 12px; color: var(--muted); }
-    a { color: inherit; text-decoration: none; }
-    .page { overflow-x: hidden; padding-top: 86px; }
-    .shell { width: min(var(--max), calc(100% - 48px)); margin: 0 auto; }
-
-    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 20; background: rgba(12,17,27,0.88); backdrop-filter: blur(18px); border-bottom: 1px solid rgba(255,255,255,0.05); overflow: visible; }
-    .nav-inner { display: grid; grid-template-columns: auto 1fr auto auto; align-items: center; padding: 8px 0; gap: 18px; min-height: 78px; transition: padding 180ms ease; }
-    .nav-anchors { display: none; align-items: center; justify-content: center; gap: 4px; flex-wrap: wrap; }
-    .nav-anchors a { padding: 8px 12px; border-radius: 8px; color: var(--muted); font-size: 14px; font-weight: 600; letter-spacing: 0.01em; transition: color 140ms ease, background 140ms ease; }
-    .nav-anchors a:hover { color: var(--text); background: rgba(255,255,255,0.05); }
-    .nav-anchors a[aria-current="true"] { color: var(--accent-2); background: rgba(56,192,255,0.1); }
-    @media (min-width: 900px) {
-      .nav-anchors { display: flex; }
-      .nav-menu { display: none; }
-    }
-    .brand { display: grid; gap: 2px; }
-    .brand-mark { font-family: 'Space Grotesk', 'Manrope', system-ui, sans-serif; font-size: clamp(20px, 2.6vw, 28px); font-weight: 700; letter-spacing: 0.14em; color: var(--text); line-height: 1; }
-    .brand-sub { color: var(--muted); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; }
-    .nav-menu { position: relative; }
-    .menu-toggle { display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.05); color: var(--text); font-weight: 700; cursor: pointer; transition: background 140ms ease, border-color 140ms ease; }
-    .menu-toggle:hover { background: rgba(255,255,255,0.09); border-color: rgba(255,255,255,0.2); }
-    .menu-toggle svg { width: 16px; height: 16px; }
-    .menu-list { position: absolute; top: calc(100% + 10px); right: 0; min-width: 220px; background: rgba(16,23,35,0.96); border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 18px 36px rgba(0,0,0,0.35); border-radius: 12px; padding: 8px; display: none; }
-    .menu-list a { display: block; padding: 10px 12px; border-radius: 10px; color: var(--text); font-weight: 600; }
-    .menu-list a:hover { background: rgba(255,255,255,0.08); }
-    .nav-menu.open .menu-list { display: block; }
-    .nav-actions { display: flex; gap: 10px; justify-self: end; }
-    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 18px; border-radius: 999px; font-weight: 700; border: 1px solid transparent; cursor: pointer; text-decoration: none; transition: transform 150ms ease, box-shadow 150ms ease, background 150ms ease, border-color 150ms ease; color: var(--text); }
-    .btn:hover { transform: translateY(-1px); box-shadow: 0 12px 28px rgba(0,0,0,0.24); }
-    .btn.primary { background: linear-gradient(120deg, #38c0ff, #5bd6ff, #2fa6ff); color: #04101d; border: 1px solid rgba(56,192,255,0.6); }
-    .btn.secondary { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.14); }
-
-    header.hero { position: relative; overflow: hidden; padding: 0 0 72px; background: radial-gradient(circle at 18% 22%, rgba(56,192,255,0.18), transparent 32%), radial-gradient(circle at 82% 12%, rgba(158,241,255,0.15), transparent 30%), #0c121c; }
-    header.hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(6,10,18,0.16) 0%, rgba(6,10,18,0.38) 32%, rgba(6,10,18,0.58) 60%, rgba(8,12,20,0.86) 100%); z-index: 1; }
-    header.hero::after { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 70% 24%, rgba(83,188,255,0.12), transparent 24%), radial-gradient(circle at 18% 76%, rgba(255,194,91,0.08), transparent 20%); z-index: 0; }
-    .hero-grid { position: relative; z-index: 2; display: grid; width: 100%; }
-    .hero-copy { position: absolute; left: clamp(24px, 4vw, 56px); bottom: clamp(72px, 8vw, 120px); z-index: 3; display: grid; gap: 18px; width: min(52%, 680px); }
-    .badge { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; background: rgba(56,192,255,0.16); color: var(--accent-2); font-weight: 700; letter-spacing: 0.4px; }
-    .hero h1 { font-size: clamp(34px, 4vw, 56px); }
-    .hero h1 span { color: var(--accent); }
-    .hero p.lede { font-size: 18px; max-width: 720px; }
-    .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin: 10px 0 14px; }
-    .disclosure { font-size: 12px; color: var(--muted); opacity: 0.8; }
-    .hero-gallery { position: relative; width: 100%; border-radius: 0; border: 0; background: transparent; box-shadow: none; backdrop-filter: none; padding: 0; overflow: hidden; min-height: calc(100vh - 86px); }
-    .hero-gallery::after { content: ''; position: absolute; inset: 0; border-radius: 0; background: linear-gradient(90deg, rgba(5,9,16,0.88) 0%, rgba(5,9,16,0.66) 34%, rgba(5,9,16,0.24) 58%, rgba(5,9,16,0.12) 100%), linear-gradient(180deg, rgba(5,9,16,0.08), rgba(5,9,16,0.55)); pointer-events: none; z-index: 1; }
-    .hero-gallery-track { display: grid; grid-auto-flow: column; grid-auto-columns: 100%; gap: 18px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none; -ms-overflow-style: none; touch-action: pan-x; }
-    .hero-gallery-track::-webkit-scrollbar { display: none; }
-    .hero-slide { position: relative; margin: 0; min-height: calc(100vh - 86px); border-radius: 0; overflow: hidden; scroll-snap-align: start; background: rgba(255,255,255,0.03); }
-    .hero-slide img { width: 100%; height: 116%; display: block; object-fit: cover; object-position: center; transform: translateY(-14%); }
-    .hero-gallery-controls { position: absolute; inset: 50% 22px auto 22px; transform: translateY(-50%); z-index: 3; display: flex; align-items: center; justify-content: space-between; pointer-events: none; }
-    .hero-gallery-nav { width: 48px; height: 48px; border: 1px solid rgba(255,255,255,0.18); border-radius: 999px; background: rgba(8,12,20,0.72); color: var(--text); display: inline-flex; align-items: center; justify-content: center; cursor: pointer; transition: background 140ms ease, transform 140ms ease, border-color 140ms ease; pointer-events: auto; }
-    .hero-gallery-nav:hover { background: rgba(18,28,42,0.92); border-color: rgba(255,255,255,0.28); transform: translateY(-1px); }
-    .hero-gallery-nav:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-    .hero-gallery-nav svg { width: 22px; height: 22px; }
-    .hero-gallery-meta { position: absolute; inset: 22px 22px auto auto; z-index: 3; display: inline-flex; align-items: center; padding: 10px 14px; border-radius: 999px; background: rgba(8,12,20,0.74); border: 1px solid rgba(255,255,255,0.1); }
-    .hero-gallery-dots { display: inline-flex; align-items: center; gap: 14px; }
-    .hero-gallery-dot { position: relative; width: 14px; height: 14px; padding: 0; border-radius: 999px; background: rgba(255,255,255,0.32); border: 1px solid rgba(255,255,255,0.22); cursor: pointer; transition: transform 140ms ease, background 140ms ease, border-color 140ms ease; }
-    .hero-gallery-dot::before { content: ''; position: absolute; inset: -15px; }
-    .hero-gallery-dot:hover { background: rgba(255,255,255,0.5); }
-    .hero-gallery-dot.active { background: var(--accent); border-color: var(--accent-2); transform: scale(1.2); }
-    .hero-gallery-dot:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
-
-    section { padding: 88px 0; position: relative; }
-    section .eyebrow { text-transform: uppercase; letter-spacing: 1px; font-size: 13px; color: var(--accent); font-weight: 700; margin-bottom: 6px; }
-    section h2 { font-size: clamp(30px, 3.4vw, 44px); }
-
-    .panel { background: var(--panel); border: 1px solid rgba(255,255,255,0.04); border-radius: var(--radius); padding: clamp(24px, 3vw, 32px); box-shadow: var(--shadow); }
-    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 18px; }
-    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 16px; }
-    .card { background: var(--card); border: 1px solid rgba(255,255,255,0.05); border-radius: var(--radius); padding: 18px; box-shadow: 0 12px 28px rgba(0,0,0,0.18); }
-    .card h3 { margin: 4px 0 8px; font-size: 18px; }
-
-    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 14px; }
-    .gallery figure { margin: 0; position: relative; overflow: hidden; border-radius: var(--radius); border: 1px solid rgba(255,255,255,0.06); background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01)); box-shadow: 0 18px 40px rgba(0,0,0,0.28); min-height: 200px; display: flex; align-items: center; justify-content: center; }
-    .gallery img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .gallery figcaption { position: absolute; left: 12px; bottom: 10px; padding: 7px 10px; border-radius: 10px; background: rgba(6,10,18,0.7); color: var(--text); font-weight: 600; font-size: 13px; }
-    .placeholder { color: var(--muted); border: 1px dashed rgba(255,255,255,0.16); background: rgba(255,255,255,0.02); }
-    .placeholder::after { content: 'Photo coming soon'; position: absolute; inset: 0; display: grid; place-items: center; font-weight: 600; color: var(--muted); }
-
-    .system-feature { margin: 0 0 14px; position: relative; overflow: hidden; border-radius: var(--radius); border: 1px solid rgba(255,255,255,0.06); box-shadow: 0 18px 40px rgba(0,0,0,0.28); height: 420px; }
-    .system-feature img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .system-feature figcaption { position: absolute; left: 16px; bottom: 14px; padding: 8px 14px; border-radius: 10px; background: rgba(6,10,18,0.72); color: var(--text); font-weight: 700; font-size: 15px; }
-    .gallery-fig { margin: 0; position: relative; overflow: hidden; border-radius: var(--radius); border: 1px solid rgba(255,255,255,0.06); background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01)); box-shadow: 0 18px 40px rgba(0,0,0,0.28); display: flex; align-items: center; justify-content: center; }
-    .gallery-fig img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .gallery-fig figcaption { position: absolute; left: 12px; bottom: 10px; padding: 7px 10px; border-radius: 10px; background: rgba(6,10,18,0.7); color: var(--text); font-weight: 600; font-size: 13px; }
-
-    .process { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 14px; }
-    .process-step { background: var(--card); border: 1px solid rgba(255,255,255,0.06); border-radius: var(--radius); padding: 16px; display: grid; gap: 6px; }
-    .process-step strong { color: var(--text); }
-
-    .faq details { background: var(--card); border: 1px solid rgba(255,255,255,0.06); border-radius: var(--radius); padding: 14px 16px; box-shadow: 0 12px 30px rgba(0,0,0,0.2); }
-    .faq summary { cursor: pointer; list-style: none; font-weight: 700; color: var(--text); }
-    .faq summary::-webkit-details-marker { display: none; }
-    .faq details + details { margin-top: 10px; }
-
-    .quote-section { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px,1fr)); gap: 18px; align-items: start; }
-    form { display: grid; gap: 12px; }
-    label { font-weight: 600; color: var(--text); font-size: 14px; }
-    input, select, textarea { width: 100%; padding: 12px 14px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.04); color: var(--text); font-family: inherit; font-size: 15px; }
-    textarea { min-height: 110px; resize: vertical; }
-
-    footer { background: #0a0f18; border-top: 1px solid rgba(255,255,255,0.06); padding: 32px 0 26px; }
-    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 16px; }
-    .footer-brand { display: flex; align-items: center; gap: 12px; }
-    .footer-brand img { height: 60px; width: auto; }
-    .footer small { color: var(--muted); }
-
-    .sticky-cta { position: fixed; inset: auto 0 0 0; display: none; padding: 10px 16px; background: rgba(10,16,24,0.95); border-top: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(10px); z-index: 20; gap: 10px; }
-    .sticky-cta .btn { flex: 1; width: 100%; }
-
-    /* Service Area section */
-    .service-area-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: center; margin-top: 16px; }
-    .service-area-map { background: #0a121d; border: 1px solid rgba(255,255,255,0.06); border-radius: var(--radius); padding: 10px; box-shadow: 0 18px 40px rgba(0,0,0,0.28); }
-    .service-area-map-inner { position: relative; border-radius: 10px; overflow: hidden; background: #0a121d; }
-    .service-area-map img { display: block; width: 100%; height: auto; }
-    .service-area-overlay { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
-    .service-area-attribution { font-size: 10px; color: var(--muted); opacity: 0.7; text-align: right; padding: 6px 4px 2px; }
-    .service-area-attribution a { color: inherit; text-decoration: underline; }
-    .service-area-copy h2 { margin-bottom: 10px; }
-    .community-list { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 18px; padding: 0; list-style: none; }
-    .community-list li { background: rgba(56,192,255,0.08); border: 1px solid rgba(56,192,255,0.22); color: var(--text); padding: 8px 12px; border-radius: 999px; font-size: 14px; font-weight: 600; }
-    .service-area-callout { background: var(--card); border: 1px solid rgba(255,255,255,0.06); border-radius: var(--radius); padding: 14px 16px; color: var(--muted); font-size: 14px; }
-    .service-area-callout a { color: var(--accent-2); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
-    @media (max-width: 768px) {
-      .service-area-grid { grid-template-columns: 1fr; gap: 18px; }
-    }
-
-    /* Trust badges (used in hero) */
-    .trust-badge { display: grid; grid-template-columns: auto 1fr; gap: 12px; align-items: start; padding: 12px 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); background: rgba(10,16,26,0.55); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
-    .trust-badge svg { width: 24px; height: 24px; color: var(--accent); flex-shrink: 0; }
-    .trust-badge strong { display: block; color: var(--text); font-size: 14px; font-weight: 700; line-height: 1.25; margin-bottom: 2px; }
-    .trust-badge span { color: var(--muted); font-size: 12px; line-height: 1.35; }
-    .hero-trust-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-
-    /* Referral section */
-    #referral .panel { border: 1px solid rgba(56,192,255,0.35); box-shadow: 0 24px 60px rgba(0,0,0,0.32), 0 0 0 1px rgba(56,192,255,0.08), 0 0 60px rgba(56,192,255,0.08); background: linear-gradient(180deg, rgba(56,192,255,0.06), rgba(56,192,255,0.01)), var(--panel); }
-    .referral-content { display: grid; gap: 14px; max-width: 720px; }
-    .referral-amount { color: var(--accent-2); font-weight: 700; }
-    .referral-content .btn { justify-self: start; margin-top: 6px; }
-    @media (max-width: 600px) {
-      .referral-content .btn { justify-self: stretch; width: 100%; }
-    }
-
-    @media (max-width: 1080px) {
-      .nav-inner { grid-template-columns: auto 1fr auto auto; }
-      .nav-actions { justify-self: end; gap: 8px; }
-      .nav-menu { justify-self: end; }
-      .hero-copy { width: min(66%, 680px); bottom: clamp(64px, 7vw, 108px); }
-    }
-    @media (max-width: 820px) {
-      /* Compact single-row nav */
-      .page { padding-top: 60px; }
-      .nav-inner { grid-template-columns: auto 1fr auto; padding: 10px 0; min-height: 60px; gap: 12px; }
-      .brand { justify-self: start; }
-      /* Hide full CTA buttons — sticky bar handles them */
-      .nav-actions { display: none; }
-      .nav-menu { justify-self: end; order: unset; }
-
-      /* Hero fills viewport below compact nav */
-      .hero { padding-top: 0; padding-bottom: 0; }
-      .hero-gallery { min-height: calc(100svh - 60px); }
-      .hero-slide { min-height: calc(100svh - 60px); }
-
-      /* Bottom-heavy gradient so text is readable */
-      .hero-gallery::after {
-        background: linear-gradient(180deg,
-          rgba(7,12,20,0.18) 0%,
-          rgba(7,12,20,0.08) 30%,
-          rgba(7,12,20,0.55) 62%,
-          rgba(7,12,20,0.92) 100%);
-      }
-
-      /* Copy sits just above the sticky bar */
-      .hero-copy {
-        position: absolute;
-        left: 20px;
-        right: 20px;
-        bottom: 96px;
-        width: auto;
-        gap: 14px;
-      }
-
-      .hero h1 { font-size: clamp(24px, 6.5vw, 34px); }
-      .hero p.lede { font-size: 15px; line-height: 1.5; }
-
-      /* Trust badges and disclosure clutter the image — hide in hero on mobile */
-      .hero .hero-trust-grid { display: none; }
-      .hero .disclosure { display: none; }
-
-      /* Stack CTA buttons full-width */
-      .cta-row { flex-direction: column; gap: 8px; }
-      .cta-row .btn { width: 100%; justify-content: center; }
-
-      /* Gallery nav arrows */
-      .hero-gallery-controls { left: 12px; right: 12px; }
-
-      /* Sticky bottom bar */
-      .sticky-cta { display: flex; }
-      body { padding-bottom: 74px; }
-      /* System section — stack to single column */
-      #system .shell > div[style*="grid-template-columns"] { grid-template-columns: 1fr; }
-    }
-  </style>
+  <meta property="og:description" content="Install once. Light every season. Instant estimates for permanent roofline lighting across the West Kootenays." />
+  <meta property="og:image" content="https://summitlightingsystems.ca/Assets/hero/Chromaglow-Pro-Install-Shots-07206.jpg" />
+  <link rel="icon" href="Assets/logo2.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "SUMMIT Lighting Systems",
-    "description": "Permanent roofline lighting installed once and enjoyed year-round. Professional installs across the West Kootenays.",
+    "description": "Permanent roofline lighting installation across the West Kootenays.",
     "telephone": "+1-778-909-6758",
     "email": "info@summitlightingsystems.ca",
-    "url": "https://summitlightingsystems.ca",
-    "areaServed": [
-      { "@type": "City", "name": "Nelson", "containedInPlace": "British Columbia, Canada" },
-      { "@type": "City", "name": "Castlegar", "containedInPlace": "British Columbia, Canada" },
-      { "@type": "City", "name": "Trail", "containedInPlace": "British Columbia, Canada" },
-      { "@type": "City", "name": "Rossland", "containedInPlace": "British Columbia, Canada" },
-      { "@type": "City", "name": "Salmo", "containedInPlace": "British Columbia, Canada" },
-      { "@type": "City", "name": "Fruitvale", "containedInPlace": "British Columbia, Canada" },
-      { "@type": "City", "name": "Montrose", "containedInPlace": "British Columbia, Canada" },
-      { "@type": "City", "name": "Warfield", "containedInPlace": "British Columbia, Canada" },
-      { "@type": "Place", "name": "Slocan Valley", "containedInPlace": "British Columbia, Canada" },
-      { "@type": "City", "name": "Kaslo", "containedInPlace": "British Columbia, Canada" }
-    ],
-    "address": {
-      "@type": "PostalAddress",
-      "addressRegion": "BC",
-      "addressCountry": "CA"
-    }
+    "url": "https://summitlightingsystems.ca/",
+    "areaServed": ["Nelson BC","Castlegar BC","Trail BC","Rossland BC","Salmo BC","Fruitvale BC","Montrose BC","Warfield BC","Slocan Valley BC","Kaslo BC"],
+    "address": { "@type": "PostalAddress", "addressRegion": "BC", "addressCountry": "CA" }
   }
   </script>
+  <style>
+    :root{
+      --bg:#0b0e14;
+      --bg-2:#10141d;
+      --bg-3:#161b27;
+      --line:rgba(255,255,255,.08);
+      --line-2:rgba(255,255,255,.14);
+      --text:#eef1f6;
+      --muted:#9aa3b2;
+      --amber:#f2b450;
+      --amber-2:#ffd28a;
+      --amber-deep:#c8862a;
+      --glow:rgba(242,180,80,.35);
+      --radius:16px;
+      --shell:1120px;
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      background:var(--bg);
+      color:var(--text);
+      font-family:'Inter',system-ui,-apple-system,sans-serif;
+      font-size:16px;line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+      overflow-x:hidden;
+    }
+    h1,h2,h3{font-family:'Sora',sans-serif;line-height:1.15;letter-spacing:-.01em}
+    h1{font-size:clamp(2.2rem,5.4vw,3.7rem);font-weight:800}
+    h2{font-size:clamp(1.7rem,3.6vw,2.5rem);font-weight:700}
+    h3{font-size:1.1rem;font-weight:600}
+    p{color:var(--muted)}
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
+    .shell{max-width:var(--shell);margin:0 auto;padding:0 24px}
+    section{padding:96px 0}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:8px;
+      font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+      color:var(--amber);margin-bottom:16px;
+    }
+    .eyebrow::before{content:"";width:24px;height:1px;background:var(--amber)}
+    .lead{font-size:1.08rem;max-width:560px}
+
+    /* ---------- buttons ---------- */
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:8px;
+      padding:14px 26px;border-radius:999px;font-weight:600;font-size:.95rem;
+      border:1px solid transparent;cursor:pointer;transition:.2s;white-space:nowrap;
+      font-family:'Inter',sans-serif;
+    }
+    .btn.primary{
+      background:linear-gradient(135deg,var(--amber-2),var(--amber) 55%,var(--amber-deep));
+      color:#1d1503;box-shadow:0 6px 24px -6px var(--glow);
+    }
+    .btn.primary:hover{transform:translateY(-2px);box-shadow:0 10px 30px -6px var(--glow)}
+    .btn.ghost{border-color:var(--line-2);color:var(--text);background:rgba(255,255,255,.03)}
+    .btn.ghost:hover{border-color:var(--amber);color:var(--amber-2)}
+
+    /* ---------- nav ---------- */
+    header{
+      position:fixed;inset:0 0 auto 0;z-index:50;
+      transition:.3s;padding:18px 0;
+    }
+    header.scrolled{
+      background:rgba(11,14,20,.85);backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--line);padding:12px 0;
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:10px;font-family:'Sora',sans-serif;font-weight:700;font-size:1.02rem;letter-spacing:.02em}
+    .brand img{height:34px;width:auto}
+    .nav-links{display:flex;gap:26px;font-size:.9rem;color:var(--muted)}
+    .nav-links a{transition:.2s}
+    .nav-links a:hover{color:var(--amber-2)}
+    .nav-cta{display:flex;gap:10px;align-items:center}
+    .nav-cta .btn{padding:10px 20px;font-size:.88rem}
+    .menu-btn{display:none;background:none;border:1px solid var(--line-2);border-radius:10px;color:var(--text);padding:8px 12px;font-size:.85rem;cursor:pointer}
+    .mobile-menu{display:none}
+    @media(max-width:920px){
+      .nav-links,.nav-cta .ghost{display:none}
+      .menu-btn{display:block}
+      .mobile-menu.open{
+        display:flex;flex-direction:column;gap:4px;
+        position:fixed;top:64px;left:16px;right:16px;z-index:49;
+        background:var(--bg-2);border:1px solid var(--line-2);border-radius:16px;
+        padding:14px;box-shadow:0 20px 60px rgba(0,0,0,.5);
+      }
+      .mobile-menu a{padding:10px 12px;border-radius:10px;font-size:.95rem;color:var(--text)}
+      .mobile-menu a:hover{background:rgba(255,255,255,.05)}
+    }
+
+    /* ---------- hero ---------- */
+    .hero{
+      position:relative;min-height:92vh;display:flex;align-items:center;
+      padding:140px 0 90px;overflow:hidden;
+    }
+    .hero-bg{position:absolute;inset:0;z-index:-2}
+    .hero-bg img{
+      position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+      opacity:0;transition:opacity 1.8s ease;transform:scale(1.04);
+    }
+    .hero-bg img.active{opacity:1}
+    .hero::after{
+      content:"";position:absolute;inset:0;z-index:-1;
+      background:linear-gradient(100deg,rgba(11,14,20,.94) 22%,rgba(11,14,20,.72) 52%,rgba(11,14,20,.35) 100%),
+                 linear-gradient(0deg,var(--bg) 0%,transparent 30%);
+    }
+    .hero-content{max-width:640px}
+    .hero .lead{margin:20px 0 32px;font-size:1.15rem}
+    .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px}
+    .hero h1 .accent{
+      background:linear-gradient(120deg,var(--amber-2),var(--amber));
+      -webkit-background-clip:text;background-clip:text;color:transparent;
+    }
+    .trust-row{display:flex;flex-wrap:wrap;gap:10px}
+    .chip{
+      display:inline-flex;align-items:center;gap:8px;
+      font-size:.8rem;font-weight:500;color:var(--text);
+      border:1px solid var(--line-2);background:rgba(255,255,255,.04);
+      backdrop-filter:blur(6px);border-radius:999px;padding:8px 14px;
+    }
+    .chip svg{flex:none}
+
+    /* ---------- trust bar ---------- */
+    .trustbar{border-block:1px solid var(--line);background:var(--bg-2);padding:28px 0}
+    .trustbar .shell{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+    .trust-item{display:flex;gap:14px;align-items:flex-start}
+    .trust-item svg{flex:none;margin-top:3px}
+    .trust-item strong{display:block;font-size:.92rem}
+    .trust-item span{font-size:.8rem;color:var(--muted)}
+    @media(max-width:920px){.trustbar .shell{grid-template-columns:1fr 1fr}}
+    @media(max-width:520px){.trustbar .shell{grid-template-columns:1fr}}
+
+    /* ---------- switch ---------- */
+    .switch-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:48px}
+    @media(max-width:860px){.switch-grid{grid-template-columns:1fr}}
+    .panel{
+      border:1px solid var(--line);border-radius:var(--radius);
+      background:var(--bg-2);padding:34px;
+    }
+    .panel.glow{
+      border-color:rgba(242,180,80,.35);
+      background:linear-gradient(160deg,rgba(242,180,80,.08),var(--bg-2) 55%);
+    }
+    .panel h3{font-size:1.25rem;margin-bottom:18px}
+    .check-list{list-style:none;display:grid;gap:14px}
+    .check-list li{display:flex;gap:12px;align-items:flex-start;color:var(--muted);font-size:.97rem}
+    .check-list svg{flex:none;margin-top:4px}
+    .panel .btn{margin-top:26px}
+
+    /* ---------- benefits ---------- */
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:48px}
+    @media(max-width:920px){.cards{grid-template-columns:1fr 1fr}}
+    @media(max-width:560px){.cards{grid-template-columns:1fr}}
+    .card{
+      border:1px solid var(--line);border-radius:var(--radius);
+      background:var(--bg-2);padding:28px;transition:.25s;
+    }
+    .card:hover{border-color:rgba(242,180,80,.4);transform:translateY(-3px)}
+    .card .icon{
+      width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+      background:rgba(242,180,80,.1);border:1px solid rgba(242,180,80,.25);margin-bottom:18px;
+    }
+    .card h3{margin-bottom:8px}
+    .card p{font-size:.92rem}
+
+    /* ---------- system ---------- */
+    .gallery{display:grid;grid-template-columns:repeat(12,1fr);gap:18px;margin-top:48px}
+    .shot{
+      position:relative;border-radius:var(--radius);overflow:hidden;
+      border:1px solid var(--line);
+    }
+    .shot img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+    .shot:hover img{transform:scale(1.04)}
+    .shot figcaption{
+      position:absolute;inset:auto 0 0 0;padding:40px 18px 14px;
+      background:linear-gradient(transparent,rgba(8,10,15,.88));
+      font-size:.85rem;font-weight:500;color:var(--text);
+    }
+    .shot.wide{grid-column:span 7;aspect-ratio:16/10}
+    .shot.tall{grid-column:span 5;aspect-ratio:auto}
+    @media(max-width:760px){.shot.wide,.shot.tall{grid-column:span 12;aspect-ratio:16/10}}
+    .specs{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+
+    /* ---------- estimate ---------- */
+    .estimate-wrap{
+      display:grid;grid-template-columns:1.05fr .95fr;gap:28px;margin-top:48px;align-items:stretch;
+    }
+    @media(max-width:920px){.estimate-wrap{grid-template-columns:1fr}}
+    .est-controls{
+      border:1px solid var(--line);border-radius:var(--radius);background:var(--bg-2);padding:34px;
+      display:flex;flex-direction:column;gap:30px;
+    }
+    .field-label{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px}
+    .field-label strong{font-size:.98rem;font-weight:600}
+    .field-label .hint{font-size:.8rem;color:var(--muted)}
+    .ft-display{
+      font-family:'Sora',sans-serif;font-size:1.5rem;font-weight:700;color:var(--amber-2);
+    }
+    .ft-display small{font-size:.85rem;color:var(--muted);font-weight:500;margin-left:4px}
+    input[type=range]{
+      -webkit-appearance:none;width:100%;height:6px;border-radius:99px;
+      background:linear-gradient(90deg,var(--amber) var(--fill,40%),rgba(255,255,255,.12) var(--fill,40%));
+      outline:none;cursor:pointer;
+    }
+    input[type=range]::-webkit-slider-thumb{
+      -webkit-appearance:none;width:24px;height:24px;border-radius:50%;
+      background:var(--amber-2);border:3px solid #1d1503;
+      box-shadow:0 0 0 4px rgba(242,180,80,.25),0 4px 12px rgba(0,0,0,.4);
+    }
+    input[type=range]::-moz-range-thumb{
+      width:22px;height:22px;border-radius:50%;background:var(--amber-2);border:3px solid #1d1503;
+      box-shadow:0 0 0 4px rgba(242,180,80,.25);
+    }
+    .range-marks{display:flex;justify-content:space-between;font-size:.75rem;color:var(--muted);margin-top:8px}
+    .seg{
+      display:grid;grid-template-columns:1fr 1fr;gap:10px;
+    }
+    .seg input{display:none}
+    .seg label{
+      border:1px solid var(--line-2);border-radius:12px;padding:14px 16px;cursor:pointer;
+      text-align:center;font-size:.9rem;font-weight:500;color:var(--muted);transition:.2s;
+    }
+    .seg label small{display:block;font-size:.75rem;font-weight:400;margin-top:2px}
+    .seg input:checked + label{
+      border-color:var(--amber);color:var(--text);
+      background:rgba(242,180,80,.09);box-shadow:0 0 0 1px var(--amber) inset;
+    }
+    .est-result{
+      border:1px solid rgba(242,180,80,.35);border-radius:var(--radius);
+      background:linear-gradient(165deg,rgba(242,180,80,.1),var(--bg-2) 60%);
+      padding:34px;display:flex;flex-direction:column;
+    }
+    .est-price{
+      font-family:'Sora',sans-serif;font-size:clamp(1.9rem,4.5vw,2.7rem);font-weight:800;
+      color:var(--amber-2);margin:6px 0 4px;letter-spacing:-.01em;
+    }
+    .est-note{font-size:.8rem;color:var(--muted)}
+    .est-includes{list-style:none;display:grid;gap:11px;margin:26px 0;padding-top:24px;border-top:1px solid var(--line)}
+    .est-includes li{display:flex;gap:10px;font-size:.88rem;color:var(--muted);align-items:flex-start}
+    .est-includes svg{flex:none;margin-top:4px}
+    .est-result .btn{margin-top:auto}
+    .est-disclaimer{font-size:.74rem;color:var(--muted);margin-top:14px;opacity:.8}
+
+    /* ---------- process ---------- */
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:48px;counter-reset:step}
+    @media(max-width:920px){.steps{grid-template-columns:1fr 1fr}}
+    @media(max-width:560px){.steps{grid-template-columns:1fr}}
+    .step{
+      border:1px solid var(--line);border-radius:var(--radius);background:var(--bg-2);
+      padding:28px;position:relative;counter-increment:step;
+    }
+    .step::before{
+      content:"0" counter(step);
+      font-family:'Sora',sans-serif;font-weight:800;font-size:.85rem;color:var(--amber);
+      display:inline-block;margin-bottom:14px;letter-spacing:.1em;
+    }
+    .step h3{font-size:1rem;margin-bottom:6px}
+    .step p{font-size:.88rem}
+
+    /* ---------- area ---------- */
+    .area-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;margin-top:48px}
+    @media(max-width:860px){.area-grid{grid-template-columns:1fr}}
+    .area-map{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line)}
+    .towns{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+    .map-credit{font-size:.7rem;color:var(--muted);margin-top:8px;opacity:.7}
+    .map-credit a{text-decoration:underline}
+
+    /* ---------- faq ---------- */
+    .faq-list{max-width:780px;margin:48px auto 0}
+    details{
+      border:1px solid var(--line);border-radius:14px;background:var(--bg-2);
+      margin-bottom:12px;overflow:hidden;transition:.2s;
+    }
+    details[open]{border-color:rgba(242,180,80,.35)}
+    summary{
+      list-style:none;cursor:pointer;padding:20px 24px;font-weight:600;font-size:.98rem;
+      display:flex;justify-content:space-between;align-items:center;gap:16px;
+    }
+    summary::-webkit-details-marker{display:none}
+    summary::after{
+      content:"+";font-family:'Sora',sans-serif;font-size:1.3rem;color:var(--amber);
+      transition:transform .25s;flex:none;
+    }
+    details[open] summary::after{transform:rotate(45deg)}
+    details p{padding:0 24px 22px;font-size:.93rem}
+
+    /* ---------- referral ---------- */
+    .referral{
+      border:1px solid rgba(242,180,80,.35);border-radius:20px;
+      background:linear-gradient(120deg,rgba(242,180,80,.12),var(--bg-2) 65%);
+      padding:54px 44px;display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap;
+    }
+    .referral h2{max-width:520px}
+    .referral p{max-width:520px;margin-top:12px}
+
+    /* ---------- quote form ---------- */
+    .quote-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;margin-top:48px}
+    @media(max-width:860px){.quote-grid{grid-template-columns:1fr}}
+    .contact-card{
+      border:1px solid var(--line);border-radius:var(--radius);background:var(--bg-2);
+      padding:26px;margin-top:26px;display:grid;gap:12px;font-size:.95rem;
+    }
+    .contact-card a{color:var(--amber-2);font-weight:600}
+    form{display:grid;gap:18px}
+    .form-field label{display:block;font-size:.85rem;font-weight:600;margin-bottom:8px}
+    .form-field label span{color:var(--muted);font-weight:400}
+    .form-field input,.form-field textarea{
+      width:100%;background:var(--bg-3);border:1px solid var(--line-2);border-radius:12px;
+      padding:14px 16px;color:var(--text);font-family:'Inter',sans-serif;font-size:.95rem;
+      outline:none;transition:.2s;
+    }
+    .form-field input:focus,.form-field textarea:focus{border-color:var(--amber);box-shadow:0 0 0 3px rgba(242,180,80,.15)}
+    .form-field textarea{min-height:110px;resize:vertical}
+    #quote-result{display:none;padding:16px 20px;border-radius:12px;font-size:.92rem}
+
+    /* ---------- footer ---------- */
+    footer{border-top:1px solid var(--line);padding:54px 0 110px;background:var(--bg-2)}
+    footer .shell{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap}
+    footer small{color:var(--muted);font-size:.82rem;display:block;line-height:1.7}
+    .disclosure{font-size:.74rem;color:var(--muted);opacity:.7;margin-top:14px;max-width:420px}
+
+    /* ---------- sticky cta ---------- */
+    .sticky-cta{
+      position:fixed;bottom:0;left:0;right:0;z-index:40;display:none;
+      gap:10px;padding:12px 16px calc(12px + env(safe-area-inset-bottom));
+      background:rgba(11,14,20,.92);backdrop-filter:blur(12px);border-top:1px solid var(--line);
+    }
+    .sticky-cta .btn{flex:1;padding:13px}
+    @media(max-width:760px){.sticky-cta{display:flex}}
+
+    /* ---------- reveal ---------- */
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+    .reveal.in{opacity:1;transform:none}
+    @media(prefers-reduced-motion:reduce){
+      .reveal{opacity:1;transform:none;transition:none}
+      html{scroll-behavior:auto}
+    }
+    .center{text-align:center}
+    .center .lead{margin:0 auto}
+  </style>
 </head>
 <body>
-  <div class="page">
-    <nav class="nav" id="nav" aria-label="Primary">
-      <div class="shell nav-inner">
-        <div class="brand">
-          <span class="brand-mark">SUMMIT</span>
-          <span class="brand-sub">Lighting Systems</span>
-        </div>
-        <div class="nav-anchors" id="nav-anchors">
-          <a href="#switch">Why Switch</a>
-          <a href="#benefits">Benefits</a>
-          <a href="#system">System</a>
-          <a href="#service-area">Service Area</a>
-          <a href="#process">Process</a>
-          <a href="#faq">FAQ</a>
-          <a href="#referral">Referral</a>
-        </div>
-        <div class="nav-actions">
-          <a class="btn secondary" href="tel:+17789096758">Call / Text</a>
-          <a class="btn primary" href="#quote">Get a Free Quote</a>
-        </div>
-        <div class="nav-menu">
-          <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-list" aria-label="Open navigation menu">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-            Menu
-          </button>
-          <div class="menu-list" id="menu-list">
-            <a href="#switch">Why Switch</a>
-            <a href="#benefits">Benefits</a>
-            <a href="#system">System</a>
-            <a href="#service-area">Service Area</a>
-            <a href="#process">Process</a>
-            <a href="#faq">FAQ</a>
-            <a href="#referral">Referral</a>
-            <a href="#quote">Quote</a>
-          </div>
-        </div>
+
+  <header id="header">
+    <div class="shell nav">
+      <a class="brand" href="#top">
+        <img src="Assets/logo2.png" alt="SUMMIT Lighting Systems logo" />
+        SUMMIT
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#switch">Why Permanent</a>
+        <a href="#system">The System</a>
+        <a href="#estimate">Instant Estimate</a>
+        <a href="#process">Process</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="nav-cta">
+        <a class="btn ghost" href="tel:+17789096758">Call / Text</a>
+        <a class="btn primary" href="#estimate">Get My Estimate</a>
+        <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu">Menu</button>
       </div>
+    </div>
+    <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile">
+      <a href="#switch">Why Permanent</a>
+      <a href="#system">The System</a>
+      <a href="#estimate">Instant Estimate</a>
+      <a href="#process">Process</a>
+      <a href="#area">Service Area</a>
+      <a href="#faq">FAQ</a>
+      <a href="#referral">Referral Program</a>
+      <a href="#quote">Get a Free Quote</a>
     </nav>
+  </header>
 
-    <header class="hero" id="top">
-      <div class="hero-grid">
-        <div class="hero-gallery" id="hero-gallery" aria-roledescription="carousel" aria-label="Project photo gallery">
-          <div class="hero-gallery-meta">
-            <div class="hero-gallery-dots" role="tablist" aria-label="Choose a slide">
-              <button class="hero-gallery-dot active" type="button" role="tab" aria-selected="true" aria-label="Go to slide 1"></button>
-              <button class="hero-gallery-dot" type="button" role="tab" aria-selected="false" aria-label="Go to slide 2"></button>
-              <button class="hero-gallery-dot" type="button" role="tab" aria-selected="false" aria-label="Go to slide 3"></button>
-              <button class="hero-gallery-dot" type="button" role="tab" aria-selected="false" aria-label="Go to slide 4"></button>
-            </div>
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="hero-bg" aria-hidden="true">
+        <img src="Assets/hero/Chromaglow-Pro-Install-Shots-07206.jpg" alt="" class="active" />
+        <img src="Assets/hero/Chromaglow-Pro-Install-Shots-07211.jpg" alt="" />
+        <img src="Assets/hero/Chromaglow-Pro-Install-Shots-07207.jpg" alt="" />
+        <img src="Assets/hero/Chromaglow-Pro-Install-Shots-07208.jpg" alt="" />
+      </div>
+      <div class="shell">
+        <div class="hero-content">
+          <div class="eyebrow">Permanent Roofline Lighting · West Kootenays</div>
+          <h1>Hang lights for the last time. <span class="accent">Enjoy them forever.</span></h1>
+          <p class="lead">One clean, professional install gives you warm white elegance every evening and full colour for every holiday — all from your phone, all year round.</p>
+          <div class="hero-ctas">
+            <a class="btn primary" href="#estimate">Get My Instant Estimate</a>
+            <a class="btn ghost" href="tel:+17789096758">Call / Text (778) 909-6758</a>
           </div>
-          <div class="hero-gallery-track" id="hero-gallery-track">
-            <figure class="hero-slide">
-              <img src="./Assets/hero/Chromaglow-Pro-Install-Shots-07206.jpg" alt="Warm white permanent roofline lighting on a home exterior" loading="eager" fetchpriority="high" />
-            </figure>
-            <figure class="hero-slide">
-              <img src="./Assets/hero/Chromaglow-Pro-Install-Shots-07211.jpg" alt="Christmas lighting scenes on a home exterior at night" loading="lazy" />
-            </figure>
-            <figure class="hero-slide">
-              <img src="./Assets/hero/Chromaglow-Pro-Install-Shots-07207.jpg" alt="Blue Christmas roofline lights on a home at night" loading="lazy" />
-            </figure>
-            <figure class="hero-slide">
-              <img src="./Assets/hero/Chromaglow-Pro-Install-Shots-07208.jpg" alt="Colour-changing permanent lighting illuminating the front of a home" loading="lazy" />
-            </figure>
-          </div>
-          <div class="hero-copy">
-            <h1>Stop Hanging Lights. Install Them Once.</h1>
-            <p class="lede">Permanent roofline lighting that looks clean in the day and transforms your home at night.<br/>App-controlled. Year-round. Built for real winters.</p>
-            <div class="cta-row">
-              <a class="btn primary" href="#quote">Get a Free Quote</a>
-              <a class="btn secondary" href="tel:+17789096758">Call / Text for a Fast Estimate</a>
-            </div>
-            <div class="hero-trust-grid">
-              <div class="trust-badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M12 2 4 5v6c0 5 3.5 9.5 8 11 4.5-1.5 8-6 8-11V5l-8-3Z"/>
-                  <path d="m9 12 2 2 4-4"/>
-                </svg>
-                <div>
-                  <strong>10-Year Warranty</strong>
-                  <span>Comprehensive coverage on parts &amp; workmanship.</span>
-                </div>
-              </div>
-              <div class="trust-badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M12 2v4M12 18v4M2 12h4M18 12h4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/>
-                  <circle cx="12" cy="12" r="4"/>
-                </svg>
-                <div>
-                  <strong>IP68 + UL/cUL Certified</strong>
-                  <span>Sealed, safety-tested, built for Canadian winters.</span>
-                </div>
-              </div>
-              <div class="trust-badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0Z"/>
-                  <circle cx="12" cy="10" r="3"/>
-                </svg>
-                <div>
-                  <strong>Locally Owned &amp; Operated</strong>
-                  <span>Based in the West Kootenays. Real people, fast response.</span>
-                </div>
-              </div>
-              <div class="trust-badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="m12 2 3 7h7l-5.5 4.5L18 22l-6-4-6 4 1.5-8.5L2 9h7Z"/>
-                </svg>
-                <div>
-                  <strong>Founding Install Pricing</strong>
-                  <span>Early customers get our best rates as we build our portfolio.</span>
-                </div>
-              </div>
-            </div>
-            <div class="disclosure">
-              Powered by <strong>Chromaglow Pro</strong> (48V RGBW)
-            </div>
-          </div>
-          <div class="hero-gallery-controls">
-            <button class="hero-gallery-nav" type="button" id="hero-gallery-prev" aria-label="Previous slide">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>
-            </button>
-            <button class="hero-gallery-nav" type="button" id="hero-gallery-next" aria-label="Next slide">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"></path></svg>
-            </button>
+          <div class="trust-row">
+            <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f2b450" stroke-width="2.5"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>10-Year Warranty</span>
+            <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f2b450" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>IP68 · UL/cUL Certified</span>
+            <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f2b450" stroke-width="2.5"><path d="M12 21s-7-5.5-7-11a7 7 0 0114 0c0 5.5-7 11-7 11z"/></svg>Locally Owned &amp; Installed</span>
+            <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f2b450" stroke-width="2.5"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/></svg>Founding Install Pricing</span>
           </div>
         </div>
       </div>
-    </header>
+    </section>
 
-    <main>
-      <section id="switch">
-        <div class="shell panel">
-          <div class="eyebrow">Why People Switch</div>
-          <h2>No More Ladders. No More Seasonal Hassle.</h2>
-          <div class="grid-2" style="margin-top:12px;">
-            <div>
-              <ul style="margin:0; padding-left:18px; color: var(--text); line-height:1.6;">
-                <li>No yearly install and takedown</li>
-                <li>No tangled strands or dead sections</li>
-                <li>No risky ladder work in snow or ice</li>
-                <li>No last-minute scrambling before holidays</li>
-              </ul>
-            </div>
-            <div class="card">
-              <h3>Instead</h3>
-              <p>A permanent system that’s always ready: warm white for everyday curb appeal, full colour for holidays and events.</p>
-              <a class="btn primary" href="#quote">Get a Free Quote</a>
-            </div>
+    <!-- TRUST BAR -->
+    <div class="trustbar">
+      <div class="shell">
+        <div class="trust-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f2b450" stroke-width="2"><path d="M12 22s8-3.5 8-10V5l-8-3-8 3v7c0 6.5 8 10 8 10z"/></svg>
+          <div><strong>Built for real winters</strong><span>IP68-sealed, safety-certified hardware rated for harsh Canadian climates.</span></div>
+        </div>
+        <div class="trust-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f2b450" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          <div><strong>100,000-hour LEDs</strong><span>Roughly 45 years of nightly use, backed by a 10-year comprehensive warranty.</span></div>
+        </div>
+        <div class="trust-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f2b450" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+          <div><strong>Total app control</strong><span>Schedules, scenes, zones, and brightness — every light individually addressable.</span></div>
+        </div>
+        <div class="trust-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f2b450" stroke-width="2"><path d="M12 21s-7-5.5-7-11a7 7 0 0114 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <div><strong>West Kootenays local</strong><span>Real people, fast response. Powered by Chromaglow Pro (48V RGBW).</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WHY SWITCH -->
+    <section id="switch">
+      <div class="shell">
+        <div class="center reveal">
+          <div class="eyebrow" style="justify-content:center">Why Homeowners Switch</div>
+          <h2>The last December you spend on a ladder.</h2>
+        </div>
+        <div class="switch-grid">
+          <div class="panel reveal">
+            <h3>Leave this behind</h3>
+            <ul class="check-list">
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e2654f" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>Climbing icy ladders every November — and again in January</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e2654f" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>Tangled strands, dead bulbs, and half-lit rooflines</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e2654f" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>Replacing cheap lights that fail after a season or two</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e2654f" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>Scrambling before the holidays, then staring at bare eaves all year</li>
+            </ul>
+          </div>
+          <div class="panel glow reveal">
+            <h3>Get this instead</h3>
+            <ul class="check-list">
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f2b450" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>A permanent system that's always ready — installed once, professionally</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f2b450" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Warm white for everyday curb appeal, full colour for any occasion</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f2b450" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Low-profile tracks that practically disappear in daylight</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f2b450" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Set it and forget it — schedules and scenes run themselves</li>
+            </ul>
+            <a class="btn primary" href="#estimate">See What It Costs</a>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="benefits">
-        <div class="shell">
-          <div class="eyebrow">What You Get</div>
-          <h2>A Permanent Upgrade — Not Seasonal Decor</h2>
-          <div class="grid-3" style="margin-top:16px;">
-            <div class="card"><h3>Always ready</h3><p>One install, year-round use.</p></div>
-            <div class="card"><h3>Clean roofline look</h3><p>Low-profile, color-matched tracks.</p></div>
-            <div class="card"><h3>Full control</h3><p>Schedules, scenes, and brightness.</p></div>
-            <div class="card"><h3>True whites + full colour</h3><p>RGBW system with a dedicated white channel.</p></div>
-            <div class="card"><h3>Built for Canadian Winters</h3><p>Weather-rated components for harsh climates.</p></div>
-            <div class="card"><h3>Long-term value</h3><p>Durable system + 10 year warranty.</p></div>
+    <!-- BENEFITS -->
+    <section id="benefits" style="padding-top:0">
+      <div class="shell">
+        <div class="center reveal">
+          <div class="eyebrow" style="justify-content:center">What You Get</div>
+          <h2>A permanent upgrade, not seasonal decor.</h2>
+        </div>
+        <div class="cards">
+          <div class="card reveal">
+            <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f2b450" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></svg></div>
+            <h3>Always ready</h3>
+            <p>One install, year-round use. Your home is lit for every season, holiday, and game night — no setup required.</p>
+          </div>
+          <div class="card reveal">
+            <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f2b450" stroke-width="2"><path d="M2 20h20M5 20V8l7-5 7 5v12"/></svg></div>
+            <h3>Clean by day</h3>
+            <p>Low-profile aluminum track, colour-matched to your trim. Most visitors never notice it until the lights come on.</p>
+          </div>
+          <div class="card reveal">
+            <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f2b450" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg></div>
+            <h3>Full control</h3>
+            <p>Schedules, scenes, zones, and brightness from your phone. Hundreds of effects, one tap.</p>
+          </div>
+          <div class="card reveal">
+            <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f2b450" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg></div>
+            <h3>True whites + full colour</h3>
+            <p>Dedicated white-spectrum diodes deliver real warm white — not a washed-out RGB mix — plus 16 million colours.</p>
+          </div>
+          <div class="card reveal">
+            <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f2b450" stroke-width="2"><path d="M12 22s8-3.5 8-10V5l-8-3-8 3v7c0 6.5 8 10 8 10z"/></svg></div>
+            <h3>Winter-proof</h3>
+            <p>IP68 waterproof, UL/cUL certified, UV-resistant cabling. Engineered for snow, ice, and -40° nights.</p>
+          </div>
+          <div class="card reveal">
+            <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f2b450" stroke-width="2"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg></div>
+            <h3>Long-term value</h3>
+            <p>100,000-hour LEDs and a 10-year comprehensive warranty. Built to outlast a decade of seasonal lights.</p>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="system">
-        <div class="shell">
-          <div class="eyebrow">The System</div>
-          <h2>Premium Hardware. Permanent Results.</h2>
-          <figure class="system-feature" style="margin-top:16px;">
-            <img src="./Assets/How it works/7.jpg" alt="Hand holding the Chromaglow app with a home lit in ice blue behind" loading="lazy" />
+    <!-- SYSTEM -->
+    <section id="system" style="background:var(--bg-2);border-block:1px solid var(--line)">
+      <div class="shell">
+        <div class="center reveal">
+          <div class="eyebrow" style="justify-content:center">The System</div>
+          <h2>Premium hardware. Permanent results.</h2>
+          <p class="lead" style="margin-top:14px">Powered by Chromaglow Pro — a commercial-grade 48V RGBW platform with individually addressable LEDs.</p>
+        </div>
+        <div class="gallery">
+          <figure class="shot wide reveal">
+            <img src="Assets/How it works/6.jpg" alt="Multi-gable roofline glowing warm white at dusk" loading="lazy" />
+            <figcaption>Warm white, every night — elegant, not flashy.</figcaption>
+          </figure>
+          <figure class="shot tall reveal">
+            <img src="Assets/How it works/7.jpg" alt="Hand holding the Chromaglow app with a home lit in ice blue behind" loading="lazy" />
             <figcaption>Hundreds of scenes, one tap.</figcaption>
           </figure>
-          <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
-            <div style="display:grid; gap:14px;">
-              <figure class="gallery-fig">
-                <img src="./Assets/How it works/6.jpg" alt="Multi-gable roofline with warm white LEDs glowing at dusk" loading="lazy" />
-                <figcaption>Warm white, every night.</figcaption>
-              </figure>
-              <figure class="gallery-fig">
-                <img src="./Assets/How it works/3.jpg" alt="Close-up of low-profile LED nodes sitting flush on a white soffit in daylight" loading="lazy" />
-                <figcaption>Invisible by day.</figcaption>
-              </figure>
-            </div>
-            <figure class="gallery-fig" style="background:#0c111b; min-height:480px;">
-              <img src="./Assets/How it works/1.png" alt="Chromaglow Pro node spec diagram — 6 diodes, UL certified, 10-year warranty" loading="lazy" style="object-fit:contain;" />
-              <figcaption>Built to last 100,000 hours (45 years).</figcaption>
-            </figure>
-          </div>
+          <figure class="shot tall reveal">
+            <img src="Assets/How it works/3.jpg" alt="Close-up of low-profile LED nodes flush against a white soffit in daylight" loading="lazy" />
+            <figcaption>Practically invisible by day.</figcaption>
+          </figure>
+          <figure class="shot wide reveal">
+            <img src="Assets/How it works/1.png" alt="Chromaglow Pro node spec diagram — 6 diodes, UL certified, 10-year warranty" loading="lazy" />
+            <figcaption>Rated for 100,000 hours — about 45 years of evenings.</figcaption>
+          </figure>
         </div>
-      </section>
-
-      <section id="service-area">
-        <div class="shell panel">
-          <div class="eyebrow">Service Area</div>
-          <div class="service-area-grid">
-            <div class="service-area-map">
-              <div class="service-area-map-inner">
-                <img src="./Assets/west-kootenays-map.png" alt="Map of the West Kootenays region showing communities served by SUMMIT Lighting Systems: Kaslo, Slocan Valley, Nelson, Castlegar, Salmo, Trail, Rossland, Warfield, Montrose, and Fruitvale." loading="lazy" width="619" height="549" />
-                <svg class="service-area-overlay" viewBox="0 0 619 549" preserveAspectRatio="none" aria-hidden="true">
-                  <g stroke="#0a121d" stroke-width="2.5">
-                    <circle cx="469.0" cy="48.2" r="6" fill="#5bd6ff"/>
-                    <circle cx="266.9" cy="129.4" r="6" fill="#5bd6ff"/>
-                    <circle cx="329.6" cy="285.5" r="9" fill="#8ee6ff"/>
-                    <circle cx="196.9" cy="380.5" r="6" fill="#5bd6ff"/>
-                    <circle cx="337.2" cy="453.6" r="6" fill="#5bd6ff"/>
-                    <circle cx="177.8" cy="506.4" r="7" fill="#8ee6ff"/>
-                    <circle cx="145.9" cy="515.7" r="5" fill="#5bd6ff"/>
-                    <circle cx="167.7" cy="498.1" r="5" fill="#5bd6ff"/>
-                    <circle cx="223.7" cy="515.4" r="5" fill="#5bd6ff"/>
-                    <circle cx="234.9" cy="501.8" r="5" fill="#5bd6ff"/>
-                  </g>
-                  <g font-family="'Manrope', system-ui, sans-serif" font-weight="700" font-size="18" fill="#e8f1ff" stroke="#0a121d" stroke-width="4" paint-order="stroke fill">
-                    <text x="481" y="52">Kaslo</text>
-                    <text x="278" y="133">Slocan Valley</text>
-                    <text x="343" y="289">Nelson</text>
-                    <text x="210" y="384">Castlegar</text>
-                    <text x="351" y="457">Salmo</text>
-                    <text x="190" y="482" text-anchor="middle">Trail</text>
-                  </g>
-                </svg>
-              </div>
-              <p class="service-area-attribution">Map &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors</p>
-            </div>
-            <div class="service-area-copy">
-              <h2>Proudly Serving the West Kootenays</h2>
-              <p>Locally owned. Locally installed. Quick response across the region.</p>
-              <ul class="community-list" aria-label="Communities we serve">
-                <li>Nelson</li>
-                <li>Castlegar</li>
-                <li>Trail</li>
-                <li>Rossland</li>
-                <li>Salmo</li>
-                <li>Fruitvale</li>
-                <li>Montrose</li>
-                <li>Warfield</li>
-                <li>Slocan Valley</li>
-                <li>Kaslo</li>
-              </ul>
-              <div class="service-area-callout">
-                Outside this area? <a href="tel:+17789096758">Call / Text</a> &mdash; we may still be able to help.
-              </div>
-            </div>
-          </div>
+        <div class="specs reveal">
+          <span class="chip">48V low-voltage — safe by design</span>
+          <span class="chip">300 ft runs, no power injection</span>
+          <span class="chip">16-gauge outdoor-rated wiring</span>
+          <span class="chip">Individually addressable LEDs</span>
+          <span class="chip">RAL colour-matched track</span>
         </div>
-      </section>
-
-      <section id="process">
-        <div class="shell panel">
-          <div class="eyebrow">Simple Process</div>
-          <h2>Your Install, Step by Step</h2>
-          <div class="process" style="margin-top:14px;">
-            <div class="process-step"><strong>1) Request a quote</strong><span>Quick form or call</span></div>
-            <div class="process-step"><strong>2) On-site measure + design</strong><span>Rooflines, power access, visibility</span></div>
-            <div class="process-step"><strong>3) Professional install</strong><span>Clean mounting, tidy routing, full test</span></div>
-            <div class="process-step"><strong>4) App setup + handoff</strong><span>Scenes, schedules, controls ready</span></div>
-          </div>
-          <p style="margin-top:12px;">Most homes are completed in a day. Larger rooflines confirmed after measuring.</p>
-          <div class="cta-row" style="margin-top:12px;">
-            <a class="btn primary" href="#quote">Get a Free Quote</a>
-          </div>
-        </div>
-      </section>
-
-      <section id="faq">
-        <div class="shell panel">
-          <div class="eyebrow">FAQ</div>
-          <h2>Common Questions</h2>
-          <div class="faq" style="margin-top:12px;">
-            <details open><summary>Does it look noticeable during the day?</summary><p>No. The extruded aluminum track is designed to blend in and can be custom color-matched to your trim using RAL paint codes. Multiple track styles are available to suit different mounting scenarios.</p></details>
-            <details><summary>How long do the lights last?</summary><p>The LEDs are rated for 100,000 hours — that’s roughly 45 years at 6 hours of daily use. The system is backed by a 10-year comprehensive warranty.</p></details>
-            <details><summary>Can they handle extreme weather?</summary><p>Yes. The system carries an IP68 waterproof rating and is UL/cUL certified. Extension cables are UV-resistant and rated for 20+ years of outdoor exposure.</p></details>
-            <details><summary>Is it safe?</summary><p>Absolutely. It runs on a 48V low-voltage system — far safer than line voltage. Built-in reverse polarity protection means even a wiring mistake won’t damage the system.</p></details>
-            <details><summary>Can I use warm white without the colors?</summary><p>Yes. Each light has three dedicated white-spectrum diodes separate from the RGB diodes, so you get true, high-quality warm white — not a simulated mix.</p></details>
-            <details><summary>How far can the lights run without extra equipment?</summary><p>Up to 300 feet in a single uninterrupted run with no power injection needed, thanks to the 48V architecture and heavier 16-gauge wiring.</p></details>
-            <details><summary>How are the lights controlled?</summary><p>Through a smartphone app via Wi-Fi or Bluetooth. Every light is individually addressable, so you can create custom effects, schedule scenes, and control specific zones independently.</p></details>
-            <details><summary>What’s included in the quote?</summary><p>A custom-measured layout for your home, total cost, estimated timeline, and full warranty details — no surprises.</p></details>
-            <details><summary>How does the $200 referral bonus work?</summary><p>If you refer a neighbour, friend, or family member who books an install of $2,000 or more, we’ll send you $200 once the install is complete. There’s no cap — refer as many people as you like. Just have them mention your name in their quote request, or fill in the “Who referred you?” field on the form.</p></details>
-          </div>
-        </div>
-      </section>
-
-      <section id="referral">
-        <div class="shell panel">
-          <div class="eyebrow">Referral Program</div>
-          <div class="referral-content">
-            <h2>Know a Neighbour Who Needs This? Earn $200.</h2>
-            <p>We’re offering <span class="referral-amount">$200</span> to anyone who refers a completed install of $2,000 or more. No cap, no catch — refer as many neighbours as you like. Just let us know who sent them in your quote request.</p>
-            <a class="btn primary" href="#quote" id="refer-cta">Refer Someone Now</a>
-          </div>
-        </div>
-      </section>
-
-      <section id="quote">
-        <div class="shell">
-          <div class="panel quote-section">
-            <div>
-              <div class="eyebrow">Get a Free Quote</div>
-              <h2>Reply within 1 business day. No pressure.</h2>
-              <p id="quote-reassurance">Quick form or call / text for a fast estimate. We&rsquo;ll reply within 1 business day.</p>
-              <div class="card" style="margin-top:12px;">
-                <p><strong>Call / Text:</strong> <a href="tel:+17789096758">(778) 909-6758</a></p>
-                <p><strong>Email:</strong> <a href="mailto:info@summitlightingsystems.ca">info@summitlightingsystems.ca</a></p>
-              </div>
-            </div>
-            <form id="quote-form" action="https://api.web3forms.com/submit" method="POST" aria-describedby="quote-reassurance">
-              <input type="hidden" name="access_key" value="b3035883-5393-4cf1-8aea-7d144f7cd9d2" />
-              <input type="hidden" name="subject" value="New Quote Request — SUMMIT Lighting Systems" />
-              <input type="hidden" name="from_name" value="SUMMIT Website" />
-              <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
-              <div>
-                <label for="name">Name</label>
-                <input id="name" name="name" type="text" autocomplete="name" placeholder="Your name" required />
-              </div>
-              <div>
-                <label for="address">Address / Community</label>
-                <input id="address" name="address" type="text" autocomplete="address-level2" placeholder="Town or neighbourhood" required />
-              </div>
-              <div>
-                <label for="contact">Phone or Email</label>
-                <input id="contact" name="contact" type="text" autocomplete="email" placeholder="(778) 909-6758 or you@example.com" required />
-              </div>
-              <div>
-                <label for="referrer">Who referred you? <span style="color:var(--muted); font-weight:500;">(optional)</span></label>
-                <input id="referrer" name="referrer" type="text" placeholder="Name of the person who sent you" />
-              </div>
-              <div>
-                <label for="notes">Project Details <span style="color:var(--muted); font-weight:500;">(optional)</span></label>
-                <textarea id="notes" name="notes" placeholder="Roofline length, timeline, special requests..."></textarea>
-              </div>
-              <button class="btn primary" type="submit">Get a Free Quote</button>
-              <a class="btn secondary" href="tel:+17789096758">Call / Text for a Fast Estimate</a>
-            </form>
-            <div id="quote-result" style="display:none; padding:16px; border-radius:12px; margin-top:12px;" role="status" aria-live="polite"></div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <div class="shell">
-        <strong>SUMMIT Lighting Systems</strong><br/>
-        <small>Permanent Roofline + Year‑Round Accent Lighting</small><br/>
-        <small>Serving Nelson • Trail • Castlegar • Rossland • Salmo</small><br/>
-        <p class="disclosure" style="margin-top:10px;">Chromaglow Pro is manufactured by Big Star Lights. SUMMIT Lighting Systems is an independent installer.</p>
       </div>
-    </footer>
+    </section>
 
-    <div class="sticky-cta">
-	      <a class="btn secondary" href="tel:+17789096758">Call / Text</a>
-      <a class="btn primary" href="#quote">Get a Free Quote</a>
+    <!-- ESTIMATE CALCULATOR -->
+    <section id="estimate">
+      <div class="shell">
+        <div class="center reveal">
+          <div class="eyebrow" style="justify-content:center">Instant Estimate</div>
+          <h2>What would your home cost?</h2>
+          <p class="lead" style="margin-top:14px">Two quick questions. A real number — not a sales call.</p>
+        </div>
+        <div class="estimate-wrap">
+          <div class="est-controls reveal">
+            <div>
+              <div class="field-label">
+                <strong>Roofline to illuminate</strong>
+                <span class="hint">Front only? Whole perimeter? Your call.</span>
+              </div>
+              <div class="ft-display" id="ftDisplay">150<small>linear ft</small></div>
+              <input type="range" id="ftRange" min="40" max="400" step="5" value="150" aria-label="Roofline length in linear feet" />
+              <div class="range-marks"><span>40 ft</span><span>Typical home: 120–200 ft</span><span>400 ft</span></div>
+            </div>
+            <div>
+              <div class="field-label">
+                <strong>Roofline access</strong>
+                <span class="hint">Affects equipment needed</span>
+              </div>
+              <div class="seg">
+                <input type="radio" name="access" id="accessLadder" checked />
+                <label for="accessLadder">Reachable by ladder<small>Single storey / standard two storey</small></label>
+                <input type="radio" name="access" id="accessBoom" />
+                <label for="accessBoom">Some high or tricky spots<small>Steep pitch, tall peaks — lift required</small></label>
+              </div>
+            </div>
+            <p class="est-note">Not sure about either? Pick your best guess — we confirm everything with a free on-site measure before you commit to anything.</p>
+          </div>
+          <div class="est-result reveal">
+            <span class="eyebrow" style="margin-bottom:4px">Your estimated investment</span>
+            <div class="est-price" id="estPrice" aria-live="polite">$5,900 – $7,600</div>
+            <span class="est-note">Installed. Complete. No hidden extras.</span>
+            <ul class="est-includes">
+              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#f2b450" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Chromaglow Pro lights, track &amp; power system</li>
+              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#f2b450" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Professional installation &amp; clean cable routing</li>
+              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#f2b450" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>App setup, scenes &amp; schedules configured</li>
+              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#f2b450" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>10-year comprehensive warranty</li>
+            </ul>
+            <a class="btn primary" id="lockQuoteBtn" href="#quote">Lock In My Exact Quote — Free</a>
+            <p class="est-disclaimer">Estimate based on typical installs. Final pricing is confirmed after a free on-site measure and design — and founding-customer rates may bring it lower.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section id="process" style="padding-top:0">
+      <div class="shell">
+        <div class="center reveal">
+          <div class="eyebrow" style="justify-content:center">Simple Process</div>
+          <h2>From quote to glowing roofline — usually in a day.</h2>
+        </div>
+        <div class="steps">
+          <div class="step reveal"><h3>Request your quote</h3><p>Use the instant estimate above, the quick form below, or just call. We reply within one business day.</p></div>
+          <div class="step reveal"><h3>Free on-site design</h3><p>We measure your rooflines, check power access, and design the layout with you — no obligation.</p></div>
+          <div class="step reveal"><h3>Professional install</h3><p>Clean mounting, tidy cable routing, colour-matched track, and a full system test.</p></div>
+          <div class="step reveal"><h3>App setup &amp; handoff</h3><p>We configure your scenes and schedules, then hand you the controls. That's it — forever.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICE AREA -->
+    <section id="area" style="background:var(--bg-2);border-block:1px solid var(--line)">
+      <div class="shell">
+        <div class="area-grid">
+          <div class="reveal">
+            <div class="eyebrow">Service Area</div>
+            <h2>Proudly serving the West Kootenays.</h2>
+            <p class="lead" style="margin-top:14px">Locally owned, locally installed. Quick response across the region — and if you're just outside it, call anyway. We can often make it work.</p>
+            <div class="towns">
+              <span class="chip">Nelson</span><span class="chip">Castlegar</span><span class="chip">Trail</span>
+              <span class="chip">Rossland</span><span class="chip">Salmo</span><span class="chip">Fruitvale</span>
+              <span class="chip">Montrose</span><span class="chip">Warfield</span><span class="chip">Slocan Valley</span>
+              <span class="chip">Kaslo</span>
+            </div>
+          </div>
+          <div class="reveal">
+            <div class="area-map">
+              <img src="Assets/west-kootenays-map.png" alt="Map of the West Kootenays region showing communities served by SUMMIT Lighting Systems" loading="lazy" />
+            </div>
+            <p class="map-credit">Map © <a href="https://www.openstreetmap.org/copyright" rel="noopener" target="_blank">OpenStreetMap</a> contributors</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <div class="shell">
+        <div class="center reveal">
+          <div class="eyebrow" style="justify-content:center">FAQ</div>
+          <h2>Common questions, straight answers.</h2>
+        </div>
+        <div class="faq-list reveal">
+          <details>
+            <summary>Will I see it during the day?</summary>
+            <p>Barely. The extruded aluminum track sits low-profile against your roofline and can be custom colour-matched to your trim using RAL paint codes. Multiple track styles suit different mounting scenarios.</p>
+          </details>
+          <details>
+            <summary>How long do the lights last?</summary>
+            <p>The LEDs are rated for 100,000 hours — roughly 45 years at 6 hours of nightly use — and the whole system is backed by a 10-year comprehensive warranty on parts and workmanship.</p>
+          </details>
+          <details>
+            <summary>Can it handle Kootenay winters?</summary>
+            <p>That's exactly what it's built for. The system carries an IP68 waterproof rating and UL/cUL certification, with UV-resistant cables rated for 20+ years of outdoor exposure.</p>
+          </details>
+          <details>
+            <summary>Is it safe?</summary>
+            <p>Yes. It runs on a 48V low-voltage system — far safer than line voltage — with built-in reverse polarity protection, so even a wiring mistake can't damage the system.</p>
+          </details>
+          <details>
+            <summary>Can I run just warm white, no colours?</summary>
+            <p>Absolutely. Each light has three dedicated white-spectrum diodes separate from the RGB diodes, so you get true, high-quality warm white — not a simulated mix. Many customers run warm white 350 nights a year.</p>
+          </details>
+          <details>
+            <summary>How are the lights controlled?</summary>
+            <p>Through a smartphone app via Wi-Fi or Bluetooth. Every light is individually addressable — create custom effects, schedule scenes, and control zones independently. Runs up to 300 feet need no extra equipment.</p>
+          </details>
+          <details>
+            <summary>How accurate is the instant estimate?</summary>
+            <p>It's based on our real install pricing and is intentionally given as a range. Your exact quote depends on track style, power placement, and roofline details — all confirmed during a free, no-obligation on-site measure.</p>
+          </details>
+          <details>
+            <summary>What's included in the final quote?</summary>
+            <p>A custom-measured layout for your home, total cost, estimated timeline, and full warranty details. No surprises, no pressure.</p>
+          </details>
+          <details>
+            <summary>How does the $200 referral bonus work?</summary>
+            <p>Refer a neighbour, friend, or family member who books an install of $2,000 or more, and we'll send you $200 once their install is complete. No cap — refer as many people as you like. Just have them mention your name.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- REFERRAL -->
+    <section id="referral" style="padding-top:0">
+      <div class="shell">
+        <div class="referral reveal">
+          <div>
+            <div class="eyebrow">Referral Program</div>
+            <h2>Know a neighbour who needs this? Earn $200.</h2>
+            <p>Every completed referral install of $2,000+ puts $200 in your pocket. No cap, no catch — just have them mention your name in their quote request.</p>
+          </div>
+          <a class="btn primary" href="#quote">Refer Someone Now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUOTE FORM -->
+    <section id="quote" style="background:var(--bg-2);border-top:1px solid var(--line)">
+      <div class="shell">
+        <div class="quote-grid">
+          <div class="reveal">
+            <div class="eyebrow">Get Your Free Quote</div>
+            <h2>Reply within one business day. Zero pressure.</h2>
+            <p class="lead" style="margin-top:14px">Send the quick form, or call / text for a fast estimate. We'll set up a free on-site measure whenever you're ready.</p>
+            <div class="contact-card">
+              <span><strong>Call / Text:</strong> <a href="tel:+17789096758">(778) 909-6758</a></span>
+              <span><strong>Email:</strong> <a href="mailto:info@summitlightingsystems.ca">info@summitlightingsystems.ca</a></span>
+            </div>
+          </div>
+          <form id="quote-form" action="https://api.web3forms.com/submit" method="POST" class="reveal">
+            <input type="hidden" name="access_key" value="b3035883-5393-4cf1-8aea-7d144f7cd9d2" />
+            <input type="hidden" name="subject" value="New Quote Request — SUMMIT Lighting Systems" />
+            <input type="hidden" name="from_name" value="SUMMIT Website" />
+            <input type="hidden" name="instant_estimate" id="estimateField" value="" />
+            <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
+            <div class="form-field">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" autocomplete="name" placeholder="Your name" required />
+            </div>
+            <div class="form-field">
+              <label for="address">Address / Community</label>
+              <input id="address" name="address" type="text" autocomplete="address-level2" placeholder="Town or neighbourhood" required />
+            </div>
+            <div class="form-field">
+              <label for="contact">Phone or Email</label>
+              <input id="contact" name="contact" type="text" autocomplete="email" placeholder="(778) 909-6758 or you@example.com" required />
+            </div>
+            <div class="form-field">
+              <label for="referrer">Who referred you? <span>(optional)</span></label>
+              <input id="referrer" name="referrer" type="text" placeholder="Name of the person who sent you" />
+            </div>
+            <div class="form-field">
+              <label for="notes">Project details <span>(optional)</span></label>
+              <textarea id="notes" name="notes" placeholder="Roofline length, timeline, special requests..."></textarea>
+            </div>
+            <button class="btn primary" type="submit">Request My Free Quote</button>
+            <div id="quote-result" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell">
+      <div>
+        <strong style="font-family:'Sora',sans-serif">SUMMIT Lighting Systems</strong>
+        <small>Permanent Roofline + Year-Round Accent Lighting<br/>Serving Nelson · Castlegar · Trail · Rossland · Salmo &amp; the West Kootenays</small>
+        <p class="disclosure">Chromaglow Pro is manufactured by Big Star Lights. SUMMIT Lighting Systems is an independent installer.</p>
+      </div>
+      <div>
+        <small><a href="tel:+17789096758" style="color:var(--amber-2)">(778) 909-6758</a><br/><a href="mailto:info@summitlightingsystems.ca">info@summitlightingsystems.ca</a></small>
+      </div>
     </div>
+  </footer>
+
+  <div class="sticky-cta">
+    <a class="btn ghost" href="tel:+17789096758">Call / Text</a>
+    <a class="btn primary" href="#estimate">Instant Estimate</a>
   </div>
 
   <script>
-    const nav = document.getElementById('nav');
-    const navInner = nav.querySelector('.nav-inner');
-    const menu = nav.querySelector('.nav-menu');
-    const toggle = nav.querySelector('.menu-toggle');
-    const menuList = nav.querySelector('.menu-list');
-    const heroGallery = document.getElementById('hero-gallery');
-    const heroGalleryTrack = document.getElementById('hero-gallery-track');
-    const heroGallerySlides = heroGalleryTrack ? Array.from(heroGalleryTrack.querySelectorAll('.hero-slide')) : [];
-    const heroGalleryDots = Array.from(document.querySelectorAll('.hero-gallery-dot'));
-    const prevSlideButton = document.getElementById('hero-gallery-prev');
-    const nextSlideButton = document.getElementById('hero-gallery-next');
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const closeMenu = () => { menu.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); };
-
-    const getActiveHeroSlide = () => {
-      if (!heroGalleryTrack || !heroGallerySlides.length) return 0;
-      const current = heroGalleryTrack.scrollLeft;
-      let closestIndex = 0;
-      let closestDistance = Infinity;
-      heroGallerySlides.forEach((slide, index) => {
-        const distance = Math.abs(slide.offsetLeft - current);
-        if (distance < closestDistance) {
-          closestDistance = distance;
-          closestIndex = index;
-        }
-      });
-      return closestIndex;
-    };
-    const updateHeroGallery = () => {
-      if (!heroGalleryTrack || !heroGallerySlides.length) return;
-      const activeIndex = getActiveHeroSlide();
-      heroGalleryDots.forEach((dot, index) => {
-        const isActive = index === activeIndex;
-        dot.classList.toggle('active', isActive);
-        dot.setAttribute('aria-selected', String(isActive));
-      });
-    };
-    const goToHeroSlide = (index) => {
-      if (!heroGalleryTrack || !heroGallerySlides.length) return;
-      const target = heroGallerySlides[(index + heroGallerySlides.length) % heroGallerySlides.length];
-      heroGalleryTrack.scrollTo({
-        left: target.offsetLeft,
-        behavior: reduceMotion ? 'auto' : 'smooth'
-      });
-    };
-    const moveHeroGallery = (direction) => {
-      goToHeroSlide(getActiveHeroSlide() + direction);
-    };
-
-    // Hero slider auto-advance (pauses on hover/focus, respects reduced motion)
-    let heroAutoplayId = null;
-    const startHeroAutoplay = () => {
-      if (reduceMotion || !heroGallerySlides.length) return;
-      stopHeroAutoplay();
-      heroAutoplayId = window.setInterval(() => moveHeroGallery(1), 6000);
-    };
-    const stopHeroAutoplay = () => {
-      if (heroAutoplayId) {
-        window.clearInterval(heroAutoplayId);
-        heroAutoplayId = null;
-      }
-    };
-    if (heroGallery) {
-      heroGallery.addEventListener('mouseenter', stopHeroAutoplay);
-      heroGallery.addEventListener('mouseleave', startHeroAutoplay);
-      heroGallery.addEventListener('focusin', stopHeroAutoplay);
-      heroGallery.addEventListener('focusout', startHeroAutoplay);
-      document.addEventListener('visibilitychange', () => {
-        if (document.hidden) stopHeroAutoplay(); else startHeroAutoplay();
-      });
-    }
-
-    const onScroll = () => {
-      const scrolled = window.scrollY > 12;
-      nav.classList.toggle('scrolled', scrolled);
-      navInner.classList.toggle('gap', !scrolled);
-      if (scrolled) closeMenu();
-    };
-    toggle.addEventListener('click', () => {
-      const open = !menu.classList.contains('open');
-      menu.classList.toggle('open', open);
-      toggle.setAttribute('aria-expanded', String(open));
-    });
-    prevSlideButton?.addEventListener('click', () => moveHeroGallery(-1));
-    nextSlideButton?.addEventListener('click', () => moveHeroGallery(1));
-    heroGalleryDots.forEach((dot, index) => {
-      dot.addEventListener('click', () => goToHeroSlide(index));
-    });
-    menuList.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
-    window.addEventListener('click', (e) => { if (!menu.contains(e.target) && menu.classList.contains('open')) closeMenu(); });
-    heroGalleryTrack?.addEventListener('scroll', updateHeroGallery, { passive: true });
-    window.addEventListener('resize', updateHeroGallery);
+    /* ---------- nav ---------- */
+    const header = document.getElementById('header');
+    const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 24);
+    window.addEventListener('scroll', onScroll, {passive:true});
     onScroll();
-    updateHeroGallery();
-    startHeroAutoplay();
-    window.addEventListener('scroll', onScroll, { passive: true });
 
-    // Scroll-spy: highlight current section in nav-anchors
-    const navAnchorLinks = Array.from(document.querySelectorAll('#nav-anchors a'));
-    const sectionMap = new Map();
-    navAnchorLinks.forEach(link => {
-      const id = link.getAttribute('href')?.replace('#', '');
-      const target = id && document.getElementById(id);
-      if (target) sectionMap.set(target, link);
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', open);
     });
-    if (sectionMap.size && 'IntersectionObserver' in window) {
-      const setActiveLink = (link) => {
-        navAnchorLinks.forEach(l => l.removeAttribute('aria-current'));
-        if (link) link.setAttribute('aria-current', 'true');
-      };
-      const observer = new IntersectionObserver((entries) => {
-        const visible = entries
-          .filter(e => e.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
-        if (visible.length) {
-          setActiveLink(sectionMap.get(visible[0].target));
-        }
-      }, { rootMargin: '-40% 0px -50% 0px', threshold: [0, 0.1, 0.25, 0.5, 1] });
-      sectionMap.forEach((_, section) => observer.observe(section));
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    }));
+
+    /* ---------- hero crossfade ---------- */
+    const slides = document.querySelectorAll('.hero-bg img');
+    let slideIdx = 0;
+    setInterval(() => {
+      slides[slideIdx].classList.remove('active');
+      slideIdx = (slideIdx + 1) % slides.length;
+      slides[slideIdx].classList.add('active');
+    }, 6000);
+
+    /* ---------- reveal on scroll ---------- */
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    /* ---------- instant estimate ----------
+       Pricing model (from internal quote calculator):
+       - Lights:  (ft × 1.1) / 25 pcs × $260  = $11.44/ft
+       - Track:   (ft × 1.1) / 3 pcs × $11.50 = $4.22/ft
+       - Cable:   ft × $1.15                  = $1.15/ft
+       - Power supply: $575 per 300 ft run
+       - Misc materials: $200
+       - Lift (non-ladder access): $725
+       Quote = 2 × material cost; shown as a −10% / +15% range. */
+    const PER_FT = (1.1/25)*260 + (1.1/3)*11.5 + 1.15;
+    const PSU = 575, MISC = 200, LIFT = 725;
+
+    function estimateRange(ft, ladderAccess){
+      const materials = ft*PER_FT + MISC + Math.ceil(ft/300)*PSU + (ladderAccess ? 0 : LIFT);
+      const quote = materials * 2;
+      const round100 = v => Math.round(v/100)*100;
+      return { low: round100(quote*0.9), high: round100(quote*1.15) };
     }
 
-    // Referral CTA: scroll to quote form and focus the referrer field
-    const referCta = document.getElementById('refer-cta');
-    const focusReferrer = () => {
-      const referrer = document.getElementById('referrer');
-      if (referrer) {
-        referrer.focus({ preventScroll: true });
-        referrer.placeholder = 'Their name (so we know who to thank!)';
-      }
-    };
-    referCta?.addEventListener('click', (e) => {
-      e.preventDefault();
-      const quote = document.getElementById('quote');
-      quote?.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
-      window.setTimeout(focusReferrer, reduceMotion ? 0 : 600);
-      history.replaceState(null, '', '#quote');
+    const ftRange = document.getElementById('ftRange');
+    const ftDisplay = document.getElementById('ftDisplay');
+    const estPrice = document.getElementById('estPrice');
+    const estimateField = document.getElementById('estimateField');
+    const accessLadder = document.getElementById('accessLadder');
+    const fmt = v => '$' + v.toLocaleString('en-CA');
+
+    function updateEstimate(){
+      const ft = +ftRange.value;
+      const ladder = accessLadder.checked;
+      const {low, high} = estimateRange(ft, ladder);
+      ftDisplay.innerHTML = ft + '<small>linear ft</small>';
+      estPrice.textContent = fmt(low) + ' – ' + fmt(high);
+      const pct = ((ft - ftRange.min) / (ftRange.max - ftRange.min)) * 100;
+      ftRange.style.setProperty('--fill', pct + '%');
+      estimateField.value = ft + ' ft, ' + (ladder ? 'ladder accessible' : 'lift required') + ', estimate ' + fmt(low) + '–' + fmt(high);
+    }
+    ftRange.addEventListener('input', updateEstimate);
+    document.querySelectorAll('input[name=access]').forEach(r => r.addEventListener('change', updateEstimate));
+    updateEstimate();
+
+    /* carry estimate into the form notes */
+    document.getElementById('lockQuoteBtn').addEventListener('click', () => {
+      const notes = document.getElementById('notes');
+      if (!notes.value.trim()) notes.value = 'Instant estimate: ' + estimateField.value;
     });
 
+    /* ---------- form submit ---------- */
     const quoteForm = document.getElementById('quote-form');
     const quoteResult = document.getElementById('quote-result');
-    if (quoteForm) {
-      quoteForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const submitBtn = quoteForm.querySelector('button[type="submit"]');
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Sending\u2026';
-        try {
-          const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(quoteForm) });
-          const json = await res.json();
-          if (json.success) {
-            quoteForm.style.display = 'none';
-            quoteResult.style.cssText = 'display:block; padding:16px; border-radius:12px; background:rgba(53,185,255,0.1); border:1px solid rgba(53,185,255,0.3);';
-            quoteResult.innerHTML = '<strong style="color:var(--text)">Message sent!</strong><p style="margin:6px 0 0; color:var(--muted)">We\'ll be in touch within 1 business day.</p>';
-          } else {
-            throw new Error('Submission failed');
-          }
-        } catch {
-          submitBtn.disabled = false;
-          submitBtn.textContent = 'Get a Free Quote';
-          quoteResult.style.cssText = 'display:block; padding:16px; border-radius:12px; background:rgba(255,80,80,0.08); border:1px solid rgba(255,80,80,0.25);';
-          quoteResult.innerHTML = '<strong style="color:var(--text)">Something went wrong.</strong><p style="margin:6px 0 0; color:var(--muted)">Please call or text us at (778) 909-6758.</p>';
-        }
-      });
-    }
+    quoteForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = quoteForm.querySelector('button[type=submit]');
+      btn.disabled = true; btn.textContent = 'Sending…';
+      try{
+        const res = await fetch('https://api.web3forms.com/submit', { method:'POST', body:new FormData(quoteForm) });
+        quoteResult.style.display = 'block';
+        if (res.ok){
+          quoteResult.style.background = 'rgba(96,190,120,.12)';
+          quoteResult.style.border = '1px solid rgba(96,190,120,.4)';
+          quoteResult.textContent = "Thanks! Your request is in — we'll reply within one business day.";
+          quoteForm.reset(); updateEstimate();
+        } else { throw new Error(); }
+      }catch{
+        quoteResult.style.display = 'block';
+        quoteResult.style.background = 'rgba(226,101,79,.12)';
+        quoteResult.style.border = '1px solid rgba(226,101,79,.4)';
+        quoteResult.innerHTML = 'Something went wrong — please call or text <a href="tel:+17789096758" style="color:var(--amber-2)">(778) 909-6758</a> instead.';
+      }finally{
+        btn.disabled = false; btn.textContent = 'Request My Free Quote';
+      }
+    });
   </script>
 </body>
 </html>
