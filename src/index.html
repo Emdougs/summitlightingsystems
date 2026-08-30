@@ -192,6 +192,7 @@
     .brand{display:flex;align-items:center}
     .brand img{height:44px;width:auto;display:block}
     .nav-links{display:flex;gap:26px;font-size:.9rem;color:var(--muted)}
+    @media(max-width:1180px){.nav-links{gap:17px;font-size:.85rem}}
     .nav-links a{transition:.2s}
     .nav-links a:hover{color:var(--amber-2)}
     .nav-cta{display:flex;gap:10px;align-items:center}
@@ -303,6 +304,102 @@
     .shot.tall{grid-column:span 5;aspect-ratio:auto}
     @media(max-width:760px){.shot.wide,.shot.tall{grid-column:span 12;aspect-ratio:16/10}}
     .specs{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+
+    /* ---------- reviews ----------
+       Single featured review. When there are 3+, change .reviews-wrap to:
+       max-width:none;display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(320px,1fr)) */
+    .reviews-wrap{max-width:820px;margin:44px auto 0}
+    .review-card{
+      border:1px solid var(--line);border-radius:var(--radius);
+      background:var(--bg-2);padding:34px 34px 26px;position:relative;overflow:hidden;
+    }
+    .review-card::before{
+      content:"\201C";position:absolute;top:-6px;right:24px;
+      font-family:'Sora',sans-serif;font-size:6rem;line-height:1;
+      color:rgba(242,180,80,.14);pointer-events:none;
+    }
+    .review-stars{display:flex;gap:3px;margin-bottom:16px}
+    .review-text{color:var(--text);font-size:1.02rem;line-height:1.75;position:relative}
+    .review-foot{
+      display:flex;align-items:center;gap:13px;flex-wrap:wrap;
+      margin-top:24px;padding-top:20px;border-top:1px solid var(--line);
+    }
+    .review-avatar{
+      width:42px;height:42px;border-radius:50%;flex:none;display:grid;place-items:center;
+      font-family:'Sora',sans-serif;font-weight:700;font-size:1.05rem;color:#1d1503;
+      background:linear-gradient(135deg,var(--amber-2),var(--amber));
+    }
+    .review-who strong{display:block;font-size:.95rem;font-weight:600}
+    .review-who span{font-size:.8rem;color:var(--muted)}
+    .review-source{
+      margin-left:auto;display:inline-flex;align-items:center;gap:8px;
+      font-size:.78rem;color:var(--muted);
+      border:1px solid var(--line-2);border-radius:999px;padding:7px 14px;
+    }
+    @media(max-width:560px){.review-source{margin-left:0}}
+    .review-tie{
+      display:inline-flex;align-items:center;gap:7px;margin-top:22px;
+      font-size:.88rem;font-weight:500;color:var(--amber-2);transition:.2s;
+    }
+    .review-tie:hover{gap:11px}
+
+    /* ---------- install gallery ---------- */
+    .ig{columns:3;column-gap:16px;margin-top:48px}
+    @media(max-width:900px){.ig{columns:2}}
+    @media(max-width:560px){.ig{columns:1}}
+    .ig-item{
+      break-inside:avoid;margin:0 0 16px;padding:0;width:100%;display:block;position:relative;
+      border:1px solid var(--line);border-radius:14px;overflow:hidden;
+      background:var(--bg-2);cursor:zoom-in;font:inherit;color:inherit;text-align:left;
+    }
+    .ig-item img{width:100%;height:auto;transition:transform .55s}
+    .ig-item:hover img{transform:scale(1.045)}
+    .ig-item:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+    .ig-cap{
+      position:absolute;inset:auto 0 0 0;padding:38px 14px 13px;
+      background:linear-gradient(transparent,rgba(8,10,15,.9));
+      font-size:.84rem;font-weight:500;line-height:1.45;color:var(--text);
+    }
+    .ig-note{text-align:center;font-size:.85rem;color:var(--muted);margin-top:10px}
+
+    /* ---------- lightbox ---------- */
+    .lb{
+      position:fixed;inset:0;z-index:100;display:none;
+      align-items:center;justify-content:center;padding:6vh 5vw;
+      background:rgba(6,8,12,.95);backdrop-filter:blur(8px);
+    }
+    .lb.open{display:flex}
+    /* explicit width (not max-width) — a percentage max-width on the image
+       otherwise creates a sizing cycle and the figure overflows on narrow screens */
+    .lb-fig{
+      display:flex;flex-direction:column;align-items:center;gap:16px;
+      width:min(1100px,88vw);min-width:0;
+    }
+    .lb-fig img{
+      max-width:100%;max-height:76vh;width:auto;height:auto;
+      border-radius:12px;object-fit:contain;box-shadow:0 30px 80px rgba(0,0,0,.6);
+    }
+    .lb-cap{font-size:.92rem;color:var(--muted);text-align:center;max-width:min(620px,100%)}
+    .lb-btn{
+      position:absolute;width:46px;height:46px;border-radius:50%;
+      display:grid;place-items:center;cursor:pointer;transition:.2s;
+      background:rgba(255,255,255,.07);border:1px solid var(--line-2);color:var(--text);
+    }
+    .lb-btn:hover{background:rgba(242,180,80,.18);border-color:var(--amber);color:var(--amber-2)}
+    .lb-btn:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+    .lb-prev,.lb-next{top:50%;transform:translateY(-50%)}
+    .lb-prev{left:2vw}
+    .lb-next{right:2vw}
+    .lb-close{top:3vh;right:2vw}
+    .lb-count{
+      position:absolute;bottom:3vh;left:50%;transform:translateX(-50%);
+      font-size:.8rem;color:var(--muted);letter-spacing:.06em;
+    }
+    @media(max-width:620px){
+      .lb{padding:8vh 3vw}
+      .lb-btn{width:38px;height:38px}
+      .lb-prev{left:4px}.lb-next{right:4px}.lb-close{right:8px;top:2vh}
+    }
 
     /* ---------- estimate ---------- */
     .estimate-wrap{
@@ -482,6 +579,8 @@
       <nav class="nav-links" aria-label="Primary">
         <a href="#switch">Why Permanent</a>
         <a href="#system">The System</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#reviews">Reviews</a>
         <a href="#estimate">Instant Estimate</a>
         <a href="#process">Process</a>
         <a href="#faq">FAQ</a>
@@ -495,6 +594,8 @@
     <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile">
       <a href="#switch">Why Permanent</a>
       <a href="#system">The System</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#reviews">Reviews</a>
       <a href="#estimate">Instant Estimate</a>
       <a href="#process">Process</a>
       <a href="#area">Service Area</a>
@@ -555,8 +656,55 @@
       </div>
     </div>
 
+    <!-- REVIEWS -->
+    <section id="reviews">
+      <div class="shell">
+        <div class="center reveal">
+          <div class="eyebrow" style="justify-content:center">Reviews</div>
+          <h2>What our customers say.</h2>
+          <p class="lead" style="margin-top:14px;margin-inline:auto">Real reviews from real West Kootenays homeowners.</p>
+        </div>
+        <div class="reviews-wrap">
+          <!-- Add another review by copying one .review-card block. -->
+          <figure class="review-card reveal">
+            <div class="review-stars" role="img" aria-label="Rated 5 out of 5 stars">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="#f2b450" aria-hidden="true"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="#f2b450" aria-hidden="true"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="#f2b450" aria-hidden="true"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="#f2b450" aria-hidden="true"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="#f2b450" aria-hidden="true"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+            </div>
+            <blockquote class="review-text">
+              Our experience with summit lighting was awesome! From the planning, to the install, to enjoying our lights, everything was seamless. Eric was responsive and timely in communicating with us. He included us in the planning the day of install by asking our preference for the power supply placement. We were shown how to navigate the app to use our lights and offered support after if anything is needed. We completed permanent lights on the front of our house but I would not hesitate to contact summit lighting to extend our package! Highly recommend!
+            </blockquote>
+            <a class="review-tie" href="#gallery">
+              See Katie's install in the gallery
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <figcaption class="review-foot">
+              <div class="review-avatar" aria-hidden="true">K</div>
+              <div class="review-who">
+                <strong>Katie Rumbolt</strong>
+                <span>Castlegar, BC · August 2026</span>
+              </div>
+              <span class="review-source">
+                <svg width="14" height="14" viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M45.1 24.5c0-1.6-.1-2.8-.5-4H24v7.5h12.1c-.2 2-1.6 5-4.5 7l6.9 5.4c4.1-3.8 6.6-9.4 6.6-15.9z"/><path fill="#34A853" d="M24 46c5.9 0 10.9-2 14.5-5.3l-6.9-5.4c-1.9 1.3-4.4 2.2-7.6 2.2-5.8 0-10.7-3.8-12.5-9.1l-7.1 5.5C8.1 41 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.5 28.4c-.5-1.4-.7-2.9-.7-4.4s.3-3 .7-4.4l-7.1-5.6C2.9 17 2 20.4 2 24s.9 7 2.4 10l7.1-5.6z"/><path fill="#EA4335" d="M24 10.6c4.1 0 6.9 1.8 8.5 3.3l6.2-6C34.9 4.4 29.9 2 24 2 15.4 2 8.1 7 4.4 14l7.1 5.6c1.8-5.3 6.7-9 12.5-9z"/></svg>
+                Verified Google review
+              </span>
+            </figcaption>
+          </figure>
+          <div class="center" style="margin-top:26px">
+            <a class="btn ghost" href="https://www.google.com/search?kgmid=/g/11z3np9lxh&amp;q=Summit+Lighting+Systems" target="_blank" rel="noopener">
+              <svg width="15" height="15" viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M45.1 24.5c0-1.6-.1-2.8-.5-4H24v7.5h12.1c-.2 2-1.6 5-4.5 7l6.9 5.4c4.1-3.8 6.6-9.4 6.6-15.9z"/><path fill="#34A853" d="M24 46c5.9 0 10.9-2 14.5-5.3l-6.9-5.4c-1.9 1.3-4.4 2.2-7.6 2.2-5.8 0-10.7-3.8-12.5-9.1l-7.1 5.5C8.1 41 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.5 28.4c-.5-1.4-.7-2.9-.7-4.4s.3-3 .7-4.4l-7.1-5.6C2.9 17 2 20.4 2 24s.9 7 2.4 10l7.1-5.6z"/><path fill="#EA4335" d="M24 10.6c4.1 0 6.9 1.8 8.5 3.3l6.2-6C34.9 4.4 29.9 2 24 2 15.4 2 8.1 7 4.4 14l7.1 5.6c1.8-5.3 6.7-9 12.5-9z"/></svg>
+              Read all our reviews on Google
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- WHY SWITCH -->
-    <section id="switch">
+    <section id="switch" style="padding-top:0">
       <div class="shell">
         <div class="center reveal">
           <div class="eyebrow" style="justify-content:center">Why Homeowners Switch</div>
@@ -664,8 +812,73 @@
       </div>
     </section>
 
+    <!-- INSTALL GALLERY -->
+    <section id="gallery">
+      <div class="shell">
+        <div class="center reveal">
+          <div class="eyebrow" style="justify-content:center">Our Work</div>
+          <h2>Real installs. Real Kootenay homes.</h2>
+          <p class="lead" style="margin-top:14px;margin-inline:auto">Every photo below is our own work — no stock images, no renders. Tap any shot to see it full size.</p>
+        </div>
+
+        <div class="ig reveal">
+          <button type="button" class="ig-item" data-full="Assets/gallery/red-green-christmas-lights-night.webp" data-cap="Red and green for Christmas on a Castlegar home — set from the app, no ladder required.">
+            <img src="Assets/gallery/red-green-christmas-lights-night-thumb.webp" width="800" height="600" loading="lazy" decoding="async" alt="Permanent Christmas lights in red and green outlining the roofline of a two-storey home in Castlegar BC at dusk" />
+            <span class="ig-cap">Red and green for Christmas on a Castlegar home — set from the app, no ladder required.</span>
+          </button>
+
+          <button type="button" class="ig-item" data-full="Assets/gallery/warm-white-roofline-lighting-night.webp" data-cap="Same Castlegar home in warm white — the setting most customers run 350 nights a year.">
+            <img src="Assets/gallery/warm-white-roofline-lighting-night-thumb.webp" width="800" height="600" loading="lazy" decoding="async" alt="The same Castlegar BC home lit in warm white permanent roofline lighting on a clear winter evening" />
+            <span class="ig-cap">Same Castlegar home in warm white — the setting most customers run 350 nights a year.</span>
+          </button>
+
+          <button type="button" class="ig-item" data-full="Assets/gallery/castlegar-blue-white-christmas-lights-night.webp" data-cap="Blue and white on a Castlegar roofline, gables and porch included.">
+            <img src="Assets/gallery/castlegar-blue-white-christmas-lights-night-thumb.webp" width="800" height="600" loading="lazy" decoding="async" alt="Permanent roofline lights in blue and white on a Castlegar BC home at night" />
+            <span class="ig-cap">Blue and white on a Castlegar roofline, gables and porch included.</span>
+          </button>
+
+          <button type="button" class="ig-item" data-full="Assets/gallery/castlegar-warm-white-gable-dusk.webp" data-cap="Warm white picking out every gable at dusk in Castlegar.">
+            <img src="Assets/gallery/castlegar-warm-white-gable-dusk-thumb.webp" width="800" height="600" loading="lazy" decoding="async" alt="Warm white permanent lighting outlining cedar shake gables on a Castlegar home against a deep blue dusk sky" />
+            <span class="ig-cap">Warm white picking out every gable at dusk in Castlegar.</span>
+          </button>
+
+          <button type="button" class="ig-item" data-full="Assets/gallery/permanent-light-track-detail-daytime.webp" data-cap="Track tucked under the eave and colour-matched — this is what it looks like by day.">
+            <img src="Assets/gallery/permanent-light-track-detail-daytime-thumb.webp" width="600" height="800" loading="lazy" decoding="async" alt="Close-up of low-profile permanent lighting track mounted flush under the eave of a Castlegar BC home, colour-matched to the trim" />
+            <span class="ig-cap">Track tucked under the eave and colour-matched — this is what it looks like by day.</span>
+          </button>
+
+          <button type="button" class="ig-item" data-full="Assets/gallery/castlegar-permanent-roofline-lighting-daytime.webp" data-cap="The same install by daylight — you have to look for the track.">
+            <img src="Assets/gallery/castlegar-permanent-roofline-lighting-daytime-thumb.webp" width="800" height="600" loading="lazy" decoding="async" alt="Low-profile permanent light track colour-matched to white trim on a Castlegar BC home in daylight" />
+            <span class="ig-cap">The same install by daylight — you have to look for the track.</span>
+          </button>
+
+          <button type="button" class="ig-item" data-full="Assets/gallery/warm-white-roofline-lighting-daytime.webp" data-cap="Warm white running in daylight across a full two-storey Castlegar roofline.">
+            <img src="Assets/gallery/warm-white-roofline-lighting-daytime-thumb.webp" width="600" height="800" loading="lazy" decoding="async" alt="Warm white permanent roofline lighting switched on during the day on a large two-storey home in Castlegar BC" />
+            <span class="ig-cap">Warm white running in daylight across a full two-storey Castlegar roofline.</span>
+          </button>
+
+          <button type="button" class="ig-item" data-full="Assets/gallery/castlegar-light-track-soffit-daytime.webp" data-cap="Lights on in broad daylight — that's how low-profile the track sits.">
+            <img src="Assets/gallery/castlegar-light-track-soffit-daytime-thumb.webp" width="800" height="600" loading="lazy" decoding="async" alt="Close-up of permanent LED lights mounted under the soffit of a Castlegar BC home and lit during the day, showing how discreet the track is" />
+            <span class="ig-cap">Lights on in broad daylight — that's how low-profile the track sits.</span>
+          </button>
+
+          <button type="button" class="ig-item" data-full="Assets/gallery/summit-install-ladder-in-progress.webp" data-cap="Install day in Castlegar — track going up, valley behind.">
+            <img src="Assets/gallery/summit-install-ladder-in-progress-thumb.webp" width="600" height="800" loading="lazy" decoding="async" alt="SUMMIT Lighting Systems installer mounting permanent light track from a ladder on a Castlegar BC home, Kootenay mountains behind" />
+            <span class="ig-cap">Install day in Castlegar — track going up, valley behind.</span>
+          </button>
+
+          <button type="button" class="ig-item" data-full="Assets/gallery/summit-install-lift-in-progress.webp" data-cap="Every light seated by hand, one at a time, on a lift where the peaks are high.">
+            <img src="Assets/gallery/summit-install-lift-in-progress-thumb.webp" width="800" height="600" loading="lazy" decoding="async" alt="SUMMIT installer setting permanent LED lights into track from a lift above a Castlegar BC rooftop, Kootenay valley beyond" />
+            <span class="ig-cap">Every light seated by hand, one at a time, on a lift where the peaks are high.</span>
+          </button>
+        </div>
+
+        <p class="ig-note">Want to see a home like yours? <a href="#quote" style="color:var(--amber-2)">Ask us for local references</a> — we'll point you at an install near you.</p>
+      </div>
+    </section>
+
     <!-- ESTIMATE CALCULATOR -->
-    <section id="estimate">
+    <section id="estimate" style="padding-top:0">
       <div class="shell">
         <div class="center reveal">
           <div class="eyebrow" style="justify-content:center">Instant Estimate</div>
@@ -897,6 +1110,24 @@
     </div>
   </footer>
 
+  <!-- GALLERY LIGHTBOX -->
+  <div class="lb" id="lightbox" role="dialog" aria-modal="true" aria-label="Install photo viewer">
+    <button type="button" class="lb-btn lb-close" aria-label="Close photo viewer">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+    <button type="button" class="lb-btn lb-prev" aria-label="Previous photo">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <button type="button" class="lb-btn lb-next" aria-label="Next photo">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+    </button>
+    <figure class="lb-fig">
+      <img id="lbImg" src="" alt="" />
+      <figcaption class="lb-cap" id="lbCap"></figcaption>
+    </figure>
+    <div class="lb-count" id="lbCount"></div>
+  </div>
+
   <div class="sticky-cta">
     <a class="btn ghost" href="tel:+17789096758">Call / Text</a>
     <a class="btn primary" href="#estimate">Instant Estimate</a>
@@ -934,6 +1165,67 @@
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
     }, {threshold:.12});
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    /* ---------- install gallery lightbox ---------- */
+    const igItems = [...document.querySelectorAll('.ig-item')];
+    if (igItems.length) {
+      const lb = document.getElementById('lightbox');
+      const lbImg = document.getElementById('lbImg');
+      const lbCap = document.getElementById('lbCap');
+      const lbCount = document.getElementById('lbCount');
+      const lbClose = lb.querySelector('.lb-close');
+      let idx = 0, lastFocus = null;
+
+      const show = i => {
+        idx = (i + igItems.length) % igItems.length;
+        const el = igItems[idx];
+        lbImg.src = el.dataset.full;
+        lbImg.alt = el.querySelector('img').alt;
+        lbCap.textContent = el.dataset.cap || '';
+        lbCount.textContent = (idx + 1) + ' / ' + igItems.length;
+        /* warm the neighbours so arrowing through feels instant */
+        [idx + 1, idx - 1].forEach(n => {
+          const nb = igItems[(n + igItems.length) % igItems.length];
+          new Image().src = nb.dataset.full;
+        });
+      };
+
+      const openLb = i => {
+        lastFocus = document.activeElement;
+        show(i);
+        lb.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        lbClose.focus();
+      };
+
+      const closeLb = () => {
+        lb.classList.remove('open');
+        document.body.style.overflow = '';
+        lbImg.src = '';
+        if (lastFocus) lastFocus.focus();
+      };
+
+      igItems.forEach((el, i) => el.addEventListener('click', () => openLb(i)));
+      lbClose.addEventListener('click', closeLb);
+      lb.querySelector('.lb-prev').addEventListener('click', () => show(idx - 1));
+      lb.querySelector('.lb-next').addEventListener('click', () => show(idx + 1));
+      lb.addEventListener('click', e => { if (e.target === lb) closeLb(); });
+
+      document.addEventListener('keydown', e => {
+        if (!lb.classList.contains('open')) return;
+        if (e.key === 'Escape') closeLb();
+        else if (e.key === 'ArrowLeft') show(idx - 1);
+        else if (e.key === 'ArrowRight') show(idx + 1);
+        else if (e.key === 'Tab') { e.preventDefault(); lbClose.focus(); }
+      });
+
+      let touchX = 0;
+      lb.addEventListener('touchstart', e => { touchX = e.changedTouches[0].clientX; }, {passive:true});
+      lb.addEventListener('touchend', e => {
+        const dx = e.changedTouches[0].clientX - touchX;
+        if (Math.abs(dx) > 55) show(dx < 0 ? idx + 1 : idx - 1);
+      }, {passive:true});
+    }
 
     /* ---------- instant estimate ----------
        Pricing model (from internal quote calculator):

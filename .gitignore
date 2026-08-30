@@ -1,0 +1,7 @@
+# macOS
+.DS_Store
+
+# Photo masters (HEIC / full-res originals).
+# The optimized WebP versions that the site actually serves live in
+# src/Assets/gallery/ and are committed.
+photo-originals/
