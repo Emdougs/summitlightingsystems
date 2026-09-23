@@ -620,8 +620,22 @@
     .center{text-align:center}
     .center .lead{margin:0 auto}
   </style>
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '924639360726900');
+    fbq('track', 'PageView');
+  </script>
+  <!-- End Meta Pixel Code -->
 </head>
 <body>
+<!-- Meta Pixel (noscript fallback) -->
+<noscript><img height="1" width="1" style="display:none" alt=""
+  src="https://www.facebook.com/tr?id=924639360726900&amp;ev=PageView&amp;noscript=1"/></noscript>
 
   <header id="header">
     <div class="shell nav">
@@ -1412,15 +1426,22 @@
     document.getElementById('lockQuoteBtn').addEventListener('click', () => {
       const notes = document.getElementById('notes');
       if (!notes.value.trim()) notes.value = 'Instant estimate: ' + estimateField.value;
+      if (window.fbq) fbq('trackCustom', 'InstantEstimate', { estimate: estimateField.value });
     });
 
     /* ---------- form submit ---------- */
     const quoteForm = document.getElementById('quote-form');
     const quoteResult = document.getElementById('quote-result');
+
+    /* Meta Pixel: fire only if the pixel actually loaded (ad blockers, noscript) */
+    const track = (event, params) => { if (window.fbq) fbq('track', event, params); };
+
     quoteForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       const btn = quoteForm.querySelector('button[type=submit]');
       btn.disabled = true; btn.textContent = 'Sending…';
+      /* capture the estimate before the form resets */
+      const quoted = estimateRange(+ftRange.value, accessLadder.checked);
       try{
         const res = await fetch('https://api.web3forms.com/submit', { method:'POST', body:new FormData(quoteForm) });
         quoteResult.style.display = 'block';
@@ -1428,6 +1449,7 @@
           quoteResult.style.background = 'rgba(96,190,120,.12)';
           quoteResult.style.border = '1px solid rgba(96,190,120,.4)';
           quoteResult.textContent = "Thanks! Your request is in — we'll reply within one business day.";
+          track('Lead', { content_name: 'Quote request form', value: quoted.low, currency: 'CAD' });
           quoteForm.reset(); updateEstimate();
         } else { throw new Error(); }
       }catch{
@@ -1438,6 +1460,15 @@
       }finally{
         btn.disabled = false; btn.textContent = 'Request My Free Quote';
       }
+    });
+
+    /* ---------- Meta Pixel: call / text / email clicks ---------- */
+    document.addEventListener('click', (e) => {
+      const link = e.target.closest('a[href^="tel:"], a[href^="mailto:"]');
+      if (!link || !window.fbq) return;
+      fbq('track', 'Contact', {
+        content_name: link.getAttribute('href').startsWith('tel:') ? 'Call / Text' : 'Email'
+      });
     });
   </script>
 </body>
