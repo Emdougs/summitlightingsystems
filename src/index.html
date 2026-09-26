@@ -458,8 +458,17 @@
       display:grid;grid-template-columns:1.05fr .95fr;gap:28px;margin-top:48px;align-items:stretch;
     }
     @media(max-width:920px){.estimate-wrap{grid-template-columns:1fr}}
+    .flow-band{background:var(--bg-2)}
+    #estimate.flow-band{padding-bottom:0}
+    #quote.flow-band{padding-top:40px;scroll-margin-top:40px}
+    /* CTAs jump straight to the form -- on mobile the contact card sits above it */
+    #quote-form{scroll-margin-top:96px}
+    .step-connector{
+      display:flex;justify-content:center;margin:40px auto 0;
+      font-family:'Sora',sans-serif;font-size:1.3rem;color:var(--amber);
+    }
     .est-controls{
-      border:1px solid var(--line);border-radius:var(--radius);background:var(--bg-2);padding:34px;
+      border:1px solid var(--line);border-radius:var(--radius);background:var(--bg-3);padding:34px;
       display:flex;flex-direction:column;gap:30px;
     }
     .field-label{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px}
@@ -584,6 +593,35 @@
     .form-field input:focus,.form-field textarea:focus{border-color:var(--amber);box-shadow:0 0 0 3px rgba(242,180,80,.15)}
     .form-field textarea{min-height:110px;resize:vertical}
     #quote-result{display:none;padding:16px 20px;border-radius:12px;font-size:.92rem}
+    .est-summary{
+      border:1px solid rgba(242,180,80,.35);border-radius:14px;
+      background:linear-gradient(165deg,rgba(242,180,80,.1),var(--bg-3) 70%);
+      padding:16px 20px;
+    }
+    .est-summary-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+    .est-summary-label{font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--amber)}
+    .est-summary-edit{font-size:.82rem;color:var(--amber-2);font-weight:600}
+    .est-summary-edit:hover{text-decoration:underline}
+    .est-summary-price{
+      font-family:'Sora',sans-serif;font-size:1.45rem;font-weight:800;
+      color:var(--amber-2);letter-spacing:-.01em;margin-top:2px;
+    }
+    .est-summary-meta{font-size:.82rem;color:var(--muted)}
+    .form-more{border:0;background:none;margin:0;border-radius:0;overflow:visible}
+    .form-more[open]{border:0}
+    .form-more summary{
+      padding:2px 0;font-size:.88rem;font-weight:600;color:var(--muted);
+      justify-content:flex-start;gap:8px;
+    }
+    .form-more summary span{font-weight:400}
+    .form-more summary::after{content:none}
+    .form-more summary::before{
+      content:"+";font-family:'Sora',sans-serif;font-size:1.1rem;color:var(--amber);
+      transition:transform .25s;
+    }
+    .form-more[open] summary::before{transform:rotate(45deg)}
+    .form-more summary:hover{color:var(--text)}
+    .form-more-body{display:grid;gap:18px;padding-top:14px}
 
     /* ---------- local seo strip ---------- */
     .local-strip{padding:0 0 96px}
@@ -982,56 +1020,6 @@
       </div>
     </section>
 
-    <!-- ESTIMATE CALCULATOR -->
-    <section id="estimate" style="padding-top:0">
-      <div class="shell">
-        <div class="center reveal">
-          <div class="eyebrow" style="justify-content:center">Instant Estimate</div>
-          <h2>What do permanent Christmas lights cost?</h2>
-          <p class="lead" style="margin-top:14px">Two quick questions. A real number — not a sales call.</p>
-        </div>
-        <div class="estimate-wrap">
-          <div class="est-controls reveal">
-            <div>
-              <div class="field-label">
-                <strong>Roofline to illuminate</strong>
-                <span class="hint">Front only? Whole perimeter? Your call.</span>
-              </div>
-              <div class="ft-display" id="ftDisplay">150<small>linear ft</small></div>
-              <input type="range" id="ftRange" min="40" max="400" step="5" value="150" aria-label="Roofline length in linear feet" />
-              <div class="range-marks"><span>40 ft</span><span>Typical home: 120–200 ft</span><span>400 ft</span></div>
-            </div>
-            <div>
-              <div class="field-label">
-                <strong>Roofline access</strong>
-                <span class="hint">Affects equipment needed</span>
-              </div>
-              <div class="seg">
-                <input type="radio" name="access" id="accessLadder" checked />
-                <label for="accessLadder">Reachable by ladder<small>Single storey / standard two storey</small></label>
-                <input type="radio" name="access" id="accessBoom" />
-                <label for="accessBoom">Some high or tricky spots<small>Steep pitch, tall peaks — lift required</small></label>
-              </div>
-            </div>
-            <p class="est-note">Not sure about either? Pick your best guess — we confirm everything with a free on-site measure before you commit to anything.</p>
-          </div>
-          <div class="est-result reveal">
-            <span class="eyebrow" style="margin-bottom:4px">Your estimated investment</span>
-            <div class="est-price" id="estPrice" aria-live="polite">$5,900 – $7,600</div>
-            <span class="est-note">Installed. Complete. No hidden extras.</span>
-            <ul class="est-includes">
-              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#f2b450" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Chromaglow Pro lights, track &amp; power system</li>
-              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#f2b450" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Professional installation &amp; clean cable routing</li>
-              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#f2b450" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>App setup, scenes &amp; schedules configured</li>
-              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#f2b450" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>10-year comprehensive warranty</li>
-            </ul>
-            <a class="btn primary" id="lockQuoteBtn" href="#quote">Lock In My Exact Quote — Free</a>
-            <p class="est-disclaimer">Estimate based on typical installs. Final pricing is confirmed after a free on-site measure and design — and founding-customer rates may bring it lower.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- PROCESS -->
     <section id="process" style="padding-top:0">
       <div class="shell">
@@ -1040,7 +1028,7 @@
           <h2>From quote to glowing roofline — usually in a day.</h2>
         </div>
         <div class="steps">
-          <div class="step reveal"><h3>Request your quote</h3><p>Use the instant estimate above, the quick form below, or just call. We reply within one business day.</p></div>
+          <div class="step reveal"><h3>Request your quote</h3><p>Use the instant estimate below, send the quick form, or just call. We reply within one business day.</p></div>
           <div class="step reveal"><h3>Free on-site design</h3><p>We measure your rooflines, check power access, and design the layout with you — no obligation.</p></div>
           <div class="step reveal"><h3>Professional install</h3><p>Clean mounting, tidy cable routing, colour-matched track, and a full system test.</p></div>
           <div class="step reveal"><h3>App setup &amp; handoff</h3><p>We configure your scenes and schedules, then hand you the controls. That's it — forever.</p></div>
@@ -1125,28 +1113,65 @@
       </div>
     </section>
 
-    <!-- REFERRAL -->
-    <section id="referral" style="padding-top:0">
+    <!-- ESTIMATE CALCULATOR -->
+    <section id="estimate" class="flow-band" style="border-top:1px solid var(--line)">
       <div class="shell">
-        <div class="referral reveal">
-          <div>
-            <div class="eyebrow">Referral Program</div>
-            <h2>Know a neighbour who needs this? Earn $200.</h2>
-            <p>Every completed referral install of $2,000+ puts $200 in your pocket. No cap, no catch — just have them mention your name in their quote request.</p>
-          </div>
-          <a class="btn primary" href="#quote">Refer Someone Now</a>
+        <div class="center reveal">
+          <div class="eyebrow" style="justify-content:center">Step 1 · Instant Estimate</div>
+          <h2>What do permanent Christmas lights cost?</h2>
+          <p class="lead" style="margin-top:14px">Two quick questions. A real number — not a sales call.</p>
         </div>
+        <div class="estimate-wrap">
+          <div class="est-controls reveal">
+            <div>
+              <div class="field-label">
+                <strong>Roofline to illuminate</strong>
+                <span class="hint">Front only? Whole perimeter? Your call.</span>
+              </div>
+              <div class="ft-display" id="ftDisplay">150<small>linear ft</small></div>
+              <input type="range" id="ftRange" min="40" max="400" step="5" value="150" aria-label="Roofline length in linear feet" />
+              <div class="range-marks"><span>40 ft</span><span>Typical home: 120–200 ft</span><span>400 ft</span></div>
+            </div>
+            <div>
+              <div class="field-label">
+                <strong>Roofline access</strong>
+                <span class="hint">Affects equipment needed</span>
+              </div>
+              <div class="seg">
+                <input type="radio" name="access" id="accessLadder" checked />
+                <label for="accessLadder">Reachable by ladder<small>Single storey / standard two storey</small></label>
+                <input type="radio" name="access" id="accessBoom" />
+                <label for="accessBoom">Some high or tricky spots<small>Steep pitch, tall peaks — lift required</small></label>
+              </div>
+            </div>
+            <p class="est-note">Not sure about either? Pick your best guess — we confirm everything with a free on-site measure before you commit to anything.</p>
+          </div>
+          <div class="est-result reveal">
+            <span class="eyebrow" style="margin-bottom:4px">Your estimated investment</span>
+            <div class="est-price" id="estPrice" aria-live="polite">$5,900 – $7,600</div>
+            <span class="est-note">Installed. Complete. No hidden extras.</span>
+            <ul class="est-includes">
+              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#f2b450" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Chromaglow Pro lights, track &amp; power system</li>
+              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#f2b450" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Professional installation &amp; clean cable routing</li>
+              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#f2b450" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>App setup, scenes &amp; schedules configured</li>
+              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#f2b450" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>10-year comprehensive warranty</li>
+            </ul>
+            <a class="btn primary" id="lockQuoteBtn" href="#quote-form">Lock In This Price — Free ↓</a>
+            <p class="est-disclaimer">Estimate based on typical installs. Final pricing is confirmed after a free on-site measure and design — and founding-customer rates may bring it lower.</p>
+          </div>
+        </div>
+        <div class="step-connector" aria-hidden="true">↓</div>
       </div>
     </section>
 
     <!-- QUOTE FORM -->
-    <section id="quote" style="background:var(--bg-2);border-top:1px solid var(--line)">
+    <section id="quote" class="flow-band">
       <div class="shell">
         <div class="quote-grid">
           <div class="reveal">
-            <div class="eyebrow">Get Your Free Quote</div>
+            <div class="eyebrow">Step 2 · Lock In Your Exact Quote</div>
             <h2>Reply within one business day. Zero pressure.</h2>
-            <p class="lead" style="margin-top:14px">Send the quick form, or call / text for a fast estimate. We'll set up a free on-site measure whenever you're ready.</p>
+            <p class="lead" style="margin-top:14px">We'll confirm your number with a free on-site measure. No commitment until you've seen the exact quote. Prefer to talk? Call or text anytime.</p>
             <div class="contact-card">
               <span><strong>Call / Text:</strong> <a href="tel:+17789096758">(778) 909-6758</a></span>
               <span><strong>Email:</strong> <a href="mailto:info@summitlightingsystems.ca">info@summitlightingsystems.ca</a></span>
@@ -1158,29 +1183,56 @@
             <input type="hidden" name="from_name" value="SUMMIT Website" />
             <input type="hidden" name="instant_estimate" id="estimateField" value="" />
             <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
+            <div class="est-summary">
+              <div class="est-summary-top">
+                <span class="est-summary-label">Your estimate</span>
+                <a href="#estimate" class="est-summary-edit">Edit ↑</a>
+              </div>
+              <div class="est-summary-price" id="sumPrice">$5,900 – $7,600</div>
+              <div class="est-summary-meta"><span id="sumFt">150 ft</span> · <span id="sumAccess">ladder accessible</span></div>
+            </div>
             <div class="form-field">
               <label for="name">Name</label>
               <input id="name" name="name" type="text" autocomplete="name" placeholder="Your name" required />
             </div>
             <div class="form-field">
-              <label for="address">Address / Community</label>
+              <label for="address">Town</label>
               <input id="address" name="address" type="text" autocomplete="address-level2" placeholder="Town or neighbourhood" required />
             </div>
             <div class="form-field">
               <label for="contact">Phone or Email</label>
               <input id="contact" name="contact" type="text" autocomplete="email" placeholder="(778) 909-6758 or you@example.com" required />
             </div>
-            <div class="form-field">
-              <label for="referrer">Who referred you? <span>(optional)</span></label>
-              <input id="referrer" name="referrer" type="text" placeholder="Name of the person who sent you" />
-            </div>
-            <div class="form-field">
-              <label for="notes">Project details <span>(optional)</span></label>
-              <textarea id="notes" name="notes" placeholder="Roofline length, timeline, special requests..."></textarea>
-            </div>
-            <button class="btn primary" type="submit">Request My Free Quote</button>
+            <details class="form-more">
+              <summary>Add details <span>(optional)</span></summary>
+              <div class="form-more-body">
+                <div class="form-field">
+                  <label for="referrer">Who referred you? <span>(optional)</span></label>
+                  <input id="referrer" name="referrer" type="text" placeholder="Name of the person who sent you" />
+                </div>
+                <div class="form-field">
+                  <label for="notes">Project details <span>(optional)</span></label>
+                  <textarea id="notes" name="notes" placeholder="Timeline, special requests, anything we should know..."></textarea>
+                </div>
+              </div>
+            </details>
+            <button class="btn primary" type="submit">Get My Exact Quote →</button>
             <div id="quote-result" role="status" aria-live="polite"></div>
           </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- REFERRAL -->
+    <section id="referral">
+      <div class="shell">
+        <div class="referral reveal">
+          <div>
+            <div class="eyebrow">Referral Program</div>
+            <h2>Know a neighbour who needs this? Earn $200.</h2>
+            <p>Every completed referral install of $2,000+ puts $200 in your pocket. No cap, no catch — just have them mention your name in their quote request.</p>
+          </div>
+          <a class="btn primary" id="referralBtn" href="#quote-form">Refer Someone Now</a>
         </div>
       </div>
     </section>
@@ -1406,6 +1458,9 @@
     const estPrice = document.getElementById('estPrice');
     const estimateField = document.getElementById('estimateField');
     const accessLadder = document.getElementById('accessLadder');
+    const sumPrice = document.getElementById('sumPrice');
+    const sumFt = document.getElementById('sumFt');
+    const sumAccess = document.getElementById('sumAccess');
     const fmt = v => '$' + v.toLocaleString('en-CA');
 
     function updateEstimate(){
@@ -1416,17 +1471,38 @@
       estPrice.textContent = fmt(low) + ' – ' + fmt(high);
       const pct = ((ft - ftRange.min) / (ftRange.max - ftRange.min)) * 100;
       ftRange.style.setProperty('--fill', pct + '%');
-      estimateField.value = ft + ' ft, ' + (ladder ? 'ladder accessible' : 'lift required') + ', estimate ' + fmt(low) + '–' + fmt(high);
+      const accessText = ladder ? 'ladder accessible' : 'lift required';
+      estimateField.value = ft + ' ft, ' + accessText + ', estimate ' + fmt(low) + '–' + fmt(high);
+      /* mirror into the summary card at the top of the quote form */
+      sumPrice.textContent = estPrice.textContent;
+      sumFt.textContent = ft + ' ft';
+      sumAccess.textContent = accessText;
     }
-    ftRange.addEventListener('input', updateEstimate);
-    document.querySelectorAll('input[name=access]').forEach(r => r.addEventListener('change', updateEstimate));
+
+    /* Meta Pixel: first interaction with the calculator, once per page view */
+    let estimateUsed = false;
+    const onEstimateInput = () => {
+      updateEstimate();
+      if (estimateUsed) return;
+      estimateUsed = true;
+      if (window.fbq) fbq('trackCustom', 'EstimateUsed');
+    };
+    ftRange.addEventListener('input', onEstimateInput);
+    document.querySelectorAll('input[name=access]').forEach(r => r.addEventListener('change', onEstimateInput));
     updateEstimate();
 
-    /* carry estimate into the form notes */
+    /* After an in-page jump to the form, focus a field once the smooth scroll settles. */
+    const focusAfterScroll = el => setTimeout(() => el.focus({preventScroll:true}), 600);
+
     document.getElementById('lockQuoteBtn').addEventListener('click', () => {
-      const notes = document.getElementById('notes');
-      if (!notes.value.trim()) notes.value = 'Instant estimate: ' + estimateField.value;
       if (window.fbq) fbq('trackCustom', 'InstantEstimate', { estimate: estimateField.value });
+      focusAfterScroll(document.getElementById('name'));
+    });
+
+    /* Referral CTA: open the optional details so the referrer field is ready */
+    document.getElementById('referralBtn').addEventListener('click', () => {
+      document.querySelector('.form-more').open = true;
+      focusAfterScroll(document.getElementById('referrer'));
     });
 
     /* ---------- form submit ---------- */
@@ -1458,7 +1534,7 @@
         quoteResult.style.border = '1px solid rgba(226,101,79,.4)';
         quoteResult.innerHTML = 'Something went wrong — please call or text <a href="tel:+17789096758" style="color:var(--amber-2)">(778) 909-6758</a> instead.';
       }finally{
-        btn.disabled = false; btn.textContent = 'Request My Free Quote';
+        btn.disabled = false; btn.textContent = 'Get My Exact Quote →';
       }
     });
 
