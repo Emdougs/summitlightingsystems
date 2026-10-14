@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Permanent Christmas Lights | Nelson, Castlegar &amp; Trail BC | SUMMIT</title>
-  <meta name="description" content="Permanent Christmas lights &amp; year-round roofline lighting in the West Kootenays. App-controlled, 10-year warranty. Get an instant online estimate." />
+  <meta name="description" content="Permanent Christmas lights &amp; year-round roofline lighting in the West Kootenays. App-controlled, 10-year warranty. Get a free custom quote." />
   <meta name="color-scheme" content="dark" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta name="geo.region" content="CA-BC" />
@@ -15,11 +15,11 @@
   <meta property="og:site_name" content="SUMMIT Lighting Systems" />
   <meta property="og:locale" content="en_CA" />
   <meta property="og:title" content="Permanent Christmas Lights &amp; Roofline Lighting | West Kootenays" />
-  <meta property="og:description" content="Install once, light every season. Instant online estimates for permanent roofline lighting in Nelson, Castlegar, Trail &amp; beyond." />
+  <meta property="og:description" content="Install once, light every season. Free custom quotes for permanent roofline lighting in Nelson, Castlegar, Trail &amp; beyond." />
   <meta property="og:image" content="https://summitlightingsystems.ca/Assets/hero/Chromaglow-Pro-Install-Shots-07206.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Permanent Christmas Lights &amp; Roofline Lighting | West Kootenays" />
-  <meta name="twitter:description" content="Install once, light every season. Instant online estimates across the West Kootenays." />
+  <meta name="twitter:description" content="Install once, light every season. Free custom quotes across the West Kootenays." />
   <meta name="twitter:image" content="https://summitlightingsystems.ca/Assets/hero/Chromaglow-Pro-Install-Shots-07206.jpg" />
   <link rel="icon" href="Assets/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -63,7 +63,7 @@
           "name": "Permanent Lighting Installation",
           "itemListElement": [{
             "@type": "Offer",
-            "itemOffered": { "@type": "Service", "name": "Permanent roofline lighting install (free quote, instant online estimate)" }
+            "itemOffered": { "@type": "Service", "name": "Permanent roofline lighting install (free custom quote)" }
           }]
         }
       },
@@ -104,7 +104,7 @@
           {
             "@type": "Question",
             "name": "How much do permanent Christmas lights cost in the West Kootenays?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Most homes fall between $4,000 and $11,000 installed, depending on roofline length and access. Use the instant estimate calculator on this page for a range specific to your home, then book a free on-site measure for an exact quote." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Most homes fall between $4,000 and $11,000 installed, depending on roofline length and access. Tell us your roofline length on this page and we'll send a quote specific to your home, then confirm it with a free on-site measure." }
           },
           {
             "@type": "Question",
@@ -455,9 +455,8 @@
 
     /* ---------- estimate ---------- */
     .estimate-wrap{
-      display:grid;grid-template-columns:1.05fr .95fr;gap:28px;margin-top:48px;align-items:stretch;
+      max-width:760px;margin:48px auto 0;
     }
-    @media(max-width:920px){.estimate-wrap{grid-template-columns:1fr}}
     .flow-band{background:var(--bg-2)}
     #estimate.flow-band{padding-bottom:0}
     #quote.flow-band{padding-top:40px;scroll-margin-top:40px}
@@ -506,21 +505,7 @@
       border-color:var(--amber);color:var(--text);
       background:rgba(242,180,80,.09);box-shadow:0 0 0 1px var(--amber) inset;
     }
-    .est-result{
-      border:1px solid rgba(242,180,80,.35);border-radius:var(--radius);
-      background:linear-gradient(165deg,rgba(242,180,80,.1),var(--bg-2) 60%);
-      padding:34px;display:flex;flex-direction:column;
-    }
-    .est-price{
-      font-family:'Sora',sans-serif;font-size:clamp(1.9rem,4.5vw,2.7rem);font-weight:800;
-      color:var(--amber-2);margin:6px 0 4px;letter-spacing:-.01em;
-    }
     .est-note{font-size:.8rem;color:var(--muted)}
-    .est-includes{list-style:none;display:grid;gap:11px;margin:26px 0;padding-top:24px;border-top:1px solid var(--line)}
-    .est-includes li{display:flex;gap:10px;font-size:.88rem;color:var(--muted);align-items:flex-start}
-    .est-includes svg{flex:none;margin-top:4px}
-    .est-result .btn{margin-top:auto}
-    .est-disclaimer{font-size:.74rem;color:var(--muted);margin-top:14px;opacity:.8}
 
     /* ---------- process ---------- */
     .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:48px;counter-reset:step}
@@ -685,13 +670,13 @@
         <a href="#system">The System</a>
         <a href="#gallery">Gallery</a>
         <a href="#reviews">Reviews</a>
-        <a href="#estimate">Instant Estimate</a>
+        <a href="#estimate">Get a Quote</a>
         <a href="#process">Process</a>
         <a href="#faq">FAQ</a>
       </nav>
       <div class="nav-cta">
         <a class="btn ghost" href="tel:+17789096758">Call / Text</a>
-        <a class="btn primary" href="#estimate">Get My Estimate</a>
+        <a class="btn primary" href="#estimate">Get My Quote</a>
         <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu">Menu</button>
       </div>
     </div>
@@ -700,7 +685,7 @@
       <a href="#system">The System</a>
       <a href="#gallery">Gallery</a>
       <a href="#reviews">Reviews</a>
-      <a href="#estimate">Instant Estimate</a>
+      <a href="#estimate">Get a Quote</a>
       <a href="#process">Process</a>
       <a href="#area">Service Area</a>
       <a href="#faq">FAQ</a>
@@ -725,7 +710,7 @@
           <h1>Hang lights for the last time. <span class="accent">Enjoy them forever.</span></h1>
           <p class="lead">Permanent Christmas lights, installed once by professionals: warm white elegance every evening, full colour for every holiday — all from your phone, all year round.</p>
           <div class="hero-ctas">
-            <a class="btn primary" href="#estimate">Get My Instant Estimate</a>
+            <a class="btn primary" href="#estimate">Get My Free Quote</a>
             <a class="btn ghost" href="tel:+17789096758">Call / Text (778) 909-6758</a>
           </div>
           <div class="trust-row">
@@ -1028,7 +1013,7 @@
           <h2>From quote to glowing roofline — usually in a day.</h2>
         </div>
         <div class="steps">
-          <div class="step reveal"><h3>Request your quote</h3><p>Use the instant estimate below, send the quick form, or just call. We reply within one business day.</p></div>
+          <div class="step reveal"><h3>Request your quote</h3><p>Size up your roofline below and send the quick form, or just call. We reply within one business day.</p></div>
           <div class="step reveal"><h3>Free on-site design</h3><p>We measure your rooflines, check power access, and design the layout with you — no obligation.</p></div>
           <div class="step reveal"><h3>Professional install</h3><p>Clean mounting, tidy cable routing, colour-matched track, and a full system test.</p></div>
           <div class="step reveal"><h3>App setup &amp; handoff</h3><p>We configure your scenes and schedules, then hand you the controls. That's it — forever.</p></div>
@@ -1095,11 +1080,11 @@
           </details>
           <details>
             <summary>How much do permanent Christmas lights cost in the West Kootenays?</summary>
-            <p>Most homes fall between $4,000 and $11,000 installed, depending on roofline length and access. Use the instant estimate calculator on this page for a range specific to your home, then book a free on-site measure for an exact quote.</p>
+            <p>Most homes fall between $4,000 and $11,000 installed, depending on roofline length and access. Tell us your roofline length on this page and we'll send a quote specific to your home, then confirm it with a free on-site measure.</p>
           </details>
           <details>
-            <summary>How accurate is the instant estimate?</summary>
-            <p>It's based on our real install pricing and is intentionally given as a range. Your exact quote depends on track style, power placement, and roofline details — all confirmed during a free, no-obligation on-site measure.</p>
+            <summary>How accurate is the quote?</summary>
+            <p>It's based on our real install pricing for your roofline length and access. Final details — track style, power placement, and roofline specifics — are confirmed during a free, no-obligation on-site measure.</p>
           </details>
           <details>
             <summary>What's included in the final quote?</summary>
@@ -1117,9 +1102,9 @@
     <section id="estimate" class="flow-band" style="border-top:1px solid var(--line)">
       <div class="shell">
         <div class="center reveal">
-          <div class="eyebrow" style="justify-content:center">Step 1 · Instant Estimate</div>
+          <div class="eyebrow" style="justify-content:center">Step 1 · Size Up Your Roofline</div>
           <h2>What do permanent Christmas lights cost?</h2>
-          <p class="lead" style="margin-top:14px">Two quick questions. A real number — not a sales call.</p>
+          <p class="lead" style="margin-top:14px">Two quick questions, then a short form. A real number — not a sales call.</p>
         </div>
         <div class="estimate-wrap">
           <div class="est-controls reveal">
@@ -1146,19 +1131,6 @@
             </div>
             <p class="est-note">Not sure about either? Pick your best guess — we confirm everything with a free on-site measure before you commit to anything.</p>
           </div>
-          <div class="est-result reveal">
-            <span class="eyebrow" style="margin-bottom:4px">Your estimated investment</span>
-            <div class="est-price" id="estPrice" aria-live="polite">$5,900 – $7,600</div>
-            <span class="est-note">Installed. Complete. No hidden extras.</span>
-            <ul class="est-includes">
-              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#f2b450" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Chromaglow Pro lights, track &amp; power system</li>
-              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#f2b450" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Professional installation &amp; clean cable routing</li>
-              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#f2b450" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>App setup, scenes &amp; schedules configured</li>
-              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#f2b450" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>10-year comprehensive warranty</li>
-            </ul>
-            <a class="btn primary" id="lockQuoteBtn" href="#quote-form">Lock In This Price — Free ↓</a>
-            <p class="est-disclaimer">Estimate based on typical installs. Final pricing is confirmed after a free on-site measure and design — and founding-customer rates may bring it lower.</p>
-          </div>
         </div>
         <div class="step-connector" aria-hidden="true">↓</div>
       </div>
@@ -1169,9 +1141,9 @@
       <div class="shell">
         <div class="quote-grid">
           <div class="reveal">
-            <div class="eyebrow">Step 2 · Lock In Your Exact Quote</div>
+            <div class="eyebrow">Step 2 · Get Your Quote</div>
             <h2>Reply within one business day. Zero pressure.</h2>
-            <p class="lead" style="margin-top:14px">We'll confirm your number with a free on-site measure. No commitment until you've seen the exact quote. Prefer to talk? Call or text anytime.</p>
+            <p class="lead" style="margin-top:14px">We'll send your price, then confirm it with a free on-site measure. No commitment until you've seen the exact quote. Prefer to talk? Call or text anytime.</p>
             <div class="contact-card">
               <span><strong>Call / Text:</strong> <a href="tel:+17789096758">(778) 909-6758</a></span>
               <span><strong>Email:</strong> <a href="mailto:info@summitlightingsystems.ca">info@summitlightingsystems.ca</a></span>
@@ -1185,11 +1157,11 @@
             <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
             <div class="est-summary">
               <div class="est-summary-top">
-                <span class="est-summary-label">Your estimate</span>
+                <span class="est-summary-label">Your project</span>
                 <a href="#estimate" class="est-summary-edit">Edit ↑</a>
               </div>
-              <div class="est-summary-price" id="sumPrice">$5,900 – $7,600</div>
-              <div class="est-summary-meta"><span id="sumFt">150 ft</span> · <span id="sumAccess">ladder accessible</span></div>
+              <div class="est-summary-price" id="sumFt">150 ft</div>
+              <div class="est-summary-meta"><span id="sumAccess">ladder accessible</span></div>
             </div>
             <div class="form-field">
               <label for="name">Name</label>
@@ -1216,7 +1188,7 @@
                 </div>
               </div>
             </details>
-            <button class="btn primary" type="submit">Get My Exact Quote →</button>
+            <button class="btn primary" type="submit">Send Me My Quote →</button>
             <div id="quote-result" role="status" aria-live="polite"></div>
           </form>
         </div>
@@ -1287,7 +1259,7 @@
 
   <div class="sticky-cta">
     <a class="btn ghost" href="tel:+17789096758">Call / Text</a>
-    <a class="btn primary" href="#estimate">Instant Estimate</a>
+    <a class="btn primary" href="#estimate">Get a Quote</a>
   </div>
 
   <script>
@@ -1434,7 +1406,7 @@
       }, {passive:true});
     }
 
-    /* ---------- instant estimate ----------
+    /* ---------- roofline sizer + internal estimate ----------
        Pricing model (from internal quote calculator):
        - Lights:  (ft × 1.1) / 25 pcs × $260  = $11.44/ft
        - Track:   (ft × 1.1) / 3 pcs × $11.50 = $4.22/ft
@@ -1455,28 +1427,24 @@
 
     const ftRange = document.getElementById('ftRange');
     const ftDisplay = document.getElementById('ftDisplay');
-    const estPrice = document.getElementById('estPrice');
     const estimateField = document.getElementById('estimateField');
     const accessLadder = document.getElementById('accessLadder');
-    const sumPrice = document.getElementById('sumPrice');
     const sumFt = document.getElementById('sumFt');
     const sumAccess = document.getElementById('sumAccess');
     const fmt = v => '$' + v.toLocaleString('en-CA');
 
+    const accessText = () => accessLadder.checked ? 'ladder accessible' : 'lift required';
+
+    /* The price is never shown on the page -- visitors send the form to get it.
+       The estimate is attached to the submission only, so we can reply fast. */
     function updateEstimate(){
       const ft = +ftRange.value;
-      const ladder = accessLadder.checked;
-      const {low, high} = estimateRange(ft, ladder);
       ftDisplay.innerHTML = ft + '<small>linear ft</small>';
-      estPrice.textContent = fmt(low) + ' – ' + fmt(high);
       const pct = ((ft - ftRange.min) / (ftRange.max - ftRange.min)) * 100;
       ftRange.style.setProperty('--fill', pct + '%');
-      const accessText = ladder ? 'ladder accessible' : 'lift required';
-      estimateField.value = ft + ' ft, ' + accessText + ', estimate ' + fmt(low) + '–' + fmt(high);
       /* mirror into the summary card at the top of the quote form */
-      sumPrice.textContent = estPrice.textContent;
       sumFt.textContent = ft + ' ft';
-      sumAccess.textContent = accessText;
+      sumAccess.textContent = accessText();
     }
 
     /* Meta Pixel: first interaction with the calculator, once per page view */
@@ -1493,11 +1461,6 @@
 
     /* After an in-page jump to the form, focus a field once the smooth scroll settles. */
     const focusAfterScroll = el => setTimeout(() => el.focus({preventScroll:true}), 600);
-
-    document.getElementById('lockQuoteBtn').addEventListener('click', () => {
-      if (window.fbq) fbq('trackCustom', 'InstantEstimate', { estimate: estimateField.value });
-      focusAfterScroll(document.getElementById('name'));
-    });
 
     /* Referral CTA: open the optional details so the referrer field is ready */
     document.getElementById('referralBtn').addEventListener('click', () => {
@@ -1518,13 +1481,14 @@
       btn.disabled = true; btn.textContent = 'Sending…';
       /* capture the estimate before the form resets */
       const quoted = estimateRange(+ftRange.value, accessLadder.checked);
+      estimateField.value = ftRange.value + ' ft, ' + accessText() + ', estimate ' + fmt(quoted.low) + '–' + fmt(quoted.high);
       try{
         const res = await fetch('https://api.web3forms.com/submit', { method:'POST', body:new FormData(quoteForm) });
         quoteResult.style.display = 'block';
         if (res.ok){
           quoteResult.style.background = 'rgba(96,190,120,.12)';
           quoteResult.style.border = '1px solid rgba(96,190,120,.4)';
-          quoteResult.textContent = "Thanks! Your request is in — we'll reply within one business day.";
+          quoteResult.textContent = "Thanks! Your request is in — we'll send your quote within one business day.";
           track('Lead', { content_name: 'Quote request form', value: quoted.low, currency: 'CAD' });
           quoteForm.reset(); updateEstimate();
         } else { throw new Error(); }
@@ -1534,7 +1498,7 @@
         quoteResult.style.border = '1px solid rgba(226,101,79,.4)';
         quoteResult.innerHTML = 'Something went wrong — please call or text <a href="tel:+17789096758" style="color:var(--amber-2)">(778) 909-6758</a> instead.';
       }finally{
-        btn.disabled = false; btn.textContent = 'Get My Exact Quote →';
+        btn.disabled = false; btn.textContent = 'Send Me My Quote →';
       }
     });
 
