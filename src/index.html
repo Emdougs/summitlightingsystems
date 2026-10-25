@@ -3,6 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>
+    (function(){
+      var moved = {'#estimate':'/quote/','#quote':'/quote/','#quote-form':'/quote/','#area':'/quote/',
+        '#referral':'/quote/#refer','#faq':'/faq/',
+        '#switch':'/permanent-lighting/','#benefits':'/permanent-lighting/','#system':'/permanent-lighting/'};
+      var to = moved[location.hash];
+      if (to) { var p = to.split('#'); location.replace(p[0] + location.search + (p[1] ? '#' + p[1] : '')); }
+    })();
+  </script>
   <title>Permanent Christmas Lights | Nelson, Castlegar &amp; Trail BC | SUMMIT</title>
   <meta name="description" content="Permanent Christmas lights &amp; year-round roofline lighting in the West Kootenays. App-controlled, 10-year warranty. Get a free custom quote." />
   <meta name="color-scheme" content="dark" />
@@ -19,13 +28,14 @@
   <meta property="og:image" content="https://summitlightingsystems.ca/Assets/hero/Chromaglow-Pro-Install-Shots-07206.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Permanent Christmas Lights &amp; Roofline Lighting | West Kootenays" />
-  <meta name="twitter:description" content="Install once, light every season. Free custom quotes across the West Kootenays." />
+  <meta name="twitter:description" content="Install once, light every season. Free custom quotes for permanent roofline lighting in Nelson, Castlegar, Trail &amp; beyond." />
   <meta name="twitter:image" content="https://summitlightingsystems.ca/Assets/hero/Chromaglow-Pro-Install-Shots-07206.jpg" />
-  <link rel="icon" href="Assets/logo.png" />
+  <link rel="icon" href="/Assets/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="preload" as="image" href="Assets/hero/Chromaglow-Pro-Install-Shots-07206.jpg" />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/Assets/site.css" />
+  <link rel="preload" as="image" href="/Assets/hero/Chromaglow-Pro-Install-Shots-07206.jpg" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -34,6 +44,7 @@
         "@type": "LocalBusiness",
         "@id": "https://summitlightingsystems.ca/#business",
         "name": "SUMMIT Lighting Systems",
+        "legalName": "Summit Lighting Systems Inc.",
         "description": "Permanent Christmas lights and year-round roofline lighting installation across the West Kootenays, BC.",
         "url": "https://summitlightingsystems.ca/",
         "telephone": "+1-778-909-6758",
@@ -41,608 +52,93 @@
         "image": "https://summitlightingsystems.ca/Assets/hero/Chromaglow-Pro-Install-Shots-07206.jpg",
         "logo": "https://summitlightingsystems.ca/Assets/logo.png",
         "priceRange": "$$",
-        "address": { "@type": "PostalAddress", "addressRegion": "BC", "addressCountry": "CA" },
-        "geo": { "@type": "GeoCoordinates", "latitude": 49.32, "longitude": -117.66 },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Nelson",
+          "addressRegion": "BC",
+          "addressCountry": "CA"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 49.32,
+          "longitude": -117.66
+        },
         "areaServed": [
-          {"@type":"City","name":"Nelson"},{"@type":"City","name":"Castlegar"},
-          {"@type":"City","name":"Trail"},{"@type":"City","name":"Rossland"},
-          {"@type":"City","name":"Salmo"},{"@type":"City","name":"Fruitvale"},
-          {"@type":"City","name":"Montrose"},{"@type":"City","name":"Warfield"},
-          {"@type":"City","name":"Slocan Valley"},{"@type":"City","name":"Kaslo"}
-        ]
-      },
-      {
-        "@type": "Service",
-        "@id": "https://summitlightingsystems.ca/#service",
-        "serviceType": "Permanent Christmas Lights & Roofline Lighting Installation",
-        "provider": { "@id": "https://summitlightingsystems.ca/#business" },
-        "areaServed": "West Kootenays, British Columbia",
-        "description": "Professional installation of permanent, app-controlled RGBW roofline lighting with a 10-year warranty. Warm white for every day, full colour for Christmas and holidays.",
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "Permanent Lighting Installation",
-          "itemListElement": [{
-            "@type": "Offer",
-            "itemOffered": { "@type": "Service", "name": "Permanent roofline lighting install (free custom quote)" }
-          }]
-        }
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://summitlightingsystems.ca/#faq",
-        "mainEntity": [
           {
-            "@type": "Question",
-            "name": "Will I see permanent roofline lights during the day?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Barely. The extruded aluminum track sits low-profile against your roofline and can be custom colour-matched to your trim using RAL paint codes. Multiple track styles suit different mounting scenarios." }
+            "@type": "City",
+            "name": "Nelson"
           },
           {
-            "@type": "Question",
-            "name": "How long do permanent Christmas lights last?",
-            "acceptedAnswer": { "@type": "Answer", "text": "The LEDs are rated for 100,000 hours — roughly 45 years at 6 hours of nightly use — and the whole system is backed by a 10-year comprehensive warranty on parts and workmanship." }
+            "@type": "City",
+            "name": "Castlegar"
           },
           {
-            "@type": "Question",
-            "name": "Can permanent lighting handle Kootenay winters?",
-            "acceptedAnswer": { "@type": "Answer", "text": "That's exactly what it's built for. The system carries an IP68 waterproof rating and UL/cUL certification, with UV-resistant cables rated for 20+ years of outdoor exposure." }
+            "@type": "City",
+            "name": "Trail"
           },
           {
-            "@type": "Question",
-            "name": "Is permanent roofline lighting safe?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Yes. It runs on a 48V low-voltage system — far safer than line voltage — with built-in reverse polarity protection, so even a wiring mistake can't damage the system." }
+            "@type": "City",
+            "name": "Rossland"
           },
           {
-            "@type": "Question",
-            "name": "Can I run just warm white, no colours?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. Each light has three dedicated white-spectrum diodes separate from the RGB diodes, so you get true, high-quality warm white — not a simulated mix. Many customers run warm white 350 nights a year." }
+            "@type": "City",
+            "name": "Salmo"
           },
           {
-            "@type": "Question",
-            "name": "How are the lights controlled?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Through a smartphone app via Wi-Fi or Bluetooth. Every light is individually addressable — create custom effects, schedule scenes, and control zones independently. Runs up to 300 feet need no extra equipment." }
+            "@type": "City",
+            "name": "Fruitvale"
           },
           {
-            "@type": "Question",
-            "name": "How much do permanent Christmas lights cost in the West Kootenays?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Most homes fall between $4,000 and $11,000 installed, depending on roofline length and access. Tell us your roofline length on this page and we'll send a quote specific to your home, then confirm it with a free on-site measure." }
+            "@type": "City",
+            "name": "Montrose"
           },
           {
-            "@type": "Question",
-            "name": "What's included in the final quote?",
-            "acceptedAnswer": { "@type": "Answer", "text": "A custom-measured layout for your home, total cost, estimated timeline, and full warranty details. No surprises, no pressure." }
+            "@type": "City",
+            "name": "Warfield"
           },
           {
-            "@type": "Question",
-            "name": "How does the $200 referral bonus work?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Refer a neighbour, friend, or family member who books an install of $2,000 or more, and we'll send you $200 once their install is complete. No cap — refer as many people as you like. Just have them mention your name." }
+            "@type": "City",
+            "name": "Slocan Valley"
+          },
+          {
+            "@type": "City",
+            "name": "Kaslo"
           }
+        ],
+        "founder": {
+          "@type": "Person",
+          "name": "Eric Douglas"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday"
+            ],
+            "opens": "09:00",
+            "closes": "17:00"
+          }
+        ],
+        "sameAs": [
+          "https://www.facebook.com/profile.php?id=61591429754627"
         ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://summitlightingsystems.ca/#website",
+        "url": "https://summitlightingsystems.ca/",
+        "name": "SUMMIT Lighting Systems",
+        "publisher": {
+          "@id": "https://summitlightingsystems.ca/#business"
+        }
       }
     ]
   }
   </script>
-  <style>
-    :root{
-      --bg:#0b0e14;
-      --bg-2:#10141d;
-      --bg-3:#161b27;
-      --line:rgba(255,255,255,.08);
-      --line-2:rgba(255,255,255,.14);
-      --text:#eef1f6;
-      --muted:#9aa3b2;
-      --amber:#f2b450;
-      --amber-2:#ffd28a;
-      --amber-deep:#c8862a;
-      --glow:rgba(242,180,80,.35);
-      --radius:16px;
-      --shell:1120px;
-    }
-    *{margin:0;padding:0;box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      background:var(--bg);
-      color:var(--text);
-      font-family:'Inter',system-ui,-apple-system,sans-serif;
-      font-size:16px;line-height:1.6;
-      -webkit-font-smoothing:antialiased;
-      overflow-x:hidden;
-    }
-    h1,h2,h3{font-family:'Sora',sans-serif;line-height:1.15;letter-spacing:-.01em}
-    h1{font-size:clamp(2.2rem,5.4vw,3.7rem);font-weight:800}
-    h2{font-size:clamp(1.7rem,3.6vw,2.5rem);font-weight:700}
-    h3{font-size:1.1rem;font-weight:600}
-    p{color:var(--muted)}
-    a{color:inherit;text-decoration:none}
-    img{display:block;max-width:100%}
-    .shell{max-width:var(--shell);margin:0 auto;padding:0 24px}
-    section{padding:96px 0}
-    .eyebrow{
-      display:inline-flex;align-items:center;gap:8px;
-      font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
-      color:var(--amber);margin-bottom:16px;
-    }
-    .eyebrow::before{content:"";width:24px;height:1px;background:var(--amber)}
-    .lead{font-size:1.08rem;max-width:560px}
-
-    /* ---------- buttons ---------- */
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;gap:8px;
-      padding:14px 26px;border-radius:999px;font-weight:600;font-size:.95rem;
-      border:1px solid transparent;cursor:pointer;transition:.2s;white-space:nowrap;
-      font-family:'Inter',sans-serif;
-    }
-    .btn.primary{
-      background:linear-gradient(135deg,var(--amber-2),var(--amber) 55%,var(--amber-deep));
-      color:#1d1503;box-shadow:0 6px 24px -6px var(--glow);
-    }
-    .btn.primary:hover{transform:translateY(-2px);box-shadow:0 10px 30px -6px var(--glow)}
-    .btn.ghost{border-color:var(--line-2);color:var(--text);background:rgba(255,255,255,.03)}
-    .btn.ghost:hover{border-color:var(--amber);color:var(--amber-2)}
-
-    /* ---------- nav ---------- */
-    header{
-      position:fixed;inset:0 0 auto 0;z-index:50;
-      transition:.3s;padding:18px 0;
-    }
-    header.scrolled{
-      background:rgba(11,14,20,.85);backdrop-filter:blur(14px);
-      border-bottom:1px solid var(--line);padding:12px 0;
-    }
-    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .brand{display:flex;align-items:center}
-    .brand img{height:44px;width:auto;display:block}
-    .nav-links{display:flex;gap:26px;font-size:.9rem;color:var(--muted)}
-    @media(max-width:1180px){.nav-links{gap:17px;font-size:.85rem}}
-    .nav-links a{transition:.2s}
-    .nav-links a:hover{color:var(--amber-2)}
-    .nav-cta{display:flex;gap:10px;align-items:center}
-    .nav-cta .btn{padding:10px 20px;font-size:.88rem}
-    .menu-btn{display:none;background:none;border:1px solid var(--line-2);border-radius:10px;color:var(--text);padding:8px 12px;font-size:.85rem;cursor:pointer}
-    .mobile-menu{display:none}
-    @media(max-width:920px){
-      .nav-links,.nav-cta .ghost{display:none}
-      .menu-btn{display:block}
-      .mobile-menu.open{
-        display:flex;flex-direction:column;gap:4px;
-        position:fixed;top:64px;left:16px;right:16px;z-index:49;
-        background:var(--bg-2);border:1px solid var(--line-2);border-radius:16px;
-        padding:14px;box-shadow:0 20px 60px rgba(0,0,0,.5);
-      }
-      .mobile-menu a{padding:10px 12px;border-radius:10px;font-size:.95rem;color:var(--text)}
-      .mobile-menu a:hover{background:rgba(255,255,255,.05)}
-    }
-
-    /* ---------- hero ---------- */
-    .hero{
-      position:relative;min-height:92vh;display:flex;align-items:center;
-      padding:140px 0 90px;overflow:hidden;
-    }
-    .hero-bg{position:absolute;inset:0;z-index:-2}
-    .hero-bg img{
-      position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
-      opacity:0;transition:opacity 1.8s ease;transform:scale(1.04);
-    }
-    .hero-bg img.active{opacity:1}
-    .hero::after{
-      content:"";position:absolute;inset:0;z-index:-1;
-      background:linear-gradient(100deg,rgba(11,14,20,.94) 22%,rgba(11,14,20,.72) 52%,rgba(11,14,20,.35) 100%),
-                 linear-gradient(0deg,var(--bg) 0%,transparent 30%);
-    }
-    .hero-content{max-width:640px}
-    .hero .lead{margin:20px 0 32px;font-size:1.15rem}
-    .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px}
-    .hero h1 .accent{
-      background:linear-gradient(120deg,var(--amber-2),var(--amber));
-      -webkit-background-clip:text;background-clip:text;color:transparent;
-    }
-    .trust-row{display:flex;flex-wrap:wrap;gap:10px}
-    .chip{
-      display:inline-flex;align-items:center;gap:8px;
-      font-size:.8rem;font-weight:500;color:var(--text);
-      border:1px solid var(--line-2);background:rgba(255,255,255,.04);
-      backdrop-filter:blur(6px);border-radius:999px;padding:8px 14px;
-    }
-    .chip svg{flex:none}
-
-    /* ---------- trust bar ---------- */
-    .trustbar{border-block:1px solid var(--line);background:var(--bg-2);padding:28px 0}
-    .trustbar .shell{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
-    .trust-item{display:flex;gap:14px;align-items:flex-start}
-    .trust-item svg{flex:none;margin-top:3px}
-    .trust-item strong{display:block;font-size:.92rem}
-    .trust-item span{font-size:.8rem;color:var(--muted)}
-    @media(max-width:920px){.trustbar .shell{grid-template-columns:1fr 1fr}}
-    @media(max-width:520px){.trustbar .shell{grid-template-columns:1fr}}
-
-    /* ---------- switch ---------- */
-    .switch-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:48px}
-    @media(max-width:860px){.switch-grid{grid-template-columns:1fr}}
-    .panel{
-      border:1px solid var(--line);border-radius:var(--radius);
-      background:var(--bg-2);padding:34px;
-    }
-    .panel.glow{
-      border-color:rgba(242,180,80,.35);
-      background:linear-gradient(160deg,rgba(242,180,80,.08),var(--bg-2) 55%);
-    }
-    .panel h3{font-size:1.25rem;margin-bottom:18px}
-    .check-list{list-style:none;display:grid;gap:14px}
-    .check-list li{display:flex;gap:12px;align-items:flex-start;color:var(--muted);font-size:.97rem}
-    .check-list svg{flex:none;margin-top:4px}
-    .panel .btn{margin-top:26px}
-
-    /* ---------- benefits ---------- */
-    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:48px}
-    @media(max-width:920px){.cards{grid-template-columns:1fr 1fr}}
-    @media(max-width:560px){.cards{grid-template-columns:1fr}}
-    .card{
-      border:1px solid var(--line);border-radius:var(--radius);
-      background:var(--bg-2);padding:28px;transition:.25s;
-    }
-    .card:hover{border-color:rgba(242,180,80,.4);transform:translateY(-3px)}
-    .card .icon{
-      width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;
-      background:rgba(242,180,80,.1);border:1px solid rgba(242,180,80,.25);margin-bottom:18px;
-    }
-    .card h3{margin-bottom:8px}
-    .card p{font-size:.92rem}
-
-    /* ---------- system ---------- */
-    .gallery{display:grid;grid-template-columns:repeat(12,1fr);gap:18px;margin-top:48px}
-    .shot{
-      position:relative;border-radius:var(--radius);overflow:hidden;
-      border:1px solid var(--line);
-    }
-    .shot img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
-    .shot:hover img{transform:scale(1.04)}
-    .shot figcaption{
-      position:absolute;inset:auto 0 0 0;padding:40px 18px 14px;
-      background:linear-gradient(transparent,rgba(8,10,15,.88));
-      font-size:.85rem;font-weight:500;color:var(--text);
-    }
-    .shot.wide{grid-column:span 7;aspect-ratio:16/10}
-    .shot.tall{grid-column:span 5;aspect-ratio:auto}
-    @media(max-width:760px){.shot.wide,.shot.tall{grid-column:span 12;aspect-ratio:16/10}}
-    .specs{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
-
-    /* ---------- reviews ----------
-       Horizontal scroll rail. Add a review by copying a .review-card block --
-       the rail, arrows and edge fades adapt to any number of cards. */
-    .reviews-rail-wrap{position:relative;margin:44px -24px 0}
-    .reviews-rail{
-      display:flex;gap:18px;align-items:stretch;
-      overflow-x:auto;overscroll-behavior-x:contain;
-      scroll-snap-type:x mandatory;scroll-padding:0 24px;
-      padding:4px 24px;
-      scrollbar-width:none;-ms-overflow-style:none;
-    }
-    .reviews-rail::-webkit-scrollbar{display:none}
-    .reviews-rail:focus-visible{outline:2px solid var(--amber);outline-offset:4px;border-radius:var(--radius)}
-    /* Edge fades -- JS toggles .at-start / .at-end when the rail can scroll. */
-    .reviews-rail-wrap::before,
-    .reviews-rail-wrap::after{
-      content:"";position:absolute;top:0;bottom:0;width:56px;z-index:2;
-      pointer-events:none;opacity:0;transition:opacity .25s ease;
-    }
-    .reviews-rail-wrap::before{left:0;background:linear-gradient(90deg,var(--bg),transparent)}
-    .reviews-rail-wrap::after{right:0;background:linear-gradient(270deg,var(--bg),transparent)}
-    .reviews-rail-wrap.can-left::before{opacity:1}
-    .reviews-rail-wrap.can-right::after{opacity:1}
-    .rail-nav{
-      position:absolute;top:50%;transform:translateY(-50%);z-index:3;
-      width:42px;height:42px;border-radius:50%;display:grid;place-items:center;
-      border:1px solid var(--line-2);background:rgba(16,20,29,.92);backdrop-filter:blur(6px);
-      color:var(--text);cursor:pointer;transition:.2s;
-    }
-    .rail-nav:hover{border-color:var(--amber);color:var(--amber-2)}
-    .rail-nav[hidden]{display:none}
-    .rail-nav.prev{left:-4px}
-    .rail-nav.next{right:-4px}
-    @media(max-width:900px){.rail-nav{display:none}}
-
-    .review-card{
-      flex:0 0 min(430px,84vw);scroll-snap-align:start;
-      display:flex;flex-direction:column;
-      border:1px solid var(--line);border-radius:var(--radius);
-      background:var(--bg-2);padding:30px 30px 24px;position:relative;overflow:hidden;
-    }
-    .review-card::before{
-      content:"\201C";position:absolute;top:-6px;right:24px;
-      font-family:'Sora',sans-serif;font-size:6rem;line-height:1;
-      color:rgba(242,180,80,.14);pointer-events:none;
-    }
-    .review-stars{display:flex;gap:3px;margin-bottom:16px}
-    .review-text{color:var(--text);font-size:.98rem;line-height:1.7;position:relative}
-    /* Collapsed by default so the section stays short; .expanded shows it all. */
-    .review-card:not(.expanded) .review-text{
-      display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:6;
-      overflow:hidden;
-    }
-    .review-more{
-      align-self:flex-start;margin-top:14px;
-      display:inline-flex;align-items:center;gap:6px;
-      background:none;border:0;padding:0;cursor:pointer;
-      font-family:'Inter',sans-serif;font-size:.85rem;font-weight:600;
-      color:var(--amber-2);transition:.2s;
-    }
-    .review-more:hover{color:var(--amber)}
-    /* Keeps a gap above the footer rule once an expanded card fills its height
-       and .review-foot's auto top margin collapses to zero. */
-    .review-more,.review-tie{margin-bottom:22px}
-    .review-more svg{transition:transform .25s ease}
-    .review-card.expanded .review-more svg{transform:rotate(180deg)}
-    /* margin-top:auto pins the footer to the card base so equal-height
-       cards in the rail keep their name rows on one line. */
-    .review-foot{
-      display:flex;align-items:center;gap:13px;flex-wrap:wrap;
-      margin-top:auto;padding-top:24px;border-top:1px solid var(--line);
-    }
-    .review-avatar{
-      width:42px;height:42px;border-radius:50%;flex:none;display:grid;place-items:center;
-      font-family:'Sora',sans-serif;font-weight:700;font-size:1.05rem;color:#1d1503;
-      background:linear-gradient(135deg,var(--amber-2),var(--amber));
-    }
-    .review-who strong{display:block;font-size:.95rem;font-weight:600}
-    .review-who span{font-size:.8rem;color:var(--muted)}
-    .review-source{
-      display:inline-flex;align-items:center;gap:8px;
-      font-size:.78rem;color:var(--muted);
-      border:1px solid var(--line-2);border-radius:999px;padding:7px 14px;
-    }
-    .review-tie{
-      display:inline-flex;align-items:center;gap:7px;margin-top:22px;
-      font-size:.88rem;font-weight:500;color:var(--amber-2);transition:.2s;
-    }
-    .review-tie:hover{gap:11px}
-
-    /* ---------- install gallery ---------- */
-    .ig{columns:3;column-gap:16px;margin-top:48px}
-    @media(max-width:900px){.ig{columns:2}}
-    @media(max-width:560px){.ig{columns:1}}
-    .ig-item{
-      break-inside:avoid;margin:0 0 16px;padding:0;width:100%;display:block;position:relative;
-      border:1px solid var(--line);border-radius:14px;overflow:hidden;
-      background:var(--bg-2);cursor:zoom-in;font:inherit;color:inherit;text-align:left;
-    }
-    .ig-item img{width:100%;height:auto;transition:transform .55s}
-    .ig-item:hover img{transform:scale(1.045)}
-    .ig-item:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
-    .ig-cap{
-      position:absolute;inset:auto 0 0 0;padding:38px 14px 13px;
-      background:linear-gradient(transparent,rgba(8,10,15,.9));
-      font-size:.84rem;font-weight:500;line-height:1.45;color:var(--text);
-    }
-    .ig-note{text-align:center;font-size:.85rem;color:var(--muted);margin-top:10px}
-
-    /* ---------- lightbox ---------- */
-    .lb{
-      position:fixed;inset:0;z-index:100;display:none;
-      align-items:center;justify-content:center;padding:6vh 5vw;
-      background:rgba(6,8,12,.95);backdrop-filter:blur(8px);
-    }
-    .lb.open{display:flex}
-    /* explicit width (not max-width) — a percentage max-width on the image
-       otherwise creates a sizing cycle and the figure overflows on narrow screens */
-    .lb-fig{
-      display:flex;flex-direction:column;align-items:center;gap:16px;
-      width:min(1100px,88vw);min-width:0;
-    }
-    .lb-fig img{
-      max-width:100%;max-height:76vh;width:auto;height:auto;
-      border-radius:12px;object-fit:contain;box-shadow:0 30px 80px rgba(0,0,0,.6);
-    }
-    .lb-cap{font-size:.92rem;color:var(--muted);text-align:center;max-width:min(620px,100%)}
-    .lb-btn{
-      position:absolute;width:46px;height:46px;border-radius:50%;
-      display:grid;place-items:center;cursor:pointer;transition:.2s;
-      background:rgba(255,255,255,.07);border:1px solid var(--line-2);color:var(--text);
-    }
-    .lb-btn:hover{background:rgba(242,180,80,.18);border-color:var(--amber);color:var(--amber-2)}
-    .lb-btn:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
-    .lb-prev,.lb-next{top:50%;transform:translateY(-50%)}
-    .lb-prev{left:2vw}
-    .lb-next{right:2vw}
-    .lb-close{top:3vh;right:2vw}
-    .lb-count{
-      position:absolute;bottom:3vh;left:50%;transform:translateX(-50%);
-      font-size:.8rem;color:var(--muted);letter-spacing:.06em;
-    }
-    @media(max-width:620px){
-      .lb{padding:8vh 3vw}
-      .lb-btn{width:38px;height:38px}
-      .lb-prev{left:4px}.lb-next{right:4px}.lb-close{right:8px;top:2vh}
-    }
-
-    /* ---------- estimate ---------- */
-    .estimate-wrap{
-      max-width:760px;margin:48px auto 0;
-    }
-    .flow-band{background:var(--bg-2)}
-    #estimate.flow-band{padding-bottom:0}
-    #quote.flow-band{padding-top:40px;scroll-margin-top:40px}
-    /* CTAs jump straight to the form -- on mobile the contact card sits above it */
-    #quote-form{scroll-margin-top:96px}
-    .step-connector{
-      display:flex;justify-content:center;margin:40px auto 0;
-      font-family:'Sora',sans-serif;font-size:1.3rem;color:var(--amber);
-    }
-    .est-controls{
-      border:1px solid var(--line);border-radius:var(--radius);background:var(--bg-3);padding:34px;
-      display:flex;flex-direction:column;gap:30px;
-    }
-    .field-label{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px}
-    .field-label strong{font-size:.98rem;font-weight:600}
-    .field-label .hint{font-size:.8rem;color:var(--muted)}
-    .ft-display{
-      font-family:'Sora',sans-serif;font-size:1.5rem;font-weight:700;color:var(--amber-2);
-    }
-    .ft-display small{font-size:.85rem;color:var(--muted);font-weight:500;margin-left:4px}
-    input[type=range]{
-      -webkit-appearance:none;width:100%;height:6px;border-radius:99px;
-      background:linear-gradient(90deg,var(--amber) var(--fill,40%),rgba(255,255,255,.12) var(--fill,40%));
-      outline:none;cursor:pointer;
-    }
-    input[type=range]::-webkit-slider-thumb{
-      -webkit-appearance:none;width:24px;height:24px;border-radius:50%;
-      background:var(--amber-2);border:3px solid #1d1503;
-      box-shadow:0 0 0 4px rgba(242,180,80,.25),0 4px 12px rgba(0,0,0,.4);
-    }
-    input[type=range]::-moz-range-thumb{
-      width:22px;height:22px;border-radius:50%;background:var(--amber-2);border:3px solid #1d1503;
-      box-shadow:0 0 0 4px rgba(242,180,80,.25);
-    }
-    .range-marks{display:flex;justify-content:space-between;font-size:.75rem;color:var(--muted);margin-top:8px}
-    .seg{
-      display:grid;grid-template-columns:1fr 1fr;gap:10px;
-    }
-    .seg input{display:none}
-    .seg label{
-      border:1px solid var(--line-2);border-radius:12px;padding:14px 16px;cursor:pointer;
-      text-align:center;font-size:.9rem;font-weight:500;color:var(--muted);transition:.2s;
-    }
-    .seg label small{display:block;font-size:.75rem;font-weight:400;margin-top:2px}
-    .seg input:checked + label{
-      border-color:var(--amber);color:var(--text);
-      background:rgba(242,180,80,.09);box-shadow:0 0 0 1px var(--amber) inset;
-    }
-    .est-note{font-size:.8rem;color:var(--muted)}
-
-    /* ---------- process ---------- */
-    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:48px;counter-reset:step}
-    @media(max-width:920px){.steps{grid-template-columns:1fr 1fr}}
-    @media(max-width:560px){.steps{grid-template-columns:1fr}}
-    .step{
-      border:1px solid var(--line);border-radius:var(--radius);background:var(--bg-2);
-      padding:28px;position:relative;counter-increment:step;
-    }
-    .step::before{
-      content:"0" counter(step);
-      font-family:'Sora',sans-serif;font-weight:800;font-size:.85rem;color:var(--amber);
-      display:inline-block;margin-bottom:14px;letter-spacing:.1em;
-    }
-    .step h3{font-size:1rem;margin-bottom:6px}
-    .step p{font-size:.88rem}
-
-    /* ---------- area ---------- */
-    .area-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;margin-top:48px}
-    @media(max-width:860px){.area-grid{grid-template-columns:1fr}}
-    .area-map{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line)}
-    .towns{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
-    .map-credit{font-size:.7rem;color:var(--muted);margin-top:8px;opacity:.7}
-    .map-credit a{text-decoration:underline}
-
-    /* ---------- faq ---------- */
-    .faq-list{max-width:780px;margin:48px auto 0}
-    details{
-      border:1px solid var(--line);border-radius:14px;background:var(--bg-2);
-      margin-bottom:12px;overflow:hidden;transition:.2s;
-    }
-    details[open]{border-color:rgba(242,180,80,.35)}
-    summary{
-      list-style:none;cursor:pointer;padding:20px 24px;font-weight:600;font-size:.98rem;
-      display:flex;justify-content:space-between;align-items:center;gap:16px;
-    }
-    summary::-webkit-details-marker{display:none}
-    summary::after{
-      content:"+";font-family:'Sora',sans-serif;font-size:1.3rem;color:var(--amber);
-      transition:transform .25s;flex:none;
-    }
-    details[open] summary::after{transform:rotate(45deg)}
-    details p{padding:0 24px 22px;font-size:.93rem}
-
-    /* ---------- referral ---------- */
-    .referral{
-      border:1px solid rgba(242,180,80,.35);border-radius:20px;
-      background:linear-gradient(120deg,rgba(242,180,80,.12),var(--bg-2) 65%);
-      padding:54px 44px;display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap;
-    }
-    .referral h2{max-width:520px}
-    .referral p{max-width:520px;margin-top:12px}
-
-    /* ---------- quote form ---------- */
-    .quote-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;margin-top:48px}
-    @media(max-width:860px){.quote-grid{grid-template-columns:1fr}}
-    .contact-card{
-      border:1px solid var(--line);border-radius:var(--radius);background:var(--bg-2);
-      padding:26px;margin-top:26px;display:grid;gap:12px;font-size:.95rem;
-    }
-    .contact-card a{color:var(--amber-2);font-weight:600}
-    form{display:grid;gap:18px}
-    .form-field label{display:block;font-size:.85rem;font-weight:600;margin-bottom:8px}
-    .form-field label span{color:var(--muted);font-weight:400}
-    .form-field input,.form-field textarea{
-      width:100%;background:var(--bg-3);border:1px solid var(--line-2);border-radius:12px;
-      padding:14px 16px;color:var(--text);font-family:'Inter',sans-serif;font-size:.95rem;
-      outline:none;transition:.2s;
-    }
-    .form-field input:focus,.form-field textarea:focus{border-color:var(--amber);box-shadow:0 0 0 3px rgba(242,180,80,.15)}
-    .form-field textarea{min-height:110px;resize:vertical}
-    #quote-result{display:none;padding:16px 20px;border-radius:12px;font-size:.92rem}
-    .est-summary{
-      border:1px solid rgba(242,180,80,.35);border-radius:14px;
-      background:linear-gradient(165deg,rgba(242,180,80,.1),var(--bg-3) 70%);
-      padding:16px 20px;
-    }
-    .est-summary-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
-    .est-summary-label{font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--amber)}
-    .est-summary-edit{font-size:.82rem;color:var(--amber-2);font-weight:600}
-    .est-summary-edit:hover{text-decoration:underline}
-    .est-summary-price{
-      font-family:'Sora',sans-serif;font-size:1.45rem;font-weight:800;
-      color:var(--amber-2);letter-spacing:-.01em;margin-top:2px;
-    }
-    .est-summary-meta{font-size:.82rem;color:var(--muted)}
-    .form-more{border:0;background:none;margin:0;border-radius:0;overflow:visible}
-    .form-more[open]{border:0}
-    .form-more summary{
-      padding:2px 0;font-size:.88rem;font-weight:600;color:var(--muted);
-      justify-content:flex-start;gap:8px;
-    }
-    .form-more summary span{font-weight:400}
-    .form-more summary::after{content:none}
-    .form-more summary::before{
-      content:"+";font-family:'Sora',sans-serif;font-size:1.1rem;color:var(--amber);
-      transition:transform .25s;
-    }
-    .form-more[open] summary::before{transform:rotate(45deg)}
-    .form-more summary:hover{color:var(--text)}
-    .form-more-body{display:grid;gap:18px;padding-top:14px}
-
-    /* ---------- local seo strip ---------- */
-    .local-strip{padding:0 0 96px}
-    .local-strip .inner{
-      border-top:1px solid var(--line);padding-top:56px;
-      display:grid;grid-template-columns:1fr 1fr;gap:40px;
-    }
-    @media(max-width:860px){.local-strip .inner{grid-template-columns:1fr}}
-    .local-strip h2{font-size:1.35rem}
-    .local-strip p{font-size:.92rem;margin-top:12px}
-
-    /* ---------- footer ---------- */
-    footer{border-top:1px solid var(--line);padding:54px 0 110px;background:var(--bg-2)}
-    footer .shell{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap}
-    footer small{color:var(--muted);font-size:.82rem;display:block;line-height:1.7}
-    .disclosure{font-size:.74rem;color:var(--muted);opacity:.7;margin-top:14px;max-width:420px}
-
-    /* ---------- sticky cta ---------- */
-    .sticky-cta{
-      position:fixed;bottom:0;left:0;right:0;z-index:40;display:none;
-      gap:10px;padding:12px 16px calc(12px + env(safe-area-inset-bottom));
-      background:rgba(11,14,20,.92);backdrop-filter:blur(12px);border-top:1px solid var(--line);
-    }
-    .sticky-cta .btn{flex:1;padding:13px}
-    @media(max-width:760px){.sticky-cta{display:flex}}
-
-    /* ---------- reveal ---------- */
-    .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
-    .reveal.in{opacity:1;transform:none}
-    @media(prefers-reduced-motion:reduce){
-      .reveal{opacity:1;transform:none;transition:none}
-      html{scroll-behavior:auto}
-    }
-    .center{text-align:center}
-    .center .lead{margin:0 auto}
-  </style>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18441639739"></script>
   <script>
@@ -672,35 +168,30 @@
 
   <header id="header">
     <div class="shell nav">
-      <a class="brand" href="#top">
-        <img src="data:image/png;base64,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" alt="SUMMIT Lighting Systems" width="86" height="44" />
+      <a class="brand" href="/">
+        <img src="/Assets/logo-header.png" alt="SUMMIT Lighting Systems" width="86" height="44" />
       </a>
       <nav class="nav-links" aria-label="Primary">
-        <a href="#switch">Why Permanent</a>
-        <a href="#system">The System</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#estimate">Get a Quote</a>
-        <a href="#process">Process</a>
-        <a href="#faq">FAQ</a>
+        <a href="/permanent-lighting/">Permanent Lighting</a>
+        <a href="/gallery/">Gallery</a>
+        <a href="/about/">About</a>
+        <a href="/faq/">FAQ</a>
+        <a href="/quote/">Contact</a>
       </nav>
       <div class="nav-cta">
         <a class="btn ghost" href="tel:+17789096758">Call / Text</a>
-        <a class="btn primary" href="#estimate">Get My Quote</a>
+        <a class="btn primary" href="/quote/">Get My Quote</a>
         <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu">Menu</button>
       </div>
     </div>
     <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile">
-      <a href="#switch">Why Permanent</a>
-      <a href="#system">The System</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#reviews">Reviews</a>
-      <a href="#estimate">Get a Quote</a>
-      <a href="#process">Process</a>
-      <a href="#area">Service Area</a>
-      <a href="#faq">FAQ</a>
-      <a href="#referral">Referral Program</a>
-      <a href="#quote">Get a Free Quote</a>
+      <a href="/" aria-current="page">Home</a>
+      <a href="/permanent-lighting/">Permanent Lighting</a>
+      <a href="/gallery/">Gallery</a>
+      <a href="/about/">About</a>
+      <a href="/faq/">FAQ</a>
+      <a href="/quote/#refer">Referral Program</a>
+      <a href="/quote/">Contact &amp; Free Quote</a>
     </nav>
   </header>
 
@@ -709,10 +200,10 @@
     <!-- HERO -->
     <section class="hero" id="hero">
       <div class="hero-bg" aria-hidden="true">
-        <img src="Assets/hero/Chromaglow-Pro-Install-Shots-07206.jpg" alt="" class="active" fetchpriority="high" />
-        <img src="Assets/hero/Chromaglow-Pro-Install-Shots-07211.jpg" alt="" loading="lazy" />
-        <img src="Assets/hero/Chromaglow-Pro-Install-Shots-07207.jpg" alt="" loading="lazy" />
-        <img src="Assets/hero/Chromaglow-Pro-Install-Shots-07208.jpg" alt="" loading="lazy" />
+        <img src="/Assets/hero/Chromaglow-Pro-Install-Shots-07206.jpg" alt="" class="active" fetchpriority="high" />
+        <img src="/Assets/hero/Chromaglow-Pro-Install-Shots-07211.jpg" alt="" loading="lazy" />
+        <img src="/Assets/hero/Chromaglow-Pro-Install-Shots-07207.jpg" alt="" loading="lazy" />
+        <img src="/Assets/hero/Chromaglow-Pro-Install-Shots-07208.jpg" alt="" loading="lazy" />
       </div>
       <div class="shell">
         <div class="hero-content">
@@ -720,7 +211,7 @@
           <h1>Hang lights for the last time. <span class="accent">Enjoy them forever.</span></h1>
           <p class="lead">Permanent Christmas lights, installed once by professionals: warm white elegance every evening, full colour for every holiday — all from your phone, all year round.</p>
           <div class="hero-ctas">
-            <a class="btn primary" href="#estimate">Get My Free Quote</a>
+            <a class="btn primary" href="/quote/">Get My Free Quote</a>
             <a class="btn ghost" href="tel:+17789096758">Call / Text (778) 909-6758</a>
           </div>
           <div class="trust-row">
@@ -763,20 +254,14 @@
           <h2>What our customers say.</h2>
           <p class="lead" style="margin-top:14px;margin-inline:auto">Real reviews from real West Kootenays homeowners.</p>
         </div>
-        <!-- Newest review first. Copy a .review-card block to add another. -->
+        <!-- Newest review first. Add new reviews to REVIEWS so the footer band picks them up too. -->
         <div class="reviews-rail-wrap reveal" id="reviewsRailWrap">
           <button class="rail-nav prev" type="button" aria-label="Scroll to previous review" hidden>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>
           </button>
           <div class="reviews-rail" id="reviewsRail" role="region" aria-label="Customer reviews, scrollable" tabindex="0">
             <figure class="review-card">
-              <div class="review-stars" role="img" aria-label="Rated 5 out of 5 stars">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="#f2b450" aria-hidden="true"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="#f2b450" aria-hidden="true"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="#f2b450" aria-hidden="true"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="#f2b450" aria-hidden="true"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="#f2b450" aria-hidden="true"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
-              </div>
+              <div class="review-stars" role="img" aria-label="Rated 5 out of 5 stars"><svg width="17" height="17" viewBox="0 0 24 24" fill="#f2b450" aria-hidden="true"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg width="17" height="17" viewBox="0 0 24 24" fill="#f2b450" aria-hidden="true"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg width="17" height="17" viewBox="0 0 24 24" fill="#f2b450" aria-hidden="true"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg width="17" height="17" viewBox="0 0 24 24" fill="#f2b450" aria-hidden="true"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg width="17" height="17" viewBox="0 0 24 24" fill="#f2b450" aria-hidden="true"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg></div>
               <blockquote class="review-text" id="rev-corinne">
                 We couldn’t be happier with our new permanent lights. Eric and his team were professional, knowledgeable and meticulous from start to finish. The workmanship is excellent, the installation is incredibly clean, and the lights look absolutely beautiful on the house. It’s clear they take a lot of pride in their work. We would highly recommend them to anyone considering permanent exterior lighting.
               </blockquote>
@@ -797,13 +282,7 @@
               </figcaption>
             </figure>
             <figure class="review-card">
-              <div class="review-stars" role="img" aria-label="Rated 5 out of 5 stars">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="#f2b450" aria-hidden="true"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="#f2b450" aria-hidden="true"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="#f2b450" aria-hidden="true"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="#f2b450" aria-hidden="true"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="#f2b450" aria-hidden="true"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
-              </div>
+              <div class="review-stars" role="img" aria-label="Rated 5 out of 5 stars"><svg width="17" height="17" viewBox="0 0 24 24" fill="#f2b450" aria-hidden="true"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg width="17" height="17" viewBox="0 0 24 24" fill="#f2b450" aria-hidden="true"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg width="17" height="17" viewBox="0 0 24 24" fill="#f2b450" aria-hidden="true"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg width="17" height="17" viewBox="0 0 24 24" fill="#f2b450" aria-hidden="true"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg width="17" height="17" viewBox="0 0 24 24" fill="#f2b450" aria-hidden="true"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg></div>
               <blockquote class="review-text" id="rev-katie">
                 Our experience with summit lighting was awesome! From the planning, to the install, to enjoying our lights, everything was seamless. Eric was responsive and timely in communicating with us. He included us in the planning the day of install by asking our preference for the power supply placement. We were shown how to navigate the app to use our lights and offered support after if anything is needed. We completed permanent lights on the front of our house but I would not hesitate to contact summit lighting to extend our package! Highly recommend!
               </blockquote>
@@ -811,7 +290,7 @@
                 <span>Read more</span>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
               </button>
-              <a class="review-tie" href="#gallery">
+              <a class="review-tie" href="/gallery/">
                 See Katie's install in the gallery
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
               </a>
@@ -842,7 +321,7 @@
     </section>
 
     <!-- WHY SWITCH -->
-    <section id="switch" style="padding-top:0">
+    <section id="why" style="padding-top:0">
       <div class="shell">
         <div class="center reveal">
           <div class="eyebrow" style="justify-content:center">Why Homeowners Switch</div>
@@ -866,181 +345,72 @@
               <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f2b450" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Low-profile tracks that practically disappear in daylight</li>
               <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f2b450" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Set it and forget it — schedules and scenes run themselves</li>
             </ul>
-            <a class="btn primary" href="#estimate">See What It Costs</a>
+            <a class="btn primary" href="/quote/">Get My Free Quote</a>
           </div>
         </div>
+        <div class="section-foot reveal"><a class="more-link" href="/permanent-lighting/">How the system works <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
       </div>
     </section>
 
-    <!-- BENEFITS -->
-    <section id="benefits" style="padding-top:0">
-      <div class="shell">
-        <div class="center reveal">
-          <div class="eyebrow" style="justify-content:center">What You Get</div>
-          <h2>A permanent upgrade, not seasonal decor.</h2>
-        </div>
-        <div class="cards">
-          <div class="card reveal">
-            <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f2b450" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></svg></div>
-            <h3>Always ready</h3>
-            <p>One install, year-round use. Your home is lit for every season, holiday, and game night — no setup required.</p>
-          </div>
-          <div class="card reveal">
-            <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f2b450" stroke-width="2"><path d="M2 20h20M5 20V8l7-5 7 5v12"/></svg></div>
-            <h3>Clean by day</h3>
-            <p>Low-profile aluminum track, colour-matched to your trim. Most visitors never notice it until the lights come on.</p>
-          </div>
-          <div class="card reveal">
-            <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f2b450" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg></div>
-            <h3>Full control</h3>
-            <p>Schedules, scenes, zones, and brightness from your phone. Hundreds of effects, one tap.</p>
-          </div>
-          <div class="card reveal">
-            <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f2b450" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg></div>
-            <h3>True whites + full colour</h3>
-            <p>Dedicated white-spectrum diodes deliver real warm white — not a washed-out RGB mix — plus 16 million colours.</p>
-          </div>
-          <div class="card reveal">
-            <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f2b450" stroke-width="2"><path d="M12 22s8-3.5 8-10V5l-8-3-8 3v7c0 6.5 8 10 8 10z"/></svg></div>
-            <h3>Winter-proof</h3>
-            <p>IP68 waterproof, UL/cUL certified, UV-resistant cabling. Engineered for snow, ice, and -40° nights.</p>
-          </div>
-          <div class="card reveal">
-            <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f2b450" stroke-width="2"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg></div>
-            <h3>Long-term value</h3>
-            <p>100,000-hour LEDs and a 10-year comprehensive warranty. Built to outlast a decade of seasonal lights.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SYSTEM -->
-    <section id="system" style="background:var(--bg-2);border-block:1px solid var(--line)">
-      <div class="shell">
-        <div class="center reveal">
-          <div class="eyebrow" style="justify-content:center">The System</div>
-          <h2>Premium hardware. Permanent results.</h2>
-          <p class="lead" style="margin-top:14px">Powered by Chromaglow Pro — a commercial-grade 48V RGBW platform with individually addressable LEDs.</p>
-        </div>
-        <div class="gallery">
-          <figure class="shot wide reveal">
-            <img src="Assets/How it works/6.jpg" alt="Permanent warm white roofline lighting on a multi-gable home at dusk in the West Kootenays" loading="lazy" />
-            <figcaption>Warm white, every night — elegant, not flashy.</figcaption>
-          </figure>
-          <figure class="shot tall reveal">
-            <img src="Assets/How it works/7.jpg" alt="Smartphone app controlling permanent Christmas lights on a home lit in ice blue" loading="lazy" />
-            <figcaption>Hundreds of scenes, one tap.</figcaption>
-          </figure>
-          <figure class="shot tall reveal">
-            <img src="Assets/How it works/3.jpg" alt="Low-profile permanent LED light track flush against a white soffit in daylight" loading="lazy" />
-            <figcaption>Practically invisible by day.</figcaption>
-          </figure>
-          <figure class="shot wide reveal">
-            <img src="Assets/How it works/1.png" alt="Chromaglow Pro permanent lighting node specs — 6 diodes, UL certified, 10-year warranty" loading="lazy" />
-            <figcaption>Rated for 100,000 hours — about 45 years of evenings.</figcaption>
-          </figure>
-        </div>
-        <div class="specs reveal">
-          <span class="chip">48V low-voltage — safe by design</span>
-          <span class="chip">300 ft runs, no power injection</span>
-          <span class="chip">16-gauge outdoor-rated wiring</span>
-          <span class="chip">Individually addressable LEDs</span>
-          <span class="chip">RAL colour-matched track</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- INSTALL GALLERY -->
-    <section id="gallery">
+    <!-- GALLERY TEASER -->
+    <section id="gallery" style="background:var(--bg-2);border-block:1px solid var(--line)">
       <div class="shell">
         <div class="center reveal">
           <div class="eyebrow" style="justify-content:center">Our Work</div>
           <h2>Real installs. Real Kootenay homes.</h2>
-          <p class="lead" style="margin-top:14px;margin-inline:auto">Every photo below is our own work — no stock images, no renders. Tap any shot to see it full size.</p>
+          <p class="lead" style="margin-top:14px;margin-inline:auto">Every photo is our own work — no stock images, no renders. Tap any shot to see it full size.</p>
         </div>
 
         <div class="ig reveal">
-          <button type="button" class="ig-item" data-full="Assets/gallery/red-green-christmas-lights-night.webp" data-cap="Red and green for Christmas on a Castlegar home — set from the app, no ladder required.">
-            <img src="Assets/gallery/red-green-christmas-lights-night-thumb.webp" width="800" height="600" loading="lazy" decoding="async" alt="Permanent Christmas lights in red and green outlining the roofline of a two-storey home in Castlegar BC at dusk" />
+          <button type="button" class="ig-item" data-full="/Assets/gallery/red-green-christmas-lights-night.webp" data-cap="Red and green for Christmas on a Castlegar home — set from the app, no ladder required.">
+            <img src="/Assets/gallery/red-green-christmas-lights-night-thumb.webp" width="800" height="600" loading="lazy" decoding="async" alt="Permanent Christmas lights in red and green outlining the roofline of a two-storey home in Castlegar BC at dusk" />
             <span class="ig-cap">Red and green for Christmas on a Castlegar home — set from the app, no ladder required.</span>
           </button>
-
-          <button type="button" class="ig-item" data-full="Assets/gallery/warm-white-roofline-lighting-night.webp" data-cap="Same Castlegar home in warm white — the setting most customers run 350 nights a year.">
-            <img src="Assets/gallery/warm-white-roofline-lighting-night-thumb.webp" width="800" height="600" loading="lazy" decoding="async" alt="The same Castlegar BC home lit in warm white permanent roofline lighting on a clear winter evening" />
+          <button type="button" class="ig-item" data-full="/Assets/gallery/warm-white-roofline-lighting-night.webp" data-cap="Same Castlegar home in warm white — the setting most customers run 350 nights a year.">
+            <img src="/Assets/gallery/warm-white-roofline-lighting-night-thumb.webp" width="800" height="600" loading="lazy" decoding="async" alt="The same Castlegar BC home lit in warm white permanent roofline lighting on a clear winter evening" />
             <span class="ig-cap">Same Castlegar home in warm white — the setting most customers run 350 nights a year.</span>
           </button>
-
-          <button type="button" class="ig-item" data-full="Assets/gallery/castlegar-blue-white-christmas-lights-night.webp" data-cap="Blue and white on a Castlegar roofline, gables and porch included.">
-            <img src="Assets/gallery/castlegar-blue-white-christmas-lights-night-thumb.webp" width="800" height="600" loading="lazy" decoding="async" alt="Permanent roofline lights in blue and white on a Castlegar BC home at night" />
+          <button type="button" class="ig-item" data-full="/Assets/gallery/castlegar-blue-white-christmas-lights-night.webp" data-cap="Blue and white on a Castlegar roofline, gables and porch included.">
+            <img src="/Assets/gallery/castlegar-blue-white-christmas-lights-night-thumb.webp" width="800" height="600" loading="lazy" decoding="async" alt="Permanent roofline lights in blue and white on a Castlegar BC home at night" />
             <span class="ig-cap">Blue and white on a Castlegar roofline, gables and porch included.</span>
           </button>
-
-          <button type="button" class="ig-item" data-full="Assets/gallery/castlegar-warm-white-gable-dusk.webp" data-cap="Warm white picking out every gable at dusk in Castlegar.">
-            <img src="Assets/gallery/castlegar-warm-white-gable-dusk-thumb.webp" width="800" height="600" loading="lazy" decoding="async" alt="Warm white permanent lighting outlining cedar shake gables on a Castlegar home against a deep blue dusk sky" />
+          <button type="button" class="ig-item" data-full="/Assets/gallery/castlegar-warm-white-gable-dusk.webp" data-cap="Warm white picking out every gable at dusk in Castlegar.">
+            <img src="/Assets/gallery/castlegar-warm-white-gable-dusk-thumb.webp" width="800" height="600" loading="lazy" decoding="async" alt="Warm white permanent lighting outlining cedar shake gables on a Castlegar home against a deep blue dusk sky" />
             <span class="ig-cap">Warm white picking out every gable at dusk in Castlegar.</span>
           </button>
-
-          <button type="button" class="ig-item" data-full="Assets/gallery/permanent-light-track-detail-daytime.webp" data-cap="Track tucked under the eave and colour-matched — this is what it looks like by day.">
-            <img src="Assets/gallery/permanent-light-track-detail-daytime-thumb.webp" width="600" height="800" loading="lazy" decoding="async" alt="Close-up of low-profile permanent lighting track mounted flush under the eave of a Castlegar BC home, colour-matched to the trim" />
+          <button type="button" class="ig-item" data-full="/Assets/gallery/permanent-light-track-detail-daytime.webp" data-cap="Track tucked under the eave and colour-matched — this is what it looks like by day.">
+            <img src="/Assets/gallery/permanent-light-track-detail-daytime-thumb.webp" width="600" height="800" loading="lazy" decoding="async" alt="Close-up of low-profile permanent lighting track mounted flush under the eave of a Castlegar BC home, colour-matched to the trim" />
             <span class="ig-cap">Track tucked under the eave and colour-matched — this is what it looks like by day.</span>
           </button>
-
-          <button type="button" class="ig-item" data-full="Assets/gallery/castlegar-permanent-roofline-lighting-daytime.webp" data-cap="The same install by daylight — you have to look for the track.">
-            <img src="Assets/gallery/castlegar-permanent-roofline-lighting-daytime-thumb.webp" width="800" height="600" loading="lazy" decoding="async" alt="Low-profile permanent light track colour-matched to white trim on a Castlegar BC home in daylight" />
-            <span class="ig-cap">The same install by daylight — you have to look for the track.</span>
-          </button>
-
-          <button type="button" class="ig-item" data-full="Assets/gallery/warm-white-roofline-lighting-daytime.webp" data-cap="Warm white running in daylight across a full two-storey Castlegar roofline.">
-            <img src="Assets/gallery/warm-white-roofline-lighting-daytime-thumb.webp" width="600" height="800" loading="lazy" decoding="async" alt="Warm white permanent roofline lighting switched on during the day on a large two-storey home in Castlegar BC" />
-            <span class="ig-cap">Warm white running in daylight across a full two-storey Castlegar roofline.</span>
-          </button>
-
-          <button type="button" class="ig-item" data-full="Assets/gallery/castlegar-light-track-soffit-daytime.webp" data-cap="Lights on in broad daylight — that's how low-profile the track sits.">
-            <img src="Assets/gallery/castlegar-light-track-soffit-daytime-thumb.webp" width="800" height="600" loading="lazy" decoding="async" alt="Close-up of permanent LED lights mounted under the soffit of a Castlegar BC home and lit during the day, showing how discreet the track is" />
-            <span class="ig-cap">Lights on in broad daylight — that's how low-profile the track sits.</span>
-          </button>
-
-          <button type="button" class="ig-item" data-full="Assets/gallery/red-trim-home-full-roofline-lighting-daytime.webp" data-cap="Warm white along every eave, from the covered porch up to the top gable.">
-            <img src="Assets/gallery/red-trim-home-full-roofline-lighting-daytime-thumb.webp" width="800" height="600" loading="lazy" decoding="async" alt="Warm white permanent lights running along the porch eaves and up the main gable of a red-trimmed West Kootenay home surrounded by tall trees" />
-            <span class="ig-cap">Warm white along every eave, from the covered porch up to the top gable.</span>
-          </button>
-          <button type="button" class="ig-item" data-full="Assets/gallery/covered-porch-eave-lighting-daytime.webp" data-cap="Lit under the porch eave, wrapping the whole deck — and still barely noticeable by day.">
-            <img src="Assets/gallery/covered-porch-eave-lighting-daytime-thumb.webp" width="800" height="600" loading="lazy" decoding="async" alt="Permanent LED lights mounted under the eave of a long covered red porch, lit during the day on a West Kootenay home" />
-            <span class="ig-cap">Lit under the porch eave, wrapping the whole deck — and still barely noticeable by day.</span>
-          </button>
-          <button type="button" class="ig-item" data-full="Assets/gallery/summit-install-ladder-in-progress.webp" data-cap="Install day in Castlegar — track going up, valley behind.">
-            <img src="Assets/gallery/summit-install-ladder-in-progress-thumb.webp" width="600" height="800" loading="lazy" decoding="async" alt="SUMMIT Lighting Systems installer mounting permanent light track from a ladder on a Castlegar BC home, Kootenay mountains behind" />
-            <span class="ig-cap">Install day in Castlegar — track going up, valley behind.</span>
-          </button>
-
-          <button type="button" class="ig-item" data-full="Assets/gallery/summit-install-lift-in-progress.webp" data-cap="Every light seated by hand, one at a time, on a lift where the peaks are high.">
-            <img src="Assets/gallery/summit-install-lift-in-progress-thumb.webp" width="800" height="600" loading="lazy" decoding="async" alt="SUMMIT installer setting permanent LED lights into track from a lift above a Castlegar BC rooftop, Kootenay valley beyond" />
-            <span class="ig-cap">Every light seated by hand, one at a time, on a lift where the peaks are high.</span>
+          <button type="button" class="ig-item" data-full="/Assets/gallery/red-trim-home-full-roofline-lighting-daytime.webp" data-cap="Warm white along every eave of a Fruitvale home, from the covered porch up to the top gable.">
+            <img src="/Assets/gallery/red-trim-home-full-roofline-lighting-daytime-thumb.webp" width="800" height="600" loading="lazy" decoding="async" alt="Warm white permanent lights running along the porch eaves and up the main gable of a red-trimmed home in Fruitvale BC surrounded by tall trees" />
+            <span class="ig-cap">Warm white along every eave of a Fruitvale home, from the covered porch up to the top gable.</span>
           </button>
         </div>
 
-        <p class="ig-note">Want to see a home like yours? <a href="#quote" style="color:var(--amber-2)">Ask us for local references</a> — we'll point you at an install near you.</p>
+        <div class="section-foot reveal"><a class="btn ghost" href="/gallery/">See the full gallery</a></div>
       </div>
     </section>
 
     <!-- PROCESS -->
-    <section id="process" style="padding-top:0">
+    <section id="process">
       <div class="shell">
         <div class="center reveal">
           <div class="eyebrow" style="justify-content:center">Simple Process</div>
           <h2>From quote to glowing roofline — usually in a day.</h2>
         </div>
         <div class="steps">
-          <div class="step reveal"><h3>Request your quote</h3><p>Size up your roofline below and send the quick form, or just call. We reply within one business day.</p></div>
+          <div class="step reveal"><h3>Request your quote</h3><p>Send the quick <a href="/quote/" style="color:var(--amber-2)">quote form</a>, or just call. We reply within one business day.</p></div>
           <div class="step reveal"><h3>Free on-site design</h3><p>We measure your rooflines, check power access, and design the layout with you — no obligation.</p></div>
           <div class="step reveal"><h3>Professional install</h3><p>Clean mounting, tidy cable routing, colour-matched track, and a full system test.</p></div>
           <div class="step reveal"><h3>App setup &amp; handoff</h3><p>We configure your scenes and schedules, then hand you the controls. That's it — forever.</p></div>
         </div>
+        <div class="section-foot reveal"><a class="more-link" href="/faq/">Common questions, straight answers <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
       </div>
     </section>
 
     <!-- SERVICE AREA -->
-    <section id="area" style="background:var(--bg-2);border-block:1px solid var(--line)">
+    <section id="service-area" style="background:var(--bg-2);border-block:1px solid var(--line)">
       <div class="shell">
         <div class="area-grid">
           <div class="reveal">
@@ -1048,15 +418,12 @@
             <h2>Permanent Christmas lights, installed locally across the West Kootenays.</h2>
             <p class="lead" style="margin-top:14px">We install permanent holiday and roofline lighting throughout the West Kootenays — locally owned, locally installed, with quick response across the region. Just outside the area? Call anyway; we can often make it work.</p>
             <div class="towns">
-              <span class="chip">Nelson</span><span class="chip">Castlegar</span><span class="chip">Trail</span>
-              <span class="chip">Rossland</span><span class="chip">Salmo</span><span class="chip">Fruitvale</span>
-              <span class="chip">Montrose</span><span class="chip">Warfield</span><span class="chip">Slocan Valley</span>
-              <span class="chip">Kaslo</span>
+              <span class="chip">Nelson</span><span class="chip">Castlegar</span><span class="chip">Trail</span><span class="chip">Rossland</span><span class="chip">Salmo</span><span class="chip">Fruitvale</span><span class="chip">Montrose</span><span class="chip">Warfield</span><span class="chip">Slocan Valley</span><span class="chip">Kaslo</span>
             </div>
           </div>
           <div class="reveal">
             <div class="area-map">
-              <img src="Assets/west-kootenays-map.png" alt="Map of the West Kootenays showing SUMMIT Lighting Systems service area: Nelson, Castlegar, Trail, Rossland, Salmo, Fruitvale, Montrose, Warfield, Slocan Valley and Kaslo BC" loading="lazy" />
+              <img src="/Assets/west-kootenays-map.png" alt="Map of the West Kootenays showing SUMMIT Lighting Systems service area: Nelson, Castlegar, Trail, Rossland, Salmo, Fruitvale, Montrose, Warfield, Slocan Valley and Kaslo BC" loading="lazy" />
             </div>
             <p class="map-credit">Map © <a href="https://www.openstreetmap.org/copyright" rel="noopener" target="_blank">OpenStreetMap</a> contributors</p>
           </div>
@@ -1064,173 +431,10 @@
       </div>
     </section>
 
-    <!-- FAQ -->
-    <section id="faq">
-      <div class="shell">
-        <div class="center reveal">
-          <div class="eyebrow" style="justify-content:center">FAQ</div>
-          <h2>Common questions, straight answers.</h2>
-        </div>
-        <div class="faq-list reveal">
-          <details>
-            <summary>Will I see permanent roofline lights during the day?</summary>
-            <p>Barely. The extruded aluminum track sits low-profile against your roofline and can be custom colour-matched to your trim using RAL paint codes. Multiple track styles suit different mounting scenarios.</p>
-          </details>
-          <details>
-            <summary>How long do permanent Christmas lights last?</summary>
-            <p>The LEDs are rated for 100,000 hours — roughly 45 years at 6 hours of nightly use — and the whole system is backed by a 10-year comprehensive warranty on parts and workmanship.</p>
-          </details>
-          <details>
-            <summary>Can permanent lighting handle Kootenay winters?</summary>
-            <p>That's exactly what it's built for. The system carries an IP68 waterproof rating and UL/cUL certification, with UV-resistant cables rated for 20+ years of outdoor exposure.</p>
-          </details>
-          <details>
-            <summary>Is permanent roofline lighting safe?</summary>
-            <p>Yes. It runs on a 48V low-voltage system — far safer than line voltage — with built-in reverse polarity protection, so even a wiring mistake can't damage the system.</p>
-          </details>
-          <details>
-            <summary>Can I run just warm white, no colours?</summary>
-            <p>Absolutely. Each light has three dedicated white-spectrum diodes separate from the RGB diodes, so you get true, high-quality warm white — not a simulated mix. Many customers run warm white 350 nights a year.</p>
-          </details>
-          <details>
-            <summary>How are the lights controlled?</summary>
-            <p>Through a smartphone app via Wi-Fi or Bluetooth. Every light is individually addressable — create custom effects, schedule scenes, and control zones independently. Runs up to 300 feet need no extra equipment.</p>
-          </details>
-          <details>
-            <summary>How much do permanent Christmas lights cost in the West Kootenays?</summary>
-            <p>Most homes fall between $4,000 and $11,000 installed, depending on roofline length and access. Tell us your roofline length on this page and we'll send a quote specific to your home, then confirm it with a free on-site measure.</p>
-          </details>
-          <details>
-            <summary>How accurate is the quote?</summary>
-            <p>It's based on our real install pricing for your roofline length and access. Final details — track style, power placement, and roofline specifics — are confirmed during a free, no-obligation on-site measure.</p>
-          </details>
-          <details>
-            <summary>What's included in the final quote?</summary>
-            <p>A custom-measured layout for your home, total cost, estimated timeline, and full warranty details. No surprises, no pressure.</p>
-          </details>
-          <details>
-            <summary>How does the $200 referral bonus work?</summary>
-            <p>Refer a neighbour, friend, or family member who books an install of $2,000 or more, and we'll send you $200 once their install is complete. No cap — refer as many people as you like. Just have them mention your name.</p>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <!-- ESTIMATE CALCULATOR -->
-    <section id="estimate" class="flow-band" style="border-top:1px solid var(--line)">
-      <div class="shell">
-        <div class="center reveal">
-          <div class="eyebrow" style="justify-content:center">Step 1 · Size Up Your Roofline</div>
-          <h2>What do permanent Christmas lights cost?</h2>
-          <p class="lead" style="margin-top:14px">Two quick questions, then a short form. A real number — not a sales call.</p>
-        </div>
-        <div class="estimate-wrap">
-          <div class="est-controls reveal">
-            <div>
-              <div class="field-label">
-                <strong>Roofline to illuminate</strong>
-                <span class="hint">Front only? Whole perimeter? Your call.</span>
-              </div>
-              <div class="ft-display" id="ftDisplay">150<small>linear ft</small></div>
-              <input type="range" id="ftRange" min="40" max="400" step="5" value="150" aria-label="Roofline length in linear feet" />
-              <div class="range-marks"><span>40 ft</span><span>Typical home: 120–200 ft</span><span>400 ft</span></div>
-            </div>
-            <div>
-              <div class="field-label">
-                <strong>Roofline access</strong>
-                <span class="hint">Affects equipment needed</span>
-              </div>
-              <div class="seg">
-                <input type="radio" name="access" id="accessLadder" checked />
-                <label for="accessLadder">Reachable by ladder<small>Single storey / standard two storey</small></label>
-                <input type="radio" name="access" id="accessBoom" />
-                <label for="accessBoom">Some high or tricky spots<small>Steep pitch, tall peaks — lift required</small></label>
-              </div>
-            </div>
-            <p class="est-note">Not sure about either? Pick your best guess — we confirm everything with a free on-site measure before you commit to anything.</p>
-          </div>
-        </div>
-        <div class="step-connector" aria-hidden="true">↓</div>
-      </div>
-    </section>
-
-    <!-- QUOTE FORM -->
-    <section id="quote" class="flow-band">
-      <div class="shell">
-        <div class="quote-grid">
-          <div class="reveal">
-            <div class="eyebrow">Step 2 · Get Your Quote</div>
-            <h2>Reply within one business day. Zero pressure.</h2>
-            <p class="lead" style="margin-top:14px">We'll send your price, then confirm it with a free on-site measure. No commitment until you've seen the exact quote. Prefer to talk? Call or text anytime.</p>
-            <div class="contact-card">
-              <span><strong>Call / Text:</strong> <a href="tel:+17789096758">(778) 909-6758</a></span>
-              <span><strong>Email:</strong> <a href="mailto:info@summitlightingsystems.ca">info@summitlightingsystems.ca</a></span>
-            </div>
-          </div>
-          <form id="quote-form" action="https://api.web3forms.com/submit" method="POST" class="reveal">
-            <input type="hidden" name="access_key" value="b3035883-5393-4cf1-8aea-7d144f7cd9d2" />
-            <input type="hidden" name="subject" value="New Quote Request — SUMMIT Lighting Systems" />
-            <input type="hidden" name="from_name" value="SUMMIT Website" />
-            <input type="hidden" name="instant_estimate" id="estimateField" value="" />
-            <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
-            <div class="est-summary">
-              <div class="est-summary-top">
-                <span class="est-summary-label">Your project</span>
-                <a href="#estimate" class="est-summary-edit">Edit ↑</a>
-              </div>
-              <div class="est-summary-price" id="sumFt">150 ft</div>
-              <div class="est-summary-meta"><span id="sumAccess">ladder accessible</span></div>
-            </div>
-            <div class="form-field">
-              <label for="name">Name</label>
-              <input id="name" name="name" type="text" autocomplete="name" placeholder="Your name" required />
-            </div>
-            <div class="form-field">
-              <label for="address">Town</label>
-              <input id="address" name="address" type="text" autocomplete="address-level2" placeholder="Town or neighbourhood" required />
-            </div>
-            <div class="form-field">
-              <label for="contact">Phone or Email</label>
-              <input id="contact" name="contact" type="text" autocomplete="email" placeholder="(778) 909-6758 or you@example.com" required />
-            </div>
-            <details class="form-more">
-              <summary>Add details <span>(optional)</span></summary>
-              <div class="form-more-body">
-                <div class="form-field">
-                  <label for="referrer">Who referred you? <span>(optional)</span></label>
-                  <input id="referrer" name="referrer" type="text" placeholder="Name of the person who sent you" />
-                </div>
-                <div class="form-field">
-                  <label for="notes">Project details <span>(optional)</span></label>
-                  <textarea id="notes" name="notes" placeholder="Timeline, special requests, anything we should know..."></textarea>
-                </div>
-              </div>
-            </details>
-            <button class="btn primary" type="submit">Send Me My Quote →</button>
-            <div id="quote-result" role="status" aria-live="polite"></div>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <!-- REFERRAL -->
-    <section id="referral">
-      <div class="shell">
-        <div class="referral reveal">
-          <div>
-            <div class="eyebrow">Referral Program</div>
-            <h2>Know a neighbour who needs this? Earn $200.</h2>
-            <p>Every completed referral install of $2,000+ puts $200 in your pocket. No cap, no catch — just have them mention your name in their quote request.</p>
-          </div>
-          <a class="btn primary" id="referralBtn" href="#quote-form">Refer Someone Now</a>
-        </div>
-      </div>
-    </section>
-
     <!-- LOCAL SEO STRIP -->
-    <section class="local-strip" aria-label="About permanent lighting in the West Kootenays">
+    <section class="local-strip" style="padding-top:96px" aria-label="About permanent lighting in the West Kootenays">
       <div class="shell">
-        <div class="inner">
+        <div class="inner" style="border-top:0;padding-top:0">
           <div class="reveal">
             <h2>Permanent Christmas light installers serving Nelson, Castlegar &amp; Trail</h2>
             <p>SUMMIT Lighting Systems is a locally owned permanent lighting company based in the West Kootenays. We design and install permanent Christmas lights, holiday lighting, and year-round architectural roofline lighting for homes and businesses in Nelson, Castlegar, Trail, Rossland, Salmo, and surrounding communities — using commercial-grade Chromaglow Pro hardware backed by a 10-year warranty.</p>
@@ -1242,20 +446,74 @@
         </div>
       </div>
     </section>
+
+    <!-- REVIEWS + CTA (shared on every page) -->
+    <section class="cta-band" aria-label="Customer reviews and free quote">
+      <div class="shell">
+        <div class="cta-band-inner reveal">
+          <div>
+            <div class="eyebrow">Free Quote · No Pressure</div>
+            <h2>Ready for your last December on a ladder?</h2>
+            <p class="lead">Tell us about your home and we'll reply with a quote within one business day, then confirm it with a free on-site measure.</p>
+            <div class="hero-ctas">
+              <a class="btn primary" href="/quote/">Get My Free Quote</a>
+              <a class="btn ghost" href="tel:+17789096758">Call / Text (778) 909-6758</a>
+            </div>
+          </div>
+          <div class="mini-reviews">
+          <figure class="mini-review">
+            <div class="review-stars" role="img" aria-label="Rated 5 out of 5 stars"><svg width="14" height="14" viewBox="0 0 24 24" fill="#f2b450" aria-hidden="true"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#f2b450" aria-hidden="true"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#f2b450" aria-hidden="true"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#f2b450" aria-hidden="true"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#f2b450" aria-hidden="true"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg></div>
+            <blockquote>“The workmanship is excellent, the installation is incredibly clean, and the lights look absolutely beautiful on the house.”</blockquote>
+            <cite>— Corinne D. · Google review</cite>
+          </figure>
+          <figure class="mini-review">
+            <div class="review-stars" role="img" aria-label="Rated 5 out of 5 stars"><svg width="14" height="14" viewBox="0 0 24 24" fill="#f2b450" aria-hidden="true"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#f2b450" aria-hidden="true"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#f2b450" aria-hidden="true"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#f2b450" aria-hidden="true"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#f2b450" aria-hidden="true"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg></div>
+            <blockquote>“From the planning, to the install, to enjoying our lights, everything was seamless. Eric was responsive and timely in communicating with us.”</blockquote>
+            <cite>— Katie R., Castlegar · Google review</cite>
+          </figure>
+            <a class="more-link" href="https://www.google.com/search?kgmid=/g/11z3np9lxh&amp;q=Summit+Lighting+Systems" target="_blank" rel="noopener">Read all our reviews on Google <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer>
     <div class="shell">
       <div>
         <strong style="font-family:'Sora',sans-serif">SUMMIT Lighting Systems</strong>
-        <small>Permanent Christmas Lights + Year-Round Roofline Lighting<br/>Serving Nelson · Castlegar · Trail · Rossland · Salmo &amp; the West Kootenays, BC</small>
+        <small>Permanent Christmas Lights + Year-Round Roofline Lighting<br/>Based in Nelson, BC · Serving Castlegar, Trail, Rossland, Salmo &amp; the West Kootenays</small>
         <p class="disclosure">Chromaglow Pro is manufactured by Big Star Lights. SUMMIT Lighting Systems is an independent installer.</p>
       </div>
+      <nav aria-label="Footer">
+        <span class="foot-title">Explore</span>
+        <small>
+          <a href="/permanent-lighting/">Permanent Lighting</a><br/>
+          <a href="/gallery/">Gallery</a><br/>
+          <a href="/about/">About</a><br/>
+          <a href="/faq/">FAQ</a><br/>
+          <a href="/quote/">Get a Quote</a><br/>
+          <a href="/privacy-policy.html">Privacy Policy</a>
+        </small>
+      </nav>
       <div>
-        <small><a href="tel:+17789096758" style="color:var(--amber-2)">(778) 909-6758</a><br/><a href="mailto:info@summitlightingsystems.ca">info@summitlightingsystems.ca</a><br/><a href="/privacy-policy.html">Privacy Policy</a></small>
+        <span class="foot-title">Contact</span>
+        <small>
+          <a href="tel:+17789096758" style="color:var(--amber-2)">(778) 909-6758</a> (call or text)<br/>
+          <a href="mailto:info@summitlightingsystems.ca">info@summitlightingsystems.ca</a><br/>
+          Nelson, BC<br/>
+          Mon–Fri, 9am–5pm<br/>
+          <a href="https://www.facebook.com/profile.php?id=61591429754627" target="_blank" rel="noopener">Facebook</a> · <a href="https://www.google.com/search?kgmid=/g/11z3np9lxh&amp;q=Summit+Lighting+Systems" target="_blank" rel="noopener">Google</a>
+        </small>
       </div>
     </div>
   </footer>
+
+  <div class="sticky-cta">
+    <a class="btn ghost" href="tel:+17789096758">Call / Text</a>
+    <a class="btn primary" href="/quote/">Get a Quote</a>
+  </div>
 
   <!-- GALLERY LIGHTBOX -->
   <div class="lb" id="lightbox" role="dialog" aria-modal="true" aria-label="Install photo viewer">
@@ -1275,259 +533,6 @@
     <div class="lb-count" id="lbCount"></div>
   </div>
 
-  <div class="sticky-cta">
-    <a class="btn ghost" href="tel:+17789096758">Call / Text</a>
-    <a class="btn primary" href="#estimate">Get a Quote</a>
-  </div>
-
-  <script>
-    /* ---------- nav ---------- */
-    const header = document.getElementById('header');
-    const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 24);
-    window.addEventListener('scroll', onScroll, {passive:true});
-    onScroll();
-
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    menuBtn.addEventListener('click', () => {
-      const open = mobileMenu.classList.toggle('open');
-      menuBtn.setAttribute('aria-expanded', open);
-    });
-    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-      mobileMenu.classList.remove('open');
-      menuBtn.setAttribute('aria-expanded', 'false');
-    }));
-
-    /* ---------- hero crossfade ---------- */
-    const slides = document.querySelectorAll('.hero-bg img');
-    let slideIdx = 0;
-    setInterval(() => {
-      slides[slideIdx].classList.remove('active');
-      slideIdx = (slideIdx + 1) % slides.length;
-      slides[slideIdx].classList.add('active');
-    }, 6000);
-
-    /* ---------- reveal on scroll ---------- */
-    const io = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-    }, {threshold:.12});
-    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-    /* ---------- reviews rail ---------- */
-    const rail = document.getElementById('reviewsRail');
-    if (rail) {
-      const railWrap = document.getElementById('reviewsRailWrap');
-      const prevBtn = railWrap.querySelector('.rail-nav.prev');
-      const nextBtn = railWrap.querySelector('.rail-nav.next');
-
-      /* Expand / collapse. The toggle only appears when the text is actually
-         clamped, so short reviews render without a dangling "Read more". */
-      rail.querySelectorAll('.review-card').forEach(card => {
-        const btn = card.querySelector('.review-more');
-        const text = card.querySelector('.review-text');
-        if (!btn || !text) return;
-        const isClamped = () => text.scrollHeight > text.clientHeight + 2;
-        const sync = () => { if (!card.classList.contains('expanded')) btn.hidden = !isClamped(); };
-        sync();
-        window.addEventListener('resize', sync, {passive:true});
-        /* Re-measure once webfonts land -- line counts shift with the fallback. */
-        if (document.fonts && document.fonts.ready) document.fonts.ready.then(sync);
-        btn.addEventListener('click', () => {
-          const open = card.classList.toggle('expanded');
-          btn.setAttribute('aria-expanded', open);
-          btn.querySelector('span').textContent = open ? 'Show less' : 'Read more';
-          if (!open) { sync(); card.scrollIntoView({block:'nearest', inline:'nearest'}); }
-          updateRail();
-        });
-      });
-
-      /* Arrows and edge fades only show when there is somewhere to scroll. */
-      const updateRail = () => {
-        const max = rail.scrollWidth - rail.clientWidth;
-        const canLeft = rail.scrollLeft > 8;
-        const canRight = rail.scrollLeft < max - 8;
-        railWrap.classList.toggle('can-left', canLeft);
-        railWrap.classList.toggle('can-right', canRight);
-        prevBtn.hidden = !canLeft;
-        nextBtn.hidden = !canRight;
-      };
-      const step = () => {
-        const card = rail.querySelector('.review-card');
-        return card ? card.getBoundingClientRect().width + 18 : rail.clientWidth * .8;
-      };
-      prevBtn.addEventListener('click', () => rail.scrollBy({left:-step(), behavior:'smooth'}));
-      nextBtn.addEventListener('click', () => rail.scrollBy({left:step(), behavior:'smooth'}));
-      rail.addEventListener('scroll', updateRail, {passive:true});
-      window.addEventListener('resize', updateRail, {passive:true});
-      if (document.fonts && document.fonts.ready) document.fonts.ready.then(updateRail);
-      updateRail();
-    }
-
-    /* ---------- install gallery lightbox ---------- */
-    const igItems = [...document.querySelectorAll('.ig-item')];
-    if (igItems.length) {
-      const lb = document.getElementById('lightbox');
-      const lbImg = document.getElementById('lbImg');
-      const lbCap = document.getElementById('lbCap');
-      const lbCount = document.getElementById('lbCount');
-      const lbClose = lb.querySelector('.lb-close');
-      let idx = 0, lastFocus = null;
-
-      const show = i => {
-        idx = (i + igItems.length) % igItems.length;
-        const el = igItems[idx];
-        lbImg.src = el.dataset.full;
-        lbImg.alt = el.querySelector('img').alt;
-        lbCap.textContent = el.dataset.cap || '';
-        lbCount.textContent = (idx + 1) + ' / ' + igItems.length;
-        /* warm the neighbours so arrowing through feels instant */
-        [idx + 1, idx - 1].forEach(n => {
-          const nb = igItems[(n + igItems.length) % igItems.length];
-          new Image().src = nb.dataset.full;
-        });
-      };
-
-      const openLb = i => {
-        lastFocus = document.activeElement;
-        show(i);
-        lb.classList.add('open');
-        document.body.style.overflow = 'hidden';
-        lbClose.focus();
-      };
-
-      const closeLb = () => {
-        lb.classList.remove('open');
-        document.body.style.overflow = '';
-        lbImg.src = '';
-        if (lastFocus) lastFocus.focus();
-      };
-
-      igItems.forEach((el, i) => el.addEventListener('click', () => openLb(i)));
-      lbClose.addEventListener('click', closeLb);
-      lb.querySelector('.lb-prev').addEventListener('click', () => show(idx - 1));
-      lb.querySelector('.lb-next').addEventListener('click', () => show(idx + 1));
-      lb.addEventListener('click', e => { if (e.target === lb) closeLb(); });
-
-      document.addEventListener('keydown', e => {
-        if (!lb.classList.contains('open')) return;
-        if (e.key === 'Escape') closeLb();
-        else if (e.key === 'ArrowLeft') show(idx - 1);
-        else if (e.key === 'ArrowRight') show(idx + 1);
-        else if (e.key === 'Tab') { e.preventDefault(); lbClose.focus(); }
-      });
-
-      let touchX = 0;
-      lb.addEventListener('touchstart', e => { touchX = e.changedTouches[0].clientX; }, {passive:true});
-      lb.addEventListener('touchend', e => {
-        const dx = e.changedTouches[0].clientX - touchX;
-        if (Math.abs(dx) > 55) show(dx < 0 ? idx + 1 : idx - 1);
-      }, {passive:true});
-    }
-
-    /* ---------- roofline sizer + internal estimate ----------
-       Pricing model (from internal quote calculator):
-       - Lights:  (ft × 1.1) / 25 pcs × $260  = $11.44/ft
-       - Track:   (ft × 1.1) / 3 pcs × $11.50 = $4.22/ft
-       - Cable:   ft × $1.15                  = $1.15/ft
-       - Power supply: $575 per 300 ft run
-       - Misc materials: $200
-       - Lift (non-ladder access): $725
-       Quote = 2 × material cost; shown as a −10% / +15% range. */
-    const PER_FT = (1.1/25)*260 + (1.1/3)*11.5 + 1.15;
-    const PSU = 575, MISC = 200, LIFT = 725;
-
-    function estimateRange(ft, ladderAccess){
-      const materials = ft*PER_FT + MISC + Math.ceil(ft/300)*PSU + (ladderAccess ? 0 : LIFT);
-      const quote = materials * 2;
-      const round100 = v => Math.round(v/100)*100;
-      return { low: round100(quote*0.9), high: round100(quote*1.15) };
-    }
-
-    const ftRange = document.getElementById('ftRange');
-    const ftDisplay = document.getElementById('ftDisplay');
-    const estimateField = document.getElementById('estimateField');
-    const accessLadder = document.getElementById('accessLadder');
-    const sumFt = document.getElementById('sumFt');
-    const sumAccess = document.getElementById('sumAccess');
-    const fmt = v => '$' + v.toLocaleString('en-CA');
-
-    const accessText = () => accessLadder.checked ? 'ladder accessible' : 'lift required';
-
-    /* The price is never shown on the page -- visitors send the form to get it.
-       The estimate is attached to the submission only, so we can reply fast. */
-    function updateEstimate(){
-      const ft = +ftRange.value;
-      ftDisplay.innerHTML = ft + '<small>linear ft</small>';
-      const pct = ((ft - ftRange.min) / (ftRange.max - ftRange.min)) * 100;
-      ftRange.style.setProperty('--fill', pct + '%');
-      /* mirror into the summary card at the top of the quote form */
-      sumFt.textContent = ft + ' ft';
-      sumAccess.textContent = accessText();
-    }
-
-    /* Meta Pixel: first interaction with the calculator, once per page view */
-    let estimateUsed = false;
-    const onEstimateInput = () => {
-      updateEstimate();
-      if (estimateUsed) return;
-      estimateUsed = true;
-      if (window.fbq) fbq('trackCustom', 'EstimateUsed');
-    };
-    ftRange.addEventListener('input', onEstimateInput);
-    document.querySelectorAll('input[name=access]').forEach(r => r.addEventListener('change', onEstimateInput));
-    updateEstimate();
-
-    /* After an in-page jump to the form, focus a field once the smooth scroll settles. */
-    const focusAfterScroll = el => setTimeout(() => el.focus({preventScroll:true}), 600);
-
-    /* Referral CTA: open the optional details so the referrer field is ready */
-    document.getElementById('referralBtn').addEventListener('click', () => {
-      document.querySelector('.form-more').open = true;
-      focusAfterScroll(document.getElementById('referrer'));
-    });
-
-    /* ---------- form submit ---------- */
-    const quoteForm = document.getElementById('quote-form');
-    const quoteResult = document.getElementById('quote-result');
-
-    /* Meta Pixel: fire only if the pixel actually loaded (ad blockers, noscript) */
-    const track = (event, params) => { if (window.fbq) fbq('track', event, params); };
-
-    quoteForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const btn = quoteForm.querySelector('button[type=submit]');
-      btn.disabled = true; btn.textContent = 'Sending…';
-      /* capture the estimate before the form resets */
-      const quoted = estimateRange(+ftRange.value, accessLadder.checked);
-      estimateField.value = ftRange.value + ' ft, ' + accessText() + ', estimate ' + fmt(quoted.low) + '–' + fmt(quoted.high);
-      try{
-        const res = await fetch('https://api.web3forms.com/submit', { method:'POST', body:new FormData(quoteForm) });
-        quoteResult.style.display = 'block';
-        if (res.ok){
-          quoteResult.style.background = 'rgba(96,190,120,.12)';
-          quoteResult.style.border = '1px solid rgba(96,190,120,.4)';
-          quoteResult.textContent = "Thanks! Your request is in — we'll send your quote within one business day.";
-          track('Lead', { content_name: 'Quote request form', value: quoted.low, currency: 'CAD' });
-          quoteForm.reset(); updateEstimate();
-        } else { throw new Error(); }
-      }catch{
-        quoteResult.style.display = 'block';
-        quoteResult.style.background = 'rgba(226,101,79,.12)';
-        quoteResult.style.border = '1px solid rgba(226,101,79,.4)';
-        quoteResult.innerHTML = 'Something went wrong — please call or text <a href="tel:+17789096758" style="color:var(--amber-2)">(778) 909-6758</a> instead.';
-      }finally{
-        btn.disabled = false; btn.textContent = 'Send Me My Quote →';
-      }
-    });
-
-    /* ---------- Meta Pixel: call / text / email clicks ---------- */
-    document.addEventListener('click', (e) => {
-      const link = e.target.closest('a[href^="tel:"], a[href^="mailto:"]');
-      if (!link || !window.fbq) return;
-      fbq('track', 'Contact', {
-        content_name: link.getAttribute('href').startsWith('tel:') ? 'Call / Text' : 'Email'
-      });
-    });
-  </script>
+  <script src="/Assets/site.js"></script>
 </body>
 </html>
