@@ -182,6 +182,9 @@ if (document.querySelector('.ig-item')) {
 const track = (event, params) => { if (window.fbq) fbq('track', event, params); };
 
 /* ---------- quote form (quote page) ---------- */
+/* Google Apps Script web app that adds each request to the "Leads" tab
+   (source: apps-script/leads-to-sheet.gs). Empty = skip the sheet. */
+const LEADS_SHEET_URL = 'https://script.google.com/macros/s/AKfycbxmkOOtbQKLTS_U4aE8Z0i6Zss-ouZPL72mJyjDqZlZzmqz7xfY3PRrU_8xc8QbucnEqQ/exec';
 const quoteForm = document.getElementById('quote-form');
 if (quoteForm) {
   /* Roofline sizer + internal estimate.
@@ -254,6 +257,12 @@ if (quoteForm) {
     try{
       const data = new FormData(quoteForm);
       data.delete('access'); /* already summarised in instant_estimate */
+      /* Sheet copy runs alongside the email. Google's reply is opaque (no-cors),
+         so the email result alone decides what the visitor sees. */
+      if (LEADS_SHEET_URL) {
+        fetch(LEADS_SHEET_URL, { method:'POST', mode:'no-cors', keepalive:true, body:new URLSearchParams(data) })
+          .catch(() => {});
+      }
       const res = await fetch('https://api.web3forms.com/submit', { method:'POST', body:data });
       quoteResult.style.display = 'block';
       if (res.ok){
