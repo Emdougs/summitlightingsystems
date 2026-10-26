@@ -48,53 +48,10 @@
           "addressRegion": "BC",
           "addressCountry": "CA"
         },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 49.32,
-          "longitude": -117.66
+        "areaServed": {
+          "@type": "AdministrativeArea",
+          "name": "West Kootenays, British Columbia"
         },
-        "areaServed": [
-          {
-            "@type": "City",
-            "name": "Nelson"
-          },
-          {
-            "@type": "City",
-            "name": "Castlegar"
-          },
-          {
-            "@type": "City",
-            "name": "Trail"
-          },
-          {
-            "@type": "City",
-            "name": "Rossland"
-          },
-          {
-            "@type": "City",
-            "name": "Salmo"
-          },
-          {
-            "@type": "City",
-            "name": "Fruitvale"
-          },
-          {
-            "@type": "City",
-            "name": "Montrose"
-          },
-          {
-            "@type": "City",
-            "name": "Warfield"
-          },
-          {
-            "@type": "City",
-            "name": "Slocan Valley"
-          },
-          {
-            "@type": "City",
-            "name": "Kaslo"
-          }
-        ],
         "founder": {
           "@type": "Person",
           "name": "Eric Douglas"
@@ -247,20 +204,7 @@
               </div>
               <div class="form-field">
                 <label for="town">Town</label>
-                <select id="town" name="town" autocomplete="address-level2" required>
-                  <option value="" disabled selected>Choose your town</option>
-                <option>Nelson</option>
-                <option>Castlegar</option>
-                <option>Trail</option>
-                <option>Rossland</option>
-                <option>Salmo</option>
-                <option>Fruitvale</option>
-                <option>Montrose</option>
-                <option>Warfield</option>
-                <option>Slocan Valley</option>
-                <option>Kaslo</option>
-                  <option>Other / not listed</option>
-                </select>
+                <input id="town" name="town" type="text" autocomplete="address-level2" placeholder="Your town" required />
               </div>
 
               <details class="form-more" id="refer">
@@ -281,7 +225,7 @@
               <figure class="form-review">
                 <div class="review-stars" role="img" aria-label="Rated 5 out of 5 stars"><svg width="13" height="13" viewBox="0 0 24 24" fill="#f2b450" aria-hidden="true"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="#f2b450" aria-hidden="true"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="#f2b450" aria-hidden="true"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="#f2b450" aria-hidden="true"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="#f2b450" aria-hidden="true"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg></div>
                 <blockquote>“From the planning, to the install, to enjoying our lights, everything was seamless. Eric was responsive and timely in communicating with us.”</blockquote>
-                <cite>— Katie R., Castlegar · Google review</cite>
+                <cite>— Katie R. · Google review</cite>
               </figure>
               <p class="form-fine">No spam, no obligation. See our <a href="/privacy-policy">privacy policy</a>.</p>
             </form>
@@ -294,13 +238,12 @@
               <span><strong>Call / Text:</strong> <a href="tel:+17789096758">(778) 909-6758</a></span>
               <span><strong>Email:</strong> <a href="mailto:info@summitlightingsystems.ca">info@summitlightingsystems.ca</a></span>
               <span><strong>Hours:</strong> Mon–Fri, 9am–5pm</span>
-              <span><strong>Based in:</strong> Nelson, BC</span>
+              <span><strong>Based in:</strong> the West Kootenays, BC</span>
               <!-- TODO(owner): street address here if it's ever made public -->
             </div>
             <div class="contact-card">
               <h2>Service area</h2>
               <span class="muted">Permanent lighting installs across the West Kootenays. Just outside the area? Call anyway; we can often make it work.</span>
-              <div class="towns"><span class="chip">Nelson</span><span class="chip">Castlegar</span><span class="chip">Trail</span><span class="chip">Rossland</span><span class="chip">Salmo</span><span class="chip">Fruitvale</span><span class="chip">Montrose</span><span class="chip">Warfield</span><span class="chip">Slocan Valley</span><span class="chip">Kaslo</span></div>
             </div>
             <div class="contact-card" style="border-color:rgba(242,180,80,.35);background:linear-gradient(150deg,rgba(242,180,80,.1),var(--bg-2) 65%)">
               <h2>Refer a neighbour, earn $200.</h2>
@@ -317,7 +260,7 @@
     <div class="shell">
       <div>
         <strong style="font-family:'Sora',sans-serif">SUMMIT Lighting Systems</strong>
-        <small>Permanent Christmas Lights + Year-Round Roofline Lighting<br/>Based in Nelson, BC · Serving Castlegar, Trail, Rossland, Salmo &amp; the West Kootenays</small>
+        <small>Permanent Christmas Lights + Year-Round Roofline Lighting<br/>Serving homes &amp; businesses across the West Kootenays, BC</small>
         <p class="disclosure">Chromaglow Pro is manufactured by Big Star Lights. SUMMIT Lighting Systems is an independent installer.</p>
       </div>
       <nav aria-label="Footer">
@@ -336,7 +279,7 @@
         <small>
           <a href="tel:+17789096758" style="color:var(--amber-2)">(778) 909-6758</a> (call or text)<br/>
           <a href="mailto:info@summitlightingsystems.ca">info@summitlightingsystems.ca</a><br/>
-          Nelson, BC<br/>
+          West Kootenays, BC<br/>
           Mon–Fri, 9am–5pm<br/>
           <a href="https://www.facebook.com/profile.php?id=61591429754627" target="_blank" rel="noopener">Facebook</a> · <a href="https://www.google.com/search?kgmid=/g/11z3np9lxh&amp;q=Summit+Lighting+Systems" target="_blank" rel="noopener">Google</a>
         </small>

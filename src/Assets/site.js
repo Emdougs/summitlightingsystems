@@ -85,27 +85,9 @@ if (rail) {
   updateRail();
 }
 
-/* ---------- gallery tabs + town filters (gallery page) ----------
-   Town chips are built from each photo's data-town, so tagging a new photo
-   data-town="Nelson" adds a Nelson chip automatically. */
+/* ---------- gallery tabs (gallery page) ---------- */
 const igGrid = document.getElementById('igGrid');
-const igFilters = document.getElementById('igFilters');
-if (igGrid && igFilters) {
-  const items = [...igGrid.querySelectorAll('.ig-item')];
-  const towns = [...new Set(items.map(el => el.dataset.town).filter(Boolean))].sort();
-  ['All', ...towns].forEach((town, i) => {
-    const b = document.createElement('button');
-    b.type = 'button';
-    b.className = 'ig-filter';
-    b.textContent = town === 'All' ? 'All towns' : town;
-    b.setAttribute('aria-pressed', i === 0);
-    b.addEventListener('click', () => {
-      igFilters.querySelectorAll('.ig-filter').forEach(x => x.setAttribute('aria-pressed', x === b));
-      items.forEach(el => { el.hidden = town !== 'All' && el.dataset.town !== town; });
-    });
-    igFilters.appendChild(b);
-  });
-
+if (igGrid) {
   const tabs = [...document.querySelectorAll('.ig-tab')];
   tabs.forEach(tab => tab.addEventListener('click', () => {
     tabs.forEach(t => {
@@ -117,7 +99,7 @@ if (igGrid && igFilters) {
 }
 
 /* ---------- install gallery lightbox ----------
-   Steps through the photos currently visible, so it respects the town filter. */
+   Steps through the photos currently visible. */
 if (document.querySelector('.ig-item')) {
   const lb = document.getElementById('lightbox');
   const lbImg = document.getElementById('lbImg');

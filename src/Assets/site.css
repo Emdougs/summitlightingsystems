@@ -394,10 +394,7 @@ input[type=range]::-moz-range-thumb{
 /* ---------- area ---------- */
 .area-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;margin-top:48px}
 @media(max-width:860px){.area-grid{grid-template-columns:1fr}}
-.area-map{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line)}
-.towns{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
-.map-credit{font-size:.7rem;color:var(--muted);margin-top:8px;opacity:.7}
-.map-credit a{text-decoration:underline}
+.area-copy{max-width:760px}
 
 /* ---------- faq ---------- */
 .faq-list{max-width:780px;margin:48px auto 0}
@@ -518,21 +515,19 @@ footer small{color:var(--muted);font-size:.82rem;display:block;line-height:1.7}
 .more-link:hover{gap:11px}
 .section-foot{text-align:center;margin-top:34px}
 
-/* gallery tabs + town filters */
+/* gallery tabs */
 .ig-tabs{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:40px}
-.ig-tab,.ig-filter{
+.ig-tab{
   font-family:'Inter',sans-serif;font-size:.86rem;font-weight:600;cursor:pointer;
   border:1px solid var(--line-2);background:rgba(255,255,255,.03);color:var(--muted);
   border-radius:999px;padding:9px 18px;transition:.2s;
 }
-.ig-tab:hover,.ig-filter:hover{color:var(--text);border-color:var(--amber)}
-.ig-tab[aria-selected=true],.ig-filter[aria-pressed=true]{
+.ig-tab:hover{color:var(--text);border-color:var(--amber)}
+.ig-tab[aria-selected=true]{
   color:#1d1503;border-color:transparent;
   background:linear-gradient(135deg,var(--amber-2),var(--amber));
 }
 .ig-tab small{font-weight:500;opacity:.75;margin-left:4px}
-.ig-filters{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-top:18px}
-.ig-filter{font-size:.8rem;padding:7px 14px}
 .ig-item[hidden]{display:none}
 .ig-soon{
   max-width:620px;margin:48px auto 0;text-align:center;
@@ -560,8 +555,6 @@ footer small{color:var(--muted);font-size:.82rem;display:block;line-height:1.7}
 .quote-aside .contact-card{margin-top:0}
 .contact-card h2{font-size:1.05rem}
 .contact-card .muted{color:var(--muted);font-size:.88rem}
-.contact-card .towns{margin-top:4px}
-.contact-card .towns .chip{font-size:.74rem;padding:6px 11px}
 .form-review{
   border-left:2px solid var(--amber);padding:4px 0 4px 16px;margin-top:4px;
 }
