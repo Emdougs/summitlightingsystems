@@ -178,7 +178,16 @@ header.scrolled{
 }
 .shot.wide{grid-column:span 7;aspect-ratio:16/10}
 .shot.tall{grid-column:span 5;aspect-ratio:auto}
-@media(max-width:760px){.shot.wide,.shot.tall{grid-column:span 12;aspect-ratio:16/10}}
+.shot.fill{grid-column:span 7}
+/* infographic: show the whole image uncropped, caption below instead of over it */
+.shot.poster{grid-column:span 5;background:var(--bg)}
+.shot.poster img{height:auto;aspect-ratio:550/824;object-fit:contain}
+.shot.poster:hover img{transform:none}
+.shot.poster figcaption{position:static;background:none;padding:12px 18px 14px}
+@media(max-width:760px){
+  .shot.wide,.shot.tall,.shot.fill{grid-column:span 12;aspect-ratio:16/10}
+  .shot.poster{grid-column:span 12}
+}
 .specs{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
 
 /* ---------- reviews ----------
